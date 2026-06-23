@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PartnerForm from "@/components/forms/PartnerForm";
+import PartnerHero from "@/components/partners/PartnerHero";
 
 export const metadata: Metadata = {
   title: "Partners | Goodness for All",
@@ -13,34 +14,7 @@ export default function PartnersPage() {
       <Header active="/partners" />
       <main>
         {/* Hero Split Layout */}
-        <section className="flex flex-col md:flex-row min-h-[618px] border-b-2 border-evergreen">
-          <div className="w-full md:w-1/2 bg-white p-container-margin md:p-section-gap-sm flex flex-col justify-center">
-            <h1 className="font-headline-lg text-headline-lg text-evergreen max-w-md">
-              Rotterdam is ook jullie stad.
-            </h1>
-            <p className="mt-6 text-body-lg text-body-lg text-on-surface-variant max-w-sm">
-              Samen bouwen we aan een stad zonder honger. Uw organisatie kan het verschil maken voor
-              duizenden buurtgenoten.
-            </p>
-          </div>
-          <div className="w-full md:w-1/2 bg-evergreen p-container-margin md:p-section-gap-sm flex flex-col justify-center">
-            <h2 className="font-headline-lg text-headline-lg text-harvest-orange">
-              Word Goodness Impact Partner.
-            </h2>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <div className="bg-asparagus text-evergreen px-4 py-2 font-label-sm text-label-sm">
-                CSRD PROOF
-              </div>
-              <div className="bg-asparagus text-evergreen px-4 py-2 font-label-sm text-label-sm">
-                ESG COMPLIANT
-              </div>
-            </div>
-            <p className="mt-6 text-body-md text-body-md text-sandstone-beige max-w-md">
-              Voldoe aan uw duurzaamheidsdoelstellingen en rapportageverplichtingen (CSRD/ESG)
-              terwijl u direct bijdraagt aan lokale voedselzekerheid in Rotterdam.
-            </p>
-          </div>
-        </section>
+        <PartnerHero />
 
         {/* Comparison Cards */}
         <section className="py-section-gap-lg px-container-margin max-w-[1200px] mx-auto">
@@ -52,7 +26,7 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Supporter */}
-            <div className="bg-sandstone-beige p-8 border-2 border-evergreen flex flex-col h-full">
+            <div className="bg-sandstone-beige p-8 border-2 border-evergreen flex flex-col h-full transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_var(--color-evergreen)]">
               <span className="font-label-sm text-label-sm text-evergreen uppercase tracking-widest mb-4">
                 Impact Supporter
               </span>
@@ -79,7 +53,7 @@ export default function PartnersPage() {
             </div>
 
             {/* Builder */}
-            <div className="bg-pure-mist p-8 border-2 border-harvest-orange flex flex-col h-full relative overflow-hidden">
+            <div className="bg-pure-mist p-8 border-2 border-harvest-orange flex flex-col h-full relative transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_var(--color-harvest-orange)]">
               <div className="absolute top-0 right-0 bg-harvest-orange text-evergreen px-4 py-1 font-label-sm text-label-sm">
                 POPULAIR
               </div>
@@ -109,7 +83,7 @@ export default function PartnersPage() {
             </div>
 
             {/* Leader */}
-            <div className="bg-evergreen p-8 border-2 border-evergreen flex flex-col h-full">
+            <div className="bg-evergreen p-8 border-2 border-evergreen flex flex-col h-full transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_var(--color-harvest-orange)]">
               <span className="font-label-sm text-label-sm text-sandstone-beige uppercase tracking-widest mb-4">
                 Impact Leader
               </span>
@@ -169,22 +143,25 @@ export default function PartnersPage() {
         {/* Partner Grid */}
         <section className="py-section-gap-lg px-container-margin max-w-[1200px] mx-auto text-center">
           <h2 className="font-headline-md text-headline-md text-evergreen mb-12">Zij gingen je voor</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 opacity-70 grayscale hover:grayscale-0 transition-all">
-            <div className="flex items-center justify-center p-8 border border-evergreen/10">
-              <div className="font-extrabold text-evergreen/40 text-xl">HAVENBEDRIJF</div>
-            </div>
-            <div className="flex items-center justify-center p-8 border border-evergreen/10">
-              <div className="font-extrabold text-evergreen/40 text-xl">ERASMUS MC</div>
-            </div>
-            <div className="flex items-center justify-center p-8 border border-evergreen/10">
-              <div className="font-extrabold text-evergreen/40 text-xl">COOLBLUE</div>
-            </div>
-            <div className="flex items-center justify-center p-8 border border-evergreen/10">
-              <div className="font-extrabold text-evergreen/40 text-xl">UNILEVER</div>
-            </div>
-            <div className="flex items-center justify-center p-8 border border-evergreen/10">
-              <div className="font-extrabold text-evergreen/40 text-xl">PORT BASE</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+            {[
+              { file: "havenbedrijf", alt: "Havenbedrijf Rotterdam" },
+              { file: "erasmus-mc", alt: "Erasmus MC" },
+              { file: "coolblue", alt: "Coolblue" },
+              { file: "unilever", alt: "Unilever" },
+              { file: "port-base", alt: "Port Base" },
+            ].map((partner) => (
+              <div
+                key={partner.file}
+                className="flex items-center justify-center p-2 border border-evergreen/10"
+              >
+                <img
+                  src={`/images/partners/logos/${partner.file}.png`}
+                  alt={partner.alt}
+                  className="max-h-40 w-auto max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
           </div>
         </section>
 

@@ -150,6 +150,32 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Infinite left-to-right partner marquee.
+   Track holds two identical halves; translating one full half left
+   loops seamlessly. Pauses on hover, respects reduced-motion. */
+.partner-marquee {
+  display: flex;
+  width: max-content;
+  animation: partner-marquee var(--partner-marquee-duration, 40s) linear infinite;
+}
+.partner-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes partner-marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* Users who prefer reduced motion still get the carousel, just calmer. */
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee {
+    animation-duration: 90s;
+  }
+}
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

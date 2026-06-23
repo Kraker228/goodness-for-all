@@ -30,21 +30,37 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Read prefers-reduced-motion here (post-hydration), never during render,
+    // so the first client render matches the server and we avoid a hydration
+    // mismatch. Reduced-motion users skip the stagger delay — the content
+    // still reveals on intersection, just instantly, mirroring the CSS guard
+    // used for the partner marquee.
+    const reduceMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const effectiveDelay = reduceMotion ? 0 : delay;
+
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          if (delay) {
-            const t = setTimeout(() => setShown(true), delay);
-            return () => clearTimeout(t);
-          }
-          setShown(true);
+          // Reveal once, then stop observing so the timer can't re-fire.
           observer.unobserve(el);
+          if (effectiveDelay) {
+            timer = setTimeout(() => setShown(true), effectiveDelay);
+          } else {
+            setShown(true);
+          }
         }
       },
       { threshold: 0.1 },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
   }, [delay]);
 
   return (

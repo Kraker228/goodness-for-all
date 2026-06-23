@@ -33,11 +33,14 @@ export default function Header({ active, position = "sticky" }: HeaderProps) {
             >
               menu
             </button>
-            <Link
-              href="/"
-              className="text-headline-md font-headline-md font-extrabold text-evergreen uppercase tracking-tight"
-            >
-              Goodness for All
+            <Link href="/" aria-label="Goodness for All — home">
+              <img
+                src="/images/logo.png"
+                alt="Goodness for All"
+                width={545}
+                height={168}
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
           <nav className="hidden md:flex gap-base items-center">
@@ -63,7 +66,7 @@ export default function Header({ active, position = "sticky" }: HeaderProps) {
           </nav>
           <Link
             href="/contact"
-            className="bg-evergreen text-sandstone-beige px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-transform inline-block"
+            className="bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all inline-block"
           >
             Contact
           </Link>

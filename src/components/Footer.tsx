@@ -5,9 +5,13 @@ export default function Footer() {
   return (
     <footer className="bg-evergreen border-t-2 border-evergreen w-full">
       <div className="w-full py-section-gap-sm px-container-margin flex flex-col md:flex-row justify-between items-center gap-base max-w-[1200px] mx-auto text-sandstone-beige">
-        <div className="text-headline-md font-headline-md text-harvest-orange">
-          Goodness for All
-        </div>
+        <img
+          src="/images/logo.png"
+          alt="Goodness for All"
+          width={545}
+          height={168}
+          className="h-10 w-auto"
+        />
         <div className="flex gap-8 my-6 md:my-0">
           {FOOTER_LINKS.map((l) => (
             <Link

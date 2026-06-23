@@ -1,56 +1,61 @@
-"use client";
-
-import { useRef } from "react";
-
+/** Partner logo definitions. Drop a matching PNG into
+ *  public/images/partners/ (use the `file` name below) and it appears
+ *  automatically — no code change needed. `alt` is the partner name. */
 const PARTNERS = [
-  "Gemeente Rotterdam",
-  "Provincie Zuid-Holland",
-  "Rabobank",
-  "FMO",
-  "ABB",
-  "Savills",
-  "Azbel",
-  "NS Stations",
-  "Lazy",
-  "SOL",
-  "Incluzio",
+  { file: "gemeente-rotterdam", alt: "Gemeente Rotterdam" },
+  { file: "provincie-zuid-holland", alt: "Provincie Zuid-Holland" },
+  { file: "rabobank", alt: "Rabobank" },
+  { file: "fmo", alt: "FMO" },
+  { file: "abb", alt: "ABB" },
+  { file: "savills", alt: "Savills" },
+  { file: "azbel", alt: "Azbel" },
+  { file: "ns-stations", alt: "NS Stations" },
+  { file: "lazy", alt: "Lazy" },
+  { file: "sol", alt: "SOL" },
+  { file: "incluzio", alt: "Incluzio" },
 ];
 
-/** Drag-to-scroll horizontal partner logo strip. */
+// Slower scroll the more logos there are, so speed stays comfortable.
+const SECONDS_PER_LOGO = 3.5;
+
+/**
+ * Infinite, seamless left-to-right logo carousel.
+ *
+ * The track renders the logo list twice. A pure-CSS animation slides the
+ * track from -50% back to 0%, so the moment the first copy scrolls off the
+ * loop restarts on the visually identical second copy — no jump. Hover
+ * pauses it; reduced-motion users get a static row (see globals.css).
+ */
 export default function PartnerStrip() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const state = useRef({ down: false, startX: 0, scrollLeft: 0 });
+  const duration = `${PARTNERS.length * SECONDS_PER_LOGO}s`;
 
   return (
     <div
-      ref={ref}
-      className="flex partner-scroll overflow-x-auto whitespace-nowrap gap-12 px-8 items-center cursor-grab active:cursor-grabbing"
-      onMouseDown={(e) => {
-        const el = ref.current!;
-        state.current = {
-          down: true,
-          startX: e.pageX - el.offsetLeft,
-          scrollLeft: el.scrollLeft,
-        };
-      }}
-      onMouseLeave={() => (state.current.down = false)}
-      onMouseUp={() => (state.current.down = false)}
-      onMouseMove={(e) => {
-        if (!state.current.down) return;
-        e.preventDefault();
-        const el = ref.current!;
-        const x = e.pageX - el.offsetLeft;
-        el.scrollLeft = state.current.scrollLeft - (x - state.current.startX) * 2;
-      }}
+      className="partner-scroll no-scrollbar overflow-hidden"
+      // Decorative; screen readers get the individual logo alts below.
+      aria-label="Onze partners"
     >
-      {PARTNERS.map((p) => (
-        <div
-          key={p}
-          className="flex-shrink-0 font-bold text-xl uppercase tracking-tighter text-evergreen/60 select-none"
-        >
-          {p}
-        </div>
-      ))}
+      <div
+        className="partner-marquee items-center"
+        style={{ "--partner-marquee-duration": duration } as Record<string, string>}
+      >
+        {[...PARTNERS, ...PARTNERS].map((partner, i) => (
+          <div
+            key={`${partner.file}-${i}`}
+            className="flex-shrink-0 px-12 flex items-center justify-center"
+            // The second copy is purely visual padding for the loop.
+            aria-hidden={i >= PARTNERS.length}
+          >
+            <img
+              src={`/images/partners/logos/${partner.file}.png`}
+              alt={partner.alt}
+              className="h-16 md:h-20 w-auto max-w-[280px] object-contain opacity-80 transition hover:opacity-100 select-none"
+              draggable={false}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

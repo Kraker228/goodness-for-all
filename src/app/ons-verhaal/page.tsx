@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import SubsidyFlowScroll from "@/components/ons-verhaal/SubsidyFlowScroll";
 
 export const metadata: Metadata = {
   title: "Ons verhaal | Goodness for All",
@@ -40,50 +41,15 @@ export default function OnsVerhaalPage() {
           </Reveal>
         </section>
 
-        {/* Section 2: Diagram / Subsidy Flow */}
-        <section className="py-section-gap-lg">
-          <Reveal className="bg-sandstone-beige p-12 border-2 border-evergreen">
-            <h2 className="font-headline-md text-headline-md text-evergreen mb-12 text-center uppercase tracking-widest">
-              De één betaalt voor de ander.
-            </h2>
-            <div className="flex flex-col md:flex-row justify-around items-center gap-12 relative">
-              {/* Connector Line (Desktop) */}
-              <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 border-t-2 border-dashed border-evergreen z-0" />
-              {/* Side 1: Corporate */}
-              <div className="z-10 bg-pure-mist border-2 border-evergreen p-8 text-center w-full md:w-64">
-                <span className="text-headline-lg font-headline-lg text-harvest-orange mb-2 block">
-                  €8
-                </span>
-                <p className="font-label-sm text-label-sm text-evergreen uppercase font-bold">
-                  Zakelijke Markt
-                </p>
-                <p className="text-xs text-evergreen/60 mt-2">Gezonde lunch op kantoor</p>
-              </div>
-              {/* Flow Arrow */}
-              <div className="z-10 bg-harvest-orange text-evergreen p-4 flex items-center justify-center">
-                <span className="material-symbols-outlined text-4xl">trending_flat</span>
-              </div>
-              {/* Side 2: Community */}
-              <div className="z-10 bg-evergreen border-2 border-evergreen p-8 text-center w-full md:w-64">
-                <span className="text-headline-lg font-headline-lg text-sandstone-beige mb-2 block">
-                  €1
-                </span>
-                <p className="font-label-sm text-label-sm text-sandstone-beige uppercase font-bold">
-                  In de Buurt
-                </p>
-                <p className="text-xs text-sandstone-beige/60 mt-2">Toegankelijk voor iedereen</p>
-              </div>
-            </div>
-            <div className="mt-12 text-center max-w-2xl mx-auto">
-              <p className="font-body-md text-body-md italic text-evergreen">
-                Door een eerlijke prijs te vragen aan hen die het kunnen dragen, maken we gezonde
-                voeding voor de hele stad toegankelijk. Geen liefdadigheid, maar solidariteit in
-                actie.
-              </p>
-            </div>
-          </Reveal>
-        </section>
+      </main>
 
+      {/* Section 2: Diagram / Subsidy Flow — pinned, scroll-scrubbed reveal.
+       *  Full-width (outside the max-w container) so the panel can pin to the
+       *  viewport; the component supplies its own inner max-width. See
+       *  SubsidyFlowScroll for the scroll mechanics and reduced-motion fallback. */}
+      <SubsidyFlowScroll />
+
+      <main className="max-w-[1200px] mx-auto px-container-margin">
         {/* Section 3: Distribution / Neighborhood Centers */}
         <section className="py-section-gap-lg">
           <Reveal className="flex flex-col md:flex-row-reverse items-center gap-section-gap-sm">
