@@ -25,8 +25,9 @@ export default function ParticleField({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // Honour reduced-motion by rendering a STATIC field (still visible) rather
+    // than hiding it entirely — users with reduce-motion still see the texture.
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
 
     const mount = mountRef.current;
     if (!mount) return;
@@ -147,9 +148,18 @@ export default function ParticleField({
         if (raf) cancelAnimationFrame(raf);
         raf = 0;
       };
-      start();
 
-      const onVisibility = () => (document.hidden ? stop() : start());
+      if (reduce) {
+        // Static frame only — visible but not animated.
+        renderer.render(scene, camera);
+      } else {
+        start();
+      }
+
+      const onVisibility = () => {
+        if (reduce) return;
+        return document.hidden ? stop() : start();
+      };
       document.addEventListener("visibilitychange", onVisibility);
 
       const onResize = () => {
