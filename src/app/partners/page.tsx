@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PartnerForm from "@/components/forms/PartnerForm";
 import PartnerHero from "@/components/partners/PartnerHero";
+import WaveLines from "@/components/partners/WaveLines";
 
 export const metadata: Metadata = {
   title: "Partners | Goodness for All",
@@ -112,7 +113,7 @@ export default function PartnersPage() {
         </section>
 
         {/* Freezer Showcase Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 bg-sandstone-beige items-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 bg-sandstone-beige items-stretch">
           <div className="h-[400px] md:h-[600px] relative overflow-hidden">
             <img
               className="w-full h-full object-cover"
@@ -120,22 +121,25 @@ export default function PartnersPage() {
               src="/images/partners/freezer.jpg"
             />
           </div>
-          <div className="p-container-margin md:p-section-gap-sm">
-            <h3 className="font-headline-lg text-headline-lg text-evergreen mb-6">
-              Directe impact in uw kantoor.
-            </h3>
-            <p className="text-body-lg text-body-lg mb-8 max-w-md">
-              Met de GfA vrieskast op locatie biedt u niet alleen gezonde opties aan uw medewerkers,
-              maar toont u elke dag uw betrokkenheid bij de stad.
-            </p>
-            <div className="border-l-4 border-harvest-orange pl-6 py-2">
-              <p className="italic text-body-md font-bold text-evergreen">
-                &quot;De vrieskast is een dagelijkse reminder aan onze missie om Rotterdam sterker te
-                maken.&quot;
+          <div className="relative overflow-hidden p-container-margin md:p-section-gap-sm flex flex-col justify-center">
+            <WaveLines />
+            <div className="relative z-10">
+              <h3 className="font-headline-lg text-headline-lg text-evergreen mb-6">
+                Directe impact in uw kantoor.
+              </h3>
+              <p className="text-body-lg text-body-lg mb-8 max-w-md">
+                Met de GfA vrieskast op locatie biedt u niet alleen gezonde opties aan uw medewerkers,
+                maar toont u elke dag uw betrokkenheid bij de stad.
               </p>
-              <p className="text-label-sm mt-2 text-on-surface-variant">
-                — HR Directeur, Rotterdamse Partner
-              </p>
+              <div className="border-l-4 border-harvest-orange pl-6 py-2">
+                <p className="italic text-body-md font-bold text-evergreen">
+                  &quot;De vrieskast is een dagelijkse reminder aan onze missie om Rotterdam sterker te
+                  maken.&quot;
+                </p>
+                <p className="text-label-sm mt-2 text-on-surface-variant">
+                  — HR Directeur, Rotterdamse Partner
+                </p>
+              </div>
             </div>
           </div>
         </section>
