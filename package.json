@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cms:check": "node scripts/check-cms.mjs"
   },
   "dependencies": {
     "@types/three": "^0.184.1",
