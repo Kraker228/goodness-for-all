@@ -127,6 +127,13 @@ export async function finishGitHubAuth(request: Request): Promise<Response> {
   const [, provider, csrfToken] =
     cookie?.match(new RegExp(`\\b${CSRF_COOKIE}=([a-z-]+?)_([0-9a-f]{32})\\b`)) ?? [];
 
+  if (!code && !state && !cookie) {
+    return htmlResponse({
+      error: "Dit is de technische GitHub callback voor de CMS-login. Gebruik /admin om in te loggen.",
+      errorCode: "CALLBACK_DIRECT_OPEN",
+    });
+  }
+
   if (provider !== PROVIDER) {
     return htmlResponse({
       error: "Deze CMS backend wordt niet ondersteund.",
