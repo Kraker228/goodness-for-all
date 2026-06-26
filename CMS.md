@@ -7,7 +7,7 @@ De CMS staat op:
 
 De content staat in `content/site.json`. Sveltia CMS schrijft wijzigingen als commits naar:
 
-- Repository: `Pimmetjeoss/goodness-for-all`
+- Repository: `sirprikkel/goodness-for-all`
 - Branch: `master`
 - OAuth: via de eigen Vercel/Next routes `/api/cms/auth` en `/api/cms/callback`, niet via Netlify
 
@@ -44,11 +44,11 @@ Een goede configuratie geeft een `github.com/login/oauth/authorize` URL terug. A
 
 ## Toegang voor klant
 
-Geef de klant een GitHub-account met schrijfrechten op `Pimmetjeoss/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw.
+Geef de klant een GitHub-account met schrijfrechten op `sirprikkel/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw.
 
 ## Vercel GitHub-koppeling
 
-De site is als Vercel-project gekoppeld aan `pimmetjes-projects/goodness`, maar als `vercel git connect --scope pimmetjes-projects` meldt dat de repo niet gekoppeld kan worden, mist de Vercel GitHub App toegang tot de private repository. Los dit op in GitHub/Vercel door de Vercel GitHub App toegang te geven tot `Pimmetjeoss/goodness-for-all` voor de account/organisatie die bij `pimmetjes-projects` hoort. Tot die koppeling werkt, kun je productie nog steeds handmatig deployen met:
+De site is als Vercel-project gekoppeld aan `pimmetjes-projects/goodness`, maar als `vercel git connect --scope pimmetjes-projects` meldt dat de repo niet gekoppeld kan worden, mist de Vercel GitHub App toegang tot de repository. Los dit op in GitHub/Vercel door de Vercel GitHub App toegang te geven tot `sirprikkel/goodness-for-all` voor de account/organisatie die bij `pimmetjes-projects` hoort. Tot die koppeling werkt, kun je productie nog steeds handmatig deployen met:
 
 ```bash
 vercel deploy --prod --scope pimmetjes-projects

@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Pimmetjeoss/goodness-for-all
+  repo: sirprikkel/goodness-for-all
   branch: master
   base_url: https://goodness-mu.vercel.app/api/cms
 

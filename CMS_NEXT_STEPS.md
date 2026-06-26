@@ -32,10 +32,10 @@ npm run build
    - Deploy daarna opnieuw naar productie.
    - Test met `npm run cms:auth:check` dat "Sign in with GitHub" naar `github.com/login/oauth/authorize` gaat en niet naar `api.netlify.com`.
 
-2. Geef de Vercel GitHub App toegang tot de private repo `Pimmetjeoss/goodness-for-all`.
+2. Geef de Vercel GitHub App toegang tot de repo `sirprikkel/goodness-for-all`.
    - GitHub: Settings -> Applications -> Installed GitHub Apps -> Vercel -> Configure.
-   - Voeg `Pimmetjeoss/goodness-for-all` toe.
-   - Let op: in deze sessie is Vercel CLI ingelogd als `pimmetjelieshout-1305`, terwijl GitHub CLI actief is als `Pimmetjeoss`. Als GitHub al "All repositories" toont maar `vercel git connect --scope pimmetjes-projects` blijft falen, zit de mismatch waarschijnlijk in de Vercel-account/team-installatie. Controleer in Vercel project settings -> Git of de GitHub account/organisatie `Pimmetjeoss` daar gekoppeld is, of login in Vercel CLI met de Vercel account die dezelfde GitHub App-installatie beheert.
+   - Voeg `sirprikkel/goodness-for-all` toe.
+   - Let op: als GitHub al "All repositories" toont maar `vercel git connect --scope pimmetjes-projects` blijft falen, zit de mismatch waarschijnlijk in de Vercel-account/team-installatie. Controleer in Vercel project settings -> Git of de GitHub account/organisatie `sirprikkel` daar gekoppeld is, of login in Vercel CLI met de Vercel account die dezelfde GitHub App-installatie beheert.
    - Daarna opnieuw:
 
 ```bash
