@@ -20,16 +20,45 @@
     "closeMenuLabel": "Close menu",
     "partnerStripAriaLabel": "Onze partners",
     "nav": [
-      { "href": "/ons-verhaal", "label": "Ons verhaal", "icon": "history_edu" },
-      { "href": "/impact", "label": "Impact", "icon": "query_stats" },
-      { "href": "/partners", "label": "Partners", "icon": "handshake" },
-      { "href": "/ik-wil-helpen", "label": "Werken bij", "icon": "work" },
-      { "href": "/contact", "label": "Contact", "icon": "mail" }
+      {
+        "href": "/ons-verhaal",
+        "label": "Ons verhaal",
+        "icon": "history_edu"
+      },
+      {
+        "href": "/impact",
+        "label": "Impact",
+        "icon": "query_stats"
+      },
+      {
+        "href": "/partners",
+        "label": "Partners",
+        "icon": "handshake"
+      },
+      {
+        "href": "/ik-wil-helpen",
+        "label": "Werken bij",
+        "icon": "work"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact",
+        "icon": "mail"
+      }
     ],
     "footerLinks": [
-      { "href": "/voor-buurthuizen", "label": "Voor buurthuizen" },
-      { "href": "/anbi", "label": "ANBI-informatie" },
-      { "href": "#", "label": "Privacy" }
+      {
+        "href": "/voor-buurthuizen",
+        "label": "Voor buurthuizen"
+      },
+      {
+        "href": "/anbi",
+        "label": "ANBI-informatie"
+      },
+      {
+        "href": "#",
+        "label": "Privacy"
+      }
     ]
   },
   "home": {
@@ -60,8 +89,14 @@
       "title": "Doe mee",
       "icon": "handshake",
       "links": [
-        { "href": "/partners", "label": "Als bedrijf: Word Impact Partner" },
-        { "href": "/voor-buurthuizen", "label": "Als buurthuis: Help de maaltijden verspreiden" },
+        {
+          "href": "/partners",
+          "label": "Als bedrijf: Word Impact Partner"
+        },
+        {
+          "href": "/voor-buurthuizen",
+          "label": "Als buurthuis: Help de maaltijden verspreiden"
+        },
         {
           "href": "/ik-wil-helpen",
           "label": "Als persoon: Kijk naar onze vacatures, vertel anderen over ons, of doneer!"
@@ -86,7 +121,10 @@
       "leftTitle": "Rotterdam is ook jullie stad.",
       "leftText": "Samen bouwen we aan een stad zonder honger. Uw organisatie kan het verschil maken voor duizenden buurtgenoten.",
       "rightTitle": "Word Goodness Impact Partner.",
-      "badges": ["CSRD PROOF", "ESG COMPLIANT"],
+      "badges": [
+        "CSRD PROOF",
+        "ESG COMPLIANT"
+      ],
       "rightText": "Voldoe aan uw duurzaamheidsdoelstellingen en rapportageverplichtingen (CSRD/ESG) terwijl u direct bijdraagt aan lokale voedselzekerheid in Rotterdam."
     },
     "pricingTitle": "Kies uw impact niveau",
@@ -146,27 +184,71 @@
     },
     "logoGridTitle": "Zij gingen je voor",
     "logoGrid": [
-      { "image": "/images/partners/logos/havenbedrijf.png", "alt": "Havenbedrijf Rotterdam" },
-      { "image": "/images/partners/logos/erasmus-mc.png", "alt": "Erasmus MC" },
-      { "image": "/images/partners/logos/coolblue.png", "alt": "Coolblue" },
-      { "image": "/images/partners/logos/unilever.png", "alt": "Unilever" },
-      { "image": "/images/partners/logos/port-base.png", "alt": "Port Base" }
+      {
+        "image": "/images/partners/logos/havenbedrijf.png",
+        "alt": "Havenbedrijf Rotterdam"
+      },
+      {
+        "image": "/images/partners/logos/erasmus-mc.png",
+        "alt": "Erasmus MC"
+      },
+      {
+        "image": "/images/partners/logos/coolblue.png",
+        "alt": "Coolblue"
+      },
+      {
+        "image": "/images/partners/logos/unilever.png",
+        "alt": "Unilever"
+      },
+      {
+        "image": "/images/partners/logos/port-base.png",
+        "alt": "Port Base"
+      }
     ],
     "formTitle": "Impact maken?",
     "formText": "Vul het formulier in en we nemen binnen 24 uur contact op."
   },
   "partnerLogos": [
-    { "image": "/images/partners/logos/gemeente-rotterdam.png", "alt": "Gemeente Rotterdam" },
-    { "image": "/images/partners/logos/provincie-zuid-holland.png", "alt": "Provincie Zuid-Holland" },
-    { "image": "/images/partners/logos/rabobank.png", "alt": "Rabobank" },
-    { "image": "/images/partners/logos/fmo.png", "alt": "FMO" },
-    { "image": "/images/partners/logos/abb.png", "alt": "ABB" },
-    { "image": "/images/partners/logos/savills.png", "alt": "Savills" },
-    { "image": "/images/partners/logos/azbel.png", "alt": "Azbel" },
-    { "image": "/images/partners/logos/ns-stations.png", "alt": "NS Stations" },
-    { "image": "/images/partners/logos/lazy.png", "alt": "Lazy" },
-    { "image": "/images/partners/logos/sol.png", "alt": "SOL" },
-    { "image": "/images/partners/logos/incluzio.png", "alt": "Incluzio" }
+    {
+      "image": "/images/partners/logos/gemeente-rotterdam.png",
+      "alt": "Gemeente Rotterdam"
+    },
+    {
+      "image": "/images/partners/logos/provincie-zuid-holland.png",
+      "alt": "Provincie Zuid-Holland"
+    },
+    {
+      "image": "/images/partners/logos/rabobank.png",
+      "alt": "Rabobank"
+    },
+    {
+      "image": "/images/partners/logos/fmo.png",
+      "alt": "FMO"
+    },
+    {
+      "image": "/images/partners/logos/abb.png",
+      "alt": "ABB"
+    },
+    {
+      "image": "/images/partners/logos/savills.png",
+      "alt": "Savills"
+    },
+    {
+      "image": "/images/partners/logos/ns-stations.png",
+      "alt": "NS Stations"
+    },
+    {
+      "image": "/images/partners/logos/lazy.png",
+      "alt": "Lazy"
+    },
+    {
+      "image": "/images/uploads/SOL-Logo-Patroon.svg",
+      "alt": "SOL"
+    },
+    {
+      "image": "/images/partners/logos/incluzio.png",
+      "alt": "Incluzio"
+    }
   ],
   "impact": {
     "metaTitle": "Impact | Goodness for All",
@@ -175,18 +257,66 @@
     "counterText": "op weg naar 100.000.",
     "locationsTitle": "Impact Locaties",
     "locations": [
-      { "org": "Incluzio", "name": "De Kip", "city": "Rotterdam" },
-      { "org": "Incluzio", "name": "De Gaffel", "city": "Rotterdam" },
-      { "org": "Incluzio", "name": "Middelpunt", "city": "Rotterdam" },
-      { "org": "Stichting", "name": "Overwin de Armoede", "city": "Rotterdam" },
-      { "org": "Speelcentrum", "name": "Weena", "city": "Rotterdam" },
-      { "org": "Stichting", "name": "Isaak en de Schittering", "city": "Rotterdam" },
-      { "org": "SOL", "name": "Riederkwartier", "city": "Rotterdam" },
-      { "org": "SOL", "name": "Feyenoord", "city": "Rotterdam" },
-      { "org": "Buurtinitiatief", "name": "Huiskamer Crooswijk", "city": "Rotterdam" },
-      { "org": "Hotspot", "name": "Hutspot", "city": "Rotterdam" },
-      { "org": "Villa", "name": "Vonk", "city": "Rotterdam" },
-      { "org": "St. Bewonersgroep", "name": "Kralingen-West", "city": "Rotterdam" }
+      {
+        "org": "Incluzio",
+        "name": "De Kip",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Incluzio",
+        "name": "De Gaffel",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Incluzio",
+        "name": "Middelpunt",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Stichting",
+        "name": "Overwin de Armoede",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Speelcentrum",
+        "name": "Weena",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Stichting",
+        "name": "Isaak en de Schittering",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "SOL",
+        "name": "Riederkwartier",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "SOL",
+        "name": "Feyenoord",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Buurtinitiatief",
+        "name": "Huiskamer Crooswijk",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Hotspot",
+        "name": "Hutspot",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "Villa",
+        "name": "Vonk",
+        "city": "Rotterdam"
+      },
+      {
+        "org": "St. Bewonersgroep",
+        "name": "Kralingen-West",
+        "city": "Rotterdam"
+      }
     ],
     "quote": {
       "text": "Onze samenwerking met Goodness for All brengt mensen echt weer bij elkaar aan tafel, zonder drempels.",
@@ -197,7 +327,10 @@
         "image": "/images/impact/gallery-1.jpg",
         "alt": "A documentary style candid photograph of diverse community members sharing a vibrant, colorful meal in a bright Rotterdam community center."
       },
-      { "placeholder": true, "text": "Voeg hier je eigen foto's toe." },
+      {
+        "placeholder": true,
+        "text": "Voeg hier je eigen foto's toe."
+      },
       {
         "image": "/images/impact/gallery-2.jpg",
         "alt": "A high-contrast close-up of hands preparing healthy meals in a professional community kitchen setting."
@@ -294,7 +427,9 @@
         "tone": "sandstone",
         "downloadLabel": "",
         "downloadHref": "",
-        "lines": ["Stichting Goodness for All Foundation Nederland"]
+        "lines": [
+          "Stichting Goodness for All Foundation Nederland"
+        ]
       },
       {
         "icon": "fingerprint",
@@ -302,7 +437,10 @@
         "tone": "mist",
         "downloadLabel": "",
         "downloadHref": "",
-        "lines": ["RSIN: 8593.12.744", "KVK: 73004521"]
+        "lines": [
+          "RSIN: 8593.12.744",
+          "KVK: 73004521"
+        ]
       },
       {
         "icon": "contact_support",
@@ -310,7 +448,11 @@
         "tone": "sandstone",
         "downloadLabel": "Contact",
         "downloadHref": "/contact",
-        "lines": ["Van der Duyn van Maasdamweg 480", "Rotterdam", "info@goodnessforall.nl"]
+        "lines": [
+          "Van der Duyn van Maasdamweg 480",
+          "Rotterdam",
+          "info@goodnessforall.nl"
+        ]
       },
       {
         "icon": "description",
@@ -318,7 +460,9 @@
         "tone": "sandstone",
         "downloadLabel": "Download PDF",
         "downloadHref": "#",
-        "lines": ["Onze strategische visie en operationele doelen voor 2024-2026."]
+        "lines": [
+          "Onze strategische visie en operationele doelen voor 2024-2026."
+        ]
       },
       {
         "icon": "history_edu",
@@ -326,7 +470,9 @@
         "tone": "mist",
         "downloadLabel": "Download PDF",
         "downloadHref": "#",
-        "lines": ["Verslaglegging van onze activiteiten en bereikte impact van afgelopen jaar."]
+        "lines": [
+          "Verslaglegging van onze activiteiten en bereikte impact van afgelopen jaar."
+        ]
       }
     ],
     "ctaTitle": "Heb je vragen?",
@@ -338,20 +484,58 @@
   "forms": {
     "contact": {
       "fields": [
-        { "id": "naam", "name": "naam", "label": "naam", "placeholder": "Jouw volledige naam", "type": "text" },
-        { "id": "email", "name": "email", "label": "e-mailadres", "placeholder": "naam@voorbeeld.nl", "type": "email" },
-        { "id": "bericht", "name": "bericht", "label": "bericht", "placeholder": "Wat kunnen we voor je betekenen?", "type": "textarea" }
+        {
+          "id": "naam",
+          "name": "naam",
+          "label": "naam",
+          "placeholder": "Jouw volledige naam",
+          "type": "text"
+        },
+        {
+          "id": "email",
+          "name": "email",
+          "label": "e-mailadres",
+          "placeholder": "naam@voorbeeld.nl",
+          "type": "email"
+        },
+        {
+          "id": "bericht",
+          "name": "bericht",
+          "label": "bericht",
+          "placeholder": "Wat kunnen we voor je betekenen?",
+          "type": "textarea"
+        }
       ],
       "submitLabel": "verzenden",
       "sentLabel": "Verzonden!"
     },
     "partner": {
       "fields": [
-        { "label": "Naam", "placeholder": "Uw volledige naam", "type": "text" },
-        { "label": "Bedrijf", "placeholder": "Bedrijfsnaam", "type": "text" },
-        { "label": "Rol", "placeholder": "Bijv. ESG Manager of Directie", "type": "text" },
-        { "label": "Email", "placeholder": "zakelijk@email.nl", "type": "email" },
-        { "label": "Bericht", "placeholder": "Hoe wilt u bijdragen aan de stad?", "type": "textarea" }
+        {
+          "label": "Naam",
+          "placeholder": "Uw volledige naam",
+          "type": "text"
+        },
+        {
+          "label": "Bedrijf",
+          "placeholder": "Bedrijfsnaam",
+          "type": "text"
+        },
+        {
+          "label": "Rol",
+          "placeholder": "Bijv. ESG Manager of Directie",
+          "type": "text"
+        },
+        {
+          "label": "Email",
+          "placeholder": "zakelijk@email.nl",
+          "type": "email"
+        },
+        {
+          "label": "Bericht",
+          "placeholder": "Hoe wilt u bijdragen aan de stad?",
+          "type": "textarea"
+        }
       ],
       "submitLabel": "Neem contact op",
       "sendingLabel": "Versturen...",
@@ -372,8 +556,21 @@
       "newOrderLabel": "Nieuwe bestelling",
       "registrationHref": "#",
       "registrationLabel": "Registreer je hier",
-      "flavors": ["Gnocchi", "Korean Noodles", "Pasta Pesto", "Lentil Curry", "Stamppot", "Burrito Bowl"],
-      "organizations": ["Incluzio", "SOL", "DOCK", "WijZijn", "Andere maatschappelijke partner"],
+      "flavors": [
+        "Gnocchi",
+        "Korean Noodles",
+        "Pasta Pesto",
+        "Lentil Curry",
+        "Stamppot",
+        "Burrito Bowl"
+      ],
+      "organizations": [
+        "Incluzio",
+        "SOL",
+        "DOCK",
+        "WijZijn",
+        "Andere maatschappelijke partner"
+      ],
       "screens": {
         "welcomeTitle": "Goed eten voor iedereen bereikbaar maken.",
         "welcomeTextBeforeLink": "Dit bestelportaal is exclusief voor maatschappelijke organisaties. Nog geen account?",
@@ -421,9 +618,18 @@
       "title": "Via buurthuizen die mensen al kennen.",
       "text": "We gaan niet op zoek naar onze doelgroep; we zijn waar zij zijn. Onze maaltijden worden gedistribueerd via vertrouwde buurthuizen en lokale hubs.",
       "points": [
-        { "icon": "location_on", "label": "Dichtbij huis" },
-        { "icon": "favorite", "label": "Zonder drempels" },
-        { "icon": "groups", "label": "Onderdeel van de wijk" }
+        {
+          "icon": "location_on",
+          "label": "Dichtbij huis"
+        },
+        {
+          "icon": "favorite",
+          "label": "Zonder drempels"
+        },
+        {
+          "icon": "groups",
+          "label": "Onderdeel van de wijk"
+        }
       ]
     },
     "subsidy": {
@@ -442,12 +648,26 @@
       "title": "De maaltijd.",
       "text": "Gezond, vers en seizoensgebonden. Onze maaltijden worden bereid met passie en zorg voor de planeet. Wij geloven in 'business as a force for good'. Elke maaltijd draagt bij aan een rechtvaardiger Rotterdam.",
       "stats": [
-        { "value": "100%", "label": "Versgarantie" },
-        { "value": "CO2", "label": "Neutraal" }
+        {
+          "value": "100%",
+          "label": "Versgarantie"
+        },
+        {
+          "value": "CO2",
+          "label": "Neutraal"
+        }
       ],
       "slides": [
-        { "image": "/images/ons-verhaal/carousel-1.jpg", "alt": "9 verschillende smaken", "caption": "9 verschillende smaken" },
-        { "image": "/images/ons-verhaal/carousel-2.jpg", "alt": "Boordevol groente, geen troep", "caption": "Boordevol groente, geen troep" },
+        {
+          "image": "/images/ons-verhaal/carousel-1.jpg",
+          "alt": "9 verschillende smaken",
+          "caption": "9 verschillende smaken"
+        },
+        {
+          "image": "/images/ons-verhaal/carousel-2.jpg",
+          "alt": "Boordevol groente, geen troep",
+          "caption": "Boordevol groente, geen troep"
+        },
         {
           "image": "/images/ons-verhaal/carousel-3.jpg",
           "alt": "Past in (bijna) elk dieet en levensovertuiging",
@@ -457,12 +677,42 @@
     },
     "teamTitle": "Het Team",
     "team": [
-      { "name": "Reinout de Kraker", "role": "Oprichter & Strategie", "image": "/images/ons-verhaal/team-1.jpg", "alt": "Professionele headshot van Reinout de Kraker." },
-      { "name": "Thomas Hilbrands", "role": "Operations & Logistiek", "image": "/images/ons-verhaal/team-2.jpg", "alt": "Professionele headshot van Thomas Hilbrands." },
-      { "name": "Laurens van Dalen", "role": "Commercieel Directeur", "image": "/images/ons-verhaal/team-3.jpg", "alt": "Professionele headshot van Laurens van Dalen." },
-      { "name": "Jori Schara", "role": "Impact Manager", "image": "/images/ons-verhaal/team-4.jpg", "alt": "Professionele headshot van Jori Schara." },
-      { "name": "Stef Gallé", "role": "Community Lead", "image": "/images/ons-verhaal/team-5.jpg", "alt": "Professionele headshot van Stef Gallé." },
-      { "name": "Martijn Bekking", "role": "Financieel Adviseur", "image": "/images/ons-verhaal/team-6.jpg", "alt": "Professionele headshot van Martijn Bekking." }
+      {
+        "name": "Reinout de Kraker",
+        "role": "Oprichter & Strategie",
+        "image": "/images/ons-verhaal/team-1.jpg",
+        "alt": "Professionele headshot van Reinout de Kraker."
+      },
+      {
+        "name": "Thomas Hilbrands",
+        "role": "Operations & Logistiek",
+        "image": "/images/ons-verhaal/team-2.jpg",
+        "alt": "Professionele headshot van Thomas Hilbrands."
+      },
+      {
+        "name": "Laurens van Dalen",
+        "role": "Commercieel Directeur",
+        "image": "/images/ons-verhaal/team-3.jpg",
+        "alt": "Professionele headshot van Laurens van Dalen."
+      },
+      {
+        "name": "Jori Schara",
+        "role": "Impact Manager",
+        "image": "/images/ons-verhaal/team-4.jpg",
+        "alt": "Professionele headshot van Jori Schara."
+      },
+      {
+        "name": "Stef Gallé",
+        "role": "Community Lead",
+        "image": "/images/ons-verhaal/team-5.jpg",
+        "alt": "Professionele headshot van Stef Gallé."
+      },
+      {
+        "name": "Martijn Bekking",
+        "role": "Financieel Adviseur",
+        "image": "/images/ons-verhaal/team-6.jpg",
+        "alt": "Professionele headshot van Martijn Bekking."
+      }
     ]
   }
 }
