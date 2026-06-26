@@ -60,7 +60,13 @@ vercel deploy --prod
 
 ## Formulieren
 
-Het contactformulier en partnerformulier posten naar `/api/contact` en gebruiken SMTP environment variables.
+Het contactformulier en partnerformulier posten naar `/api/contact` en sturen via Resend naar `info@goodnessforall.nl`. Zet in Vercel:
+
+- `CONTACT_TO=info@goodnessforall.nl`
+- `RESEND_API_KEY`
+- `RESEND_FROM`
+
+`RESEND_FROM` moet een afzender zijn op een domein dat in Resend geverifieerd is.
 
 Het buurthuizen-bestelformulier post naar `/api/orders`. In productie schrijft dit bij voorkeur naar Google Sheets via een Apps Script webhook zodra deze Vercel environment variables zijn ingesteld:
 

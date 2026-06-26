@@ -67,3 +67,15 @@ ORDER_LOG_GITHUB_PATH=content/buurthuis-bestellingen.csv
 ```
 
 Use a fine-grained GitHub token scoped to this repository with `Contents: read/write`.
+
+## Contact Forms
+
+The contact form and partner form post to `/api/contact`. Production mail is sent through Resend and requires:
+
+```bash
+CONTACT_TO=info@goodnessforall.nl
+RESEND_API_KEY=re_...
+RESEND_FROM="Goodness for All <noreply@goodnessforall.nl>"
+```
+
+`RESEND_FROM` must use a domain verified in Resend.
