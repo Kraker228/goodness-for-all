@@ -1,6 +1,7 @@
 import "server-only";
 
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import crypto from "node:crypto";
 import path from "node:path";
 
 const CSV_HEADERS = [
@@ -42,6 +43,20 @@ type GithubContentResponse = {
   content?: string;
   encoding?: string;
   sha?: string;
+};
+
+type GoogleTokenResponse = {
+  access_token?: string;
+  error?: string;
+  error_description?: string;
+};
+
+type GoogleSpreadsheetResponse = {
+  sheets?: Array<{
+    properties?: {
+      title?: string;
+    };
+  }>;
 };
 
 function requiredString(value: unknown, field: string): string {
@@ -148,6 +163,218 @@ function getEnv(name: string): string | undefined {
   return value || undefined;
 }
 
+function base64Url(value: string | Buffer): string {
+  return Buffer.from(value)
+    .toString("base64")
+    .replaceAll("+", "-")
+    .replaceAll("/", "_")
+    .replaceAll("=", "");
+}
+
+function getGooglePrivateKey(): string | undefined {
+  const rawKey = getEnv("GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY");
+  const base64Key = getEnv("GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_BASE64");
+
+  if (base64Key) {
+    return Buffer.from(base64Key, "base64").toString("utf8");
+  }
+
+  return rawKey?.replaceAll("\\n", "\n");
+}
+
+async function getGoogleAccessToken(): Promise<string> {
+  const clientEmail = getEnv("GOOGLE_SERVICE_ACCOUNT_EMAIL");
+  const privateKey = getGooglePrivateKey();
+
+  if (!clientEmail || !privateKey) {
+    throw new Error("Google Sheets service-account ontbreekt.");
+  }
+
+  const now = Math.floor(Date.now() / 1000);
+  const header = base64Url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
+  const claim = base64Url(
+    JSON.stringify({
+      iss: clientEmail,
+      scope: "https://www.googleapis.com/auth/spreadsheets",
+      aud: "https://oauth2.googleapis.com/token",
+      exp: now + 3600,
+      iat: now,
+    }),
+  );
+  const unsignedToken = `${header}.${claim}`;
+  const signature = crypto.createSign("RSA-SHA256").update(unsignedToken).sign(privateKey);
+  const assertion = `${unsignedToken}.${base64Url(signature)}`;
+
+  const response = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      assertion,
+    }),
+  });
+
+  const payload = (await response.json().catch(() => null)) as GoogleTokenResponse | null;
+
+  if (!response.ok || !payload?.access_token) {
+    throw new Error(
+      payload?.error_description ??
+        payload?.error ??
+        `Google OAuth token-aanvraag is mislukt (${response.status}).`,
+    );
+  }
+
+  return payload.access_token;
+}
+
+function getGoogleSheetConfig(): { spreadsheetId: string; sheetName: string } | undefined {
+  const spreadsheetId = getEnv("GOOGLE_SHEETS_SPREADSHEET_ID");
+
+  if (!spreadsheetId) return undefined;
+
+  return {
+    spreadsheetId,
+    sheetName: getEnv("GOOGLE_SHEETS_SHEET_NAME") ?? "Bestellingen",
+  };
+}
+
+function getGoogleSheetsWebhookConfig(): { url: string; secret?: string } | undefined {
+  const url = getEnv("GOOGLE_SHEETS_WEBHOOK_URL");
+
+  if (!url) return undefined;
+
+  return {
+    url,
+    secret: getEnv("GOOGLE_SHEETS_WEBHOOK_SECRET"),
+  };
+}
+
+function toSheetValues(row: OrderLogRow): (string | number)[] {
+  return CSV_HEADERS.map((header) => row[header]);
+}
+
+async function fetchSheetsApi(
+  accessToken: string,
+  url: string,
+  init: RequestInit = {},
+): Promise<Response> {
+  return fetch(url, {
+    ...init,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+      ...(init.headers ?? {}),
+    },
+  });
+}
+
+async function ensureGoogleSheetHeaders(
+  accessToken: string,
+  spreadsheetId: string,
+  sheetName: string,
+): Promise<void> {
+  const spreadsheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?fields=sheets.properties.title`;
+  const spreadsheet = await fetchSheetsApi(accessToken, spreadsheetUrl);
+
+  if (!spreadsheet.ok) {
+    throw new Error(`Google Sheets kon de spreadsheet niet lezen (${spreadsheet.status}).`);
+  }
+
+  const spreadsheetPayload = (await spreadsheet.json()) as GoogleSpreadsheetResponse;
+  const sheetExists = spreadsheetPayload.sheets?.some(
+    (sheet) => sheet.properties?.title === sheetName,
+  );
+
+  if (!sheetExists) {
+    const create = await fetchSheetsApi(
+      accessToken,
+      `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}:batchUpdate`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          requests: [{ addSheet: { properties: { title: sheetName } } }],
+        }),
+      },
+    );
+
+    if (!create.ok) {
+      throw new Error(`Google Sheets kon het tabblad niet aanmaken (${create.status}).`);
+    }
+  }
+
+  const range = encodeURIComponent(`'${sheetName}'!A1:${String.fromCharCode(64 + CSV_HEADERS.length)}1`);
+  const getUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}`;
+  const current = await fetchSheetsApi(accessToken, getUrl);
+
+  if (!current.ok) {
+    throw new Error(`Google Sheets kon de header niet lezen (${current.status}).`);
+  }
+
+  const payload = (await current.json()) as { values?: string[][] };
+  const hasHeaders = payload.values?.[0]?.some(Boolean);
+
+  if (hasHeaders) return;
+
+  const updateUrl = `${getUrl}?valueInputOption=RAW`;
+  const update = await fetchSheetsApi(accessToken, updateUrl, {
+    method: "PUT",
+    body: JSON.stringify({ values: [CSV_HEADERS] }),
+  });
+
+  if (!update.ok) {
+    throw new Error(`Google Sheets kon de header niet schrijven (${update.status}).`);
+  }
+}
+
+async function appendGoogleSheetRow(row: OrderLogRow): Promise<string> {
+  const config = getGoogleSheetConfig();
+
+  if (!config) {
+    throw new Error("GOOGLE_SHEETS_SPREADSHEET_ID ontbreekt.");
+  }
+
+  const accessToken = await getGoogleAccessToken();
+  await ensureGoogleSheetHeaders(accessToken, config.spreadsheetId, config.sheetName);
+
+  const range = encodeURIComponent(`'${config.sheetName}'!A:M`);
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${config.spreadsheetId}/values/${range}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`;
+  const response = await fetchSheetsApi(accessToken, url, {
+    method: "POST",
+    body: JSON.stringify({ values: [toSheetValues(row)] }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Google Sheets kon de bestelling niet opslaan (${response.status}).`);
+  }
+
+  return `Google Sheets ${config.spreadsheetId}/${config.sheetName}`;
+}
+
+async function appendGoogleSheetsWebhookRow(row: OrderLogRow): Promise<string> {
+  const config = getGoogleSheetsWebhookConfig();
+
+  if (!config) {
+    throw new Error("GOOGLE_SHEETS_WEBHOOK_URL ontbreekt.");
+  }
+
+  const response = await fetch(config.url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      secret: config.secret,
+      headers: CSV_HEADERS,
+      row,
+      values: toSheetValues(row),
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Google Sheets webhook kon de bestelling niet opslaan (${response.status}).`);
+  }
+
+  return "Google Sheets webhook";
+}
+
 async function appendGithubCsv(line: string, attempt = 1): Promise<string> {
   const token = getEnv("ORDER_LOG_GITHUB_TOKEN");
 
@@ -155,7 +382,7 @@ async function appendGithubCsv(line: string, attempt = 1): Promise<string> {
     throw new Error("ORDER_LOG_GITHUB_TOKEN ontbreekt.");
   }
 
-  const repo = getEnv("ORDER_LOG_GITHUB_REPO") ?? "Pimmetjeoss/goodness-for-all";
+  const repo = getEnv("ORDER_LOG_GITHUB_REPO") ?? "sirprikkel/goodness-for-all";
   const branch = getEnv("ORDER_LOG_GITHUB_BRANCH") ?? "master";
   const filePath = getEnv("ORDER_LOG_GITHUB_PATH") ?? "content/buurthuis-bestellingen.csv";
   const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
@@ -211,8 +438,11 @@ export async function logOrderSubmission(order: OrderSubmission): Promise<{
 }> {
   const row = toOrderRow(order);
   const line = toCsvLine(row);
-  const location =
-    process.env.NODE_ENV === "production" || getEnv("ORDER_LOG_GITHUB_TOKEN")
+  const location = getGoogleSheetsWebhookConfig()
+    ? await appendGoogleSheetsWebhookRow(row)
+    : getGoogleSheetConfig()
+    ? await appendGoogleSheetRow(row)
+    : process.env.NODE_ENV === "production" || getEnv("ORDER_LOG_GITHUB_TOKEN")
       ? await appendGithubCsv(line)
       : await appendLocalCsv(line);
 

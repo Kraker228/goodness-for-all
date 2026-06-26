@@ -1,4 +1,4 @@
-const siteUrl = process.argv[2] ?? "https://goodness-mu.vercel.app";
+const siteUrl = process.argv[2] ?? process.env.CMS_SITE_URL ?? "http://localhost:3000";
 const url = new URL("/api/cms/auth", siteUrl);
 
 url.searchParams.set("provider", "github");

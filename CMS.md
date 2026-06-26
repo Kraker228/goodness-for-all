@@ -1,9 +1,9 @@
 # Goodness for All CMS
 
-De CMS staat op:
+De CMS staat op `/admin` van de actieve Vercel deployment.
 
-- Productie: https://goodness-mu.vercel.app/admin
-- Lokale dev server: http://localhost:3002/admin wanneer `next dev` daar draait
+- Lokale dev server: `http://localhost:3000/admin` wanneer `npm run dev` draait
+- Productie: gebruik het domein dat `vercel deploy --prod` teruggeeft
 
 De content staat in `content/site.json`. Sveltia CMS schrijft wijzigingen als commits naar:
 
@@ -15,43 +15,76 @@ Afbeeldingen die via de CMS worden geupload komen in `public/images/uploads` en 
 
 ## GitHub login zonder Netlify
 
-Sveltia CMS heeft voor de knop "Sign in with GitHub" een OAuth-client nodig. Deze site gebruikt daarvoor de eigen Vercel deployment:
+Sveltia CMS heeft voor de knop "Sign in with GitHub" een OAuth-client nodig. De CMS-config gebruikt een relatieve OAuth-URL (`/api/cms`), zodat dezelfde configuratie op elk Vercel-domein werkt.
 
-- CMS config: `public/admin/config.yml`
-- OAuth start: `https://goodness-mu.vercel.app/api/cms/auth`
-- OAuth callback: `https://goodness-mu.vercel.app/api/cms/callback`
+Maak na de eerste productie-deploy in GitHub een OAuth App aan met het productie-domein:
 
-Maak in GitHub een OAuth App aan met:
+- Homepage URL: `https://<jouw-vercel-domein>`
+- Authorization callback URL: `https://<jouw-vercel-domein>/api/cms/callback`
 
-- Homepage URL: `https://goodness-mu.vercel.app`
-- Authorization callback URL: `https://goodness-mu.vercel.app/api/cms/callback`
-
-Zet daarna in Vercel bij het project de Environment Variables:
+Zet daarna in Vercel bij het nieuwe project de Environment Variables:
 
 - `GITHUB_CLIENT_ID`: Client ID van de GitHub OAuth App
 - `GITHUB_CLIENT_SECRET`: Client Secret van de GitHub OAuth App
-- `CMS_ALLOWED_DOMAINS`: `goodness-mu.vercel.app`
+- `CMS_ALLOWED_DOMAINS`: `<jouw-vercel-domein>` zonder `https://`
 
-Na aanpassen van environment variables moet Vercel opnieuw deployen. De login-URL mag daarna niet meer naar `api.netlify.com` verwijzen.
+Na aanpassen van environment variables moet Vercel opnieuw deployen. De login-URL mag daarna niet naar `api.netlify.com` verwijzen.
 
 Controleer na de redeploy:
 
 ```bash
-npm run cms:auth:check
+npm run cms:auth:check -- https://<jouw-vercel-domein>
 ```
 
 Een goede configuratie geeft een `github.com/login/oauth/authorize` URL terug. Als de command meldt dat `GITHUB_CLIENT_ID` of `GITHUB_CLIENT_SECRET` mist, staan de Vercel secrets nog niet goed.
 
 ## Toegang voor klant
 
-Geef de klant een GitHub-account met schrijfrechten op `sirprikkel/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw.
+Geef de klant een GitHub-account met schrijfrechten op `sirprikkel/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw als de GitHub-koppeling actief is.
+
+## Buurthuisbestellingen in Google Sheets
+
+Het formulier op `/voor-buurthuizen` schrijft bestellingen naar Google Sheets via een Apps Script webhook wanneer deze Vercel environment variables zijn ingesteld:
+
+- `GOOGLE_SHEETS_WEBHOOK_URL`
+- `GOOGLE_SHEETS_WEBHOOK_SECRET`
+
+De oudere directe Google Sheets API route kan ook, maar vereist een service-account key:
+
+- `GOOGLE_SHEETS_SPREADSHEET_ID`
+- `GOOGLE_SHEETS_SHEET_NAME`
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL`
+- `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`
+
+De spreadsheet moet gedeeld zijn met `GOOGLE_SERVICE_ACCOUNT_EMAIL` als editor. Het tabblad wordt automatisch aangemaakt als het ontbreekt. Als de header rij leeg is, schrijft de API automatisch de kolomnamen.
+
+De klant hoeft voor bestellingen dus alleen toegang te krijgen tot deze Google Sheet. De CMS-login is alleen voor websitecontent.
+
+## Nieuw Vercel-project aanmaken
+
+Gebruik de terminal waarin `vercel whoami` `sirprikkel-8693` toont:
+
+```bash
+cd C:\Users\pimme\Agents\goodness-for-all
+Remove-Item -Recurse -Force .vercel
+vercel link
+vercel deploy --prod
+```
+
+Kies bij `vercel link` het Sirprikkel-account/team en maak een nieuw project aan voor deze repo.
 
 ## Vercel GitHub-koppeling
 
-De site is als Vercel-project gekoppeld aan `pimmetjes-projects/goodness`, maar als `vercel git connect --scope pimmetjes-projects` meldt dat de repo niet gekoppeld kan worden, mist de Vercel GitHub App toegang tot de repository. Los dit op in GitHub/Vercel door de Vercel GitHub App toegang te geven tot `sirprikkel/goodness-for-all` voor de account/organisatie die bij `pimmetjes-projects` hoort. Tot die koppeling werkt, kun je productie nog steeds handmatig deployen met:
+Voor automatische deployments moet de Vercel GitHub App toegang hebben tot `sirprikkel/goodness-for-all`.
+
+- GitHub: Settings -> Applications -> Installed GitHub Apps -> Vercel -> Configure
+- Voeg `sirprikkel/goodness-for-all` toe of kies "All repositories"
+- Koppel daarna in Vercel project settings -> Git de repository
+
+Tot die koppeling werkt, kun je productie handmatig deployen met:
 
 ```bash
-vercel deploy --prod --scope pimmetjes-projects
+vercel deploy --prod
 ```
 
 ## Wat is bewerkbaar

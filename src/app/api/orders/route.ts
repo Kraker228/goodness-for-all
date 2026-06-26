@@ -21,6 +21,7 @@ export async function POST(request: Request): Promise<Response> {
     const status =
       message.startsWith("ORDER_LOG_") ||
       message.startsWith("GitHub") ||
+      message.startsWith("Google") ||
       message.includes("logbestand")
         ? 500
         : message.includes("ontbreekt") || message.includes("ongeldig")

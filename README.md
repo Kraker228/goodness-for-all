@@ -37,9 +37,27 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Buurthuis Order Log
 
-The form on `/voor-buurthuizen` posts to `/api/orders`. Submissions are logged as CSV rows with one column per question in `content/buurthuis-bestellingen.csv`.
+The form on `/voor-buurthuizen` posts to `/api/orders`. In production, submissions should be logged to Google Sheets.
 
-Local development appends to the CSV file directly. Production on Vercel writes the same CSV through the GitHub Contents API and requires:
+Preferred setup is a Google Apps Script webhook attached to the target spreadsheet. Configure Vercel with:
+
+```bash
+GOOGLE_SHEETS_WEBHOOK_URL=...
+GOOGLE_SHEETS_WEBHOOK_SECRET=...
+```
+
+Alternative setup is a Google Cloud service account with access to the Google Sheets API. Share the target spreadsheet with the service-account email as editor, then configure Vercel with:
+
+```bash
+GOOGLE_SHEETS_SPREADSHEET_ID=...
+GOOGLE_SHEETS_SHEET_NAME=Bestellingen
+GOOGLE_SERVICE_ACCOUNT_EMAIL=...
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
+
+If the sheet tab does not exist, the API creates it. If the header row is empty, the API writes the column headers.
+
+Local development appends to `content/buurthuis-bestellingen.csv` unless Google Sheets env vars are set. GitHub CSV logging is still available as fallback and requires:
 
 ```bash
 ORDER_LOG_GITHUB_TOKEN=github_pat_...

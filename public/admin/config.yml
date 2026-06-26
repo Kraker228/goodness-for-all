@@ -2,15 +2,16 @@ backend:
   name: github
   repo: sirprikkel/goodness-for-all
   branch: master
-  base_url: https://goodness-mu.vercel.app/api/cms
+  base_url: https://goodness-for-all.vercel.app
+  auth_endpoint: api/cms/auth
 
 local_backend: true
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
 
-site_url: https://goodness-mu.vercel.app
-display_url: https://goodness-mu.vercel.app
+site_url: /
+display_url: /
 logo_url: /images/logo.png
 
 collections:
