@@ -74,39 +74,47 @@
     "cards": [
       {
         "title": "Ons verhaal",
-        "text": "De één betaalt wat meer, zodat de ander minder betaalt. Zo werkt het.",
-        "href": "/ons-verhaal",
-        "icon": "arrow_forward"
+        "text": "De één betaalt wat meer, zodat de ander minder betaalt. ",
+        "accent": "Zo werkt het.",
+        "href": "/ons-verhaal"
       },
       {
         "title": "Impact",
-        "text": "2.000 maaltijden per maand. Bekijk waar we ze naartoe brengen.",
-        "href": "/impact",
-        "icon": "query_stats"
+        "text": "2.000 maaltijden per maand. ",
+        "accent": "Kijk naar wie we ze brengen",
+        "href": "/impact"
       }
     ],
     "joinCard": {
       "title": "Doe mee",
-      "icon": "handshake",
       "links": [
         {
           "href": "/partners",
-          "label": "Als bedrijf: Word Impact Partner"
+          "prefix": "Als bedrijf: ",
+          "accent": "Word Impact Partner"
         },
         {
           "href": "/voor-buurthuizen",
-          "label": "Als buurthuis: Help de maaltijden verspreiden"
+          "prefix": "Als buurthuis: ",
+          "accent": "Help de maaltijden verspreiden"
         },
         {
           "href": "/ik-wil-helpen",
-          "label": "Als persoon: Kijk naar onze vacatures, vertel anderen over ons, of doneer!"
+          "prefix": "Als persoon: ",
+          "accent": "Bekijk onze vacatures, deel ons verhaal, of doneer!"
         }
+      ]
+    },
+    "greenBanner": {
+      "paragraphs": [
+        "In Nederland wonen 450.000 mensen die wekelijks honger ervaren. Zij eten ongezond, steeds hetzelfde, of slaan zelfs maaltijden over omdat het niet lukt aan goed eten te komen. Te duur, te ver, te ingewikkeld, of er speelt schaamte.",
+        "Goodness for All ontwikkelt een solidaire oplossing. Doordat de één wat meer betaalt, kunnen wij goed eten aanbieden aan wie dat nodig heeft. Geen vragen wie je bent en of je arm genoeg bent. Dichtbij, vertrouwd, geen formulieren."
       ]
     },
     "counter": {
       "value": 2000,
       "label": "maaltijden per maand",
-      "text": "Via 12 buurthuizen in Rotterdam en Den Haag."
+      "text": "worden via buurthuizen en steunpunten in Rotterdam en Den Haag aangeboden aan de mensen voor wie toegang tot gezond eten niet vanzelfsprekend is."
     },
     "quote": {
       "text": "Door de maaltijden heb ik het gevoel dat ik het gesprek toch positief kan afronden en echt iets kan bieden aan mensen, waar ze op dat moment ook echt mee geholpen zijn.",

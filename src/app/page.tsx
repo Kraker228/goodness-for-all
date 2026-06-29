@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Counter from "@/components/home/Counter";
 import PartnerStrip from "@/components/home/PartnerStrip";
+import Reveal from "@/components/Reveal";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -46,51 +47,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Reveal as="section" className="bg-evergreen py-section-gap-lg">
+        <div className="max-w-[800px] mx-auto px-container-margin text-sandstone-beige space-y-6">
+          {home.greenBanner.paragraphs.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="font-body-lg text-body-lg md:text-xl leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </Reveal>
+
       <section className="py-section-gap-lg max-w-[1200px] mx-auto px-container-margin">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
           {home.cards.map((card) => (
             <Link
               key={card.href}
               href={card.href}
-              className="bg-white border-2 border-evergreen p-8 flex flex-col justify-between aspect-square group hover:bg-sandstone-beige transition-colors duration-300"
+              className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300"
             >
               <div>
                 <h3 className="font-headline-md text-headline-md mb-4 uppercase tracking-tight">
                   {card.title}
                 </h3>
-                <p className="font-body-md text-body-md text-evergreen/80">
+                <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
                   {card.text}
+                  <span className="underline text-harvest-orange">
+                    {card.accent}
+                  </span>
                 </p>
-              </div>
-              <div className="flex justify-end">
-                <span className="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">
-                  {card.icon}
-                </span>
               </div>
             </Link>
           ))}
 
-          <div className="bg-white border-2 border-evergreen p-8 flex flex-col justify-between aspect-square group hover:bg-sandstone-beige transition-colors duration-300">
+          <div className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300">
             <div>
               <h3 className="font-headline-md text-headline-md mb-4 uppercase tracking-tight">
                 {home.joinCard.title}
               </h3>
-              <p className="font-body-md text-body-md text-evergreen/80">
+              <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
                 {home.joinCard.links.map((link) => (
                   <Link
                     key={link.href}
-                    className="block hover:underline hover:text-harvest-orange transition-colors"
+                    className="block"
                     href={link.href}
                   >
-                    {link.label}
+                    {link.prefix}
+                    <span className="underline text-harvest-orange">
+                      {link.accent}
+                    </span>
                   </Link>
                 ))}
               </p>
-            </div>
-            <div className="flex justify-end">
-              <span className="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">
-                {home.joinCard.icon}
-              </span>
             </div>
           </div>
         </div>
@@ -103,7 +113,7 @@ export default function HomePage() {
               end={home.counter.value}
               className="text-[80px] md:text-[120px] font-headline-lg font-extrabold leading-none text-harvest-orange block"
             />
-            <span className="text-2xl md:text-4xl font-headline-md uppercase tracking-widest block -mt-4">
+            <span className="text-2xl md:text-4xl font-headline-md uppercase tracking-widest block -mt-1">
               {home.counter.label}
             </span>
           </div>
