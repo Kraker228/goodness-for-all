@@ -3,8 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Counter from "@/components/home/Counter";
+import HungerCarousel from "@/components/home/HungerCarousel";
 import PartnerStrip from "@/components/home/PartnerStrip";
-import Reveal from "@/components/Reveal";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -47,18 +47,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Reveal as="section" className="bg-evergreen py-section-gap-lg">
-        <div className="max-w-[800px] mx-auto px-container-margin text-sandstone-beige space-y-6">
-          {home.greenBanner.paragraphs.map((paragraph) => (
-            <p
-              key={paragraph}
-              className="font-body-lg text-body-lg md:text-xl leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </Reveal>
+      <HungerCarousel slides={home.hungerCarousel.slides} />
 
       <section className="py-section-gap-lg max-w-[1200px] mx-auto px-container-margin">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">

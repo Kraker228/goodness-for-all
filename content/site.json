@@ -105,10 +105,32 @@
         }
       ]
     },
-    "greenBanner": {
-      "paragraphs": [
-        "In Nederland wonen 450.000 mensen die wekelijks honger ervaren. Zij eten ongezond, steeds hetzelfde, of slaan zelfs maaltijden over omdat het niet lukt aan goed eten te komen. Te duur, te ver, te ingewikkeld, of er speelt schaamte.",
-        "Goodness for All ontwikkelt een solidaire oplossing. Doordat de één wat meer betaalt, kunnen wij goed eten aanbieden aan wie dat nodig heeft. Geen vragen wie je bent en of je arm genoeg bent. Dichtbij, vertrouwd, geen formulieren."
+    "hungerCarousel": {
+      "slides": [
+        {
+          "image": "/images/home/carrousel-1.jpg",
+          "imageAlt": "Twee mannen voor Huiskamer Crooswijk, een van hen met een duim omhoog",
+          "lead": "450.000",
+          "body": "mensen in Nederland ervaren wekelijks honger."
+        },
+        {
+          "image": "/images/home/carrousel-2.jpg",
+          "imageAlt": "Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis",
+          "lead": "Ongezond eten, elke dag hetzelfde, of een maaltijd overslaan.",
+          "body": null
+        },
+        {
+          "image": "/images/home/carrousel-3.jpg",
+          "imageAlt": "Buurthuismedewerkers ontvangen een doos met maaltijden en tonen trots de verpakkingen",
+          "lead": "Te duur, te ver, te ingewikkeld. Of er speelt schaamte.",
+          "body": null
+        },
+        {
+          "image": null,
+          "imageAlt": null,
+          "lead": "Een solidaire oplossing.",
+          "body": "Geen vragen wie je bent. Dichtbij, vertrouwd, geen formulieren."
+        }
       ]
     },
     "counter": {
