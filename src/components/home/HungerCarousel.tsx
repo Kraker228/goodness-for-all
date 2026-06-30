@@ -55,9 +55,14 @@ export default function HungerCarousel({ slides, interval = 5000 }: Props) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Slide viewport */}
+      {/*
+        Slide viewport — isolation:isolate creates an explicit stacking context
+        that seals all slide z-indexes inside it. Overlay elements (dots, arrows)
+        are siblings of this div at section level and will always paint on top.
+      */}
       <div
         className="h-[400px] md:h-[480px] relative"
+        style={{ isolation: "isolate" }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -121,14 +126,24 @@ export default function HungerCarousel({ slides, interval = 5000 }: Props) {
             )}
           </div>
         ))}
-
       </div>
 
-      {/* Subtle dark gradient so dots stay readable over any photo */}
-      <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+      {/*
+        Overlay layer — rendered AFTER the viewport div in the DOM and with
+        explicit z-index, so it always paints above all slide content.
+      */}
 
-      {/* Dot indicators – overlaid on the slide */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-3">
+      {/* Subtle dark gradient so dots stay readable over any photo */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"
+        style={{ zIndex: 10 }}
+      />
+
+      {/* Dot indicators */}
+      <div
+        className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-3"
+        style={{ zIndex: 20 }}
+      >
         {slides.map((_, i) => (
           <button
             key={i}
@@ -142,6 +157,26 @@ export default function HungerCarousel({ slides, interval = 5000 }: Props) {
           />
         ))}
       </div>
+
+      {/* Prev arrow */}
+      <button
+        onClick={() => advance(-1)}
+        aria-label="Vorige kaart"
+        className="absolute left-2 md:left-5 top-1/2 -translate-y-1/2 text-sandstone-beige/70 hover:text-sandstone-beige text-3xl md:text-5xl leading-none transition-colors select-none"
+        style={{ zIndex: 20 }}
+      >
+        ‹
+      </button>
+
+      {/* Next arrow */}
+      <button
+        onClick={() => advance(1)}
+        aria-label="Volgende kaart"
+        className="absolute right-2 md:right-5 top-1/2 -translate-y-1/2 text-sandstone-beige/70 hover:text-sandstone-beige text-3xl md:text-5xl leading-none transition-colors select-none"
+        style={{ zIndex: 20 }}
+      >
+        ›
+      </button>
     </section>
   );
 }
