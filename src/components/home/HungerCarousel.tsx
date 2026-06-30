@@ -101,7 +101,7 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
                       {slide.lead}
                     </span>
                     {slide.body && (
-                      <p className={i === 0 ? "hero-title font-bold text-[28px] md:text-[36px] text-white/90" : "font-body-lg text-body-lg text-white/90"}>
+                      <p className="hero-title font-bold text-[28px] md:text-[36px] text-white/90">
                         {slide.body}
                       </p>
                     )}
@@ -115,7 +115,7 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
                   {slide.lead}
                 </span>
                 {slide.body && (
-                  <p className="font-body-lg text-body-lg text-white/90 max-w-lg">
+                  <p className="hero-title font-bold text-[28px] md:text-[36px] text-white/90 max-w-lg">
                     {slide.body}
                   </p>
                 )}

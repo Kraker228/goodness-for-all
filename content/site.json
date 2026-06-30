@@ -116,14 +116,14 @@
         {
           "image": "/images/home/carrousel-2.jpg",
           "imageAlt": "Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis",
-          "lead": "Ongezond eten, elke dag hetzelfde, of een maaltijd overslaan.",
-          "body": null
+          "lead": "Mensen eten ongezond",
+          "body": "Steeds hetzelfde, of slaan maaltijden over."
         },
         {
           "image": "/images/home/carrousel-3.jpg",
           "imageAlt": "Buurthuismedewerkers ontvangen een doos met maaltijden en tonen trots de verpakkingen",
-          "lead": "Te duur, te ver, te ingewikkeld. Of er speelt schaamte.",
-          "body": null
+          "lead": "Hulp is te duur, te ver, te ingewikkeld.",
+          "body": "Of er speelt schaamte."
         },
         {
           "image": null,
@@ -667,43 +667,32 @@
     "subsidy": {
       "title": "De één betaalt voor de ander.",
       "corporateAmount": "€8",
-      "corporateTitle": "Zakelijke Markt",
-      "corporateText": "Gezonde lunch op kantoor",
+      "corporateImage": "/images/ons-verhaal/Bord-links.jpg",
+      "corporateCaption": "Op kantoor koop je makkelijke gezonde maaltijd voor thuis. Zo is gemak eindelijk gezond.",
       "arrowIcon": "trending_flat",
       "communityAmount": "€1",
-      "communityTitle": "In de Buurt",
-      "communityText": "Toegankelijk voor iedereen",
+      "communityImage": "/images/ons-verhaal/Bord-rechts.jpg",
+      "communityCaption": "Bij buurthuizen wordt dezelfde maaltijd aangeboden, voor €1 of gratis. Bereid om samen te eten of meegegeven voor het hele gezin.",
       "closingText": "Door een eerlijke prijs te vragen aan hen die het kunnen dragen, maken we gezonde voeding voor de hele stad toegankelijk. Geen liefdadigheid, maar solidariteit in actie."
     },
     "meal": {
       "eyebrow": "B-Corp Gecertificeerd",
       "title": "De maaltijd.",
-      "text": "Gezond, vers en seizoensgebonden. Onze maaltijden worden bereid met passie en zorg voor de planeet. Wij geloven in 'business as a force for good'. Elke maaltijd draagt bij aan een rechtvaardiger Rotterdam.",
-      "stats": [
+      "text": "Lazy is onze gewaardeerde partner en gelooft dat plantaardig eten gemakkelijk, lekker en voedzaam moet zijn, zodat het de norm wordt. Ze leveren 100% natuurlijke maaltijden zonder conserveermiddelen, in 9 varianten, met ingrediënten die rechtstreeks van Europese boeren komen en na de oogst geblancheerd en ingevroren worden voor pure smaak en kwaliteit.",
+      "image": "/images/ons-verhaal/keuken.jpg",
+      "imageAlt": "Lazy maaltijden in de keuken",
+      "points": [
         {
-          "value": "100%",
-          "label": "Versgarantie"
+          "icon": "verified",
+          "label": "B-corp"
         },
         {
-          "value": "CO2",
-          "label": "Neutraal"
-        }
-      ],
-      "slides": [
-        {
-          "image": "/images/ons-verhaal/carousel-1.jpg",
-          "alt": "9 verschillende smaken",
-          "caption": "9 verschillende smaken"
+          "icon": "eco",
+          "label": "100% plantaardig, en past daardoor in vrijwel elk dieet of levensovertuiging"
         },
         {
-          "image": "/images/ons-verhaal/carousel-2.jpg",
-          "alt": "Boordevol groente, geen troep",
-          "caption": "Boordevol groente, geen troep"
-        },
-        {
-          "image": "/images/ons-verhaal/carousel-3.jpg",
-          "alt": "Past in (bijna) elk dieet en levensovertuiging",
-          "caption": "Past in (bijna) elk dieet en levensovertuiging"
+          "icon": "ac_unit",
+          "label": "Vriesvers, dus super lekker en we gooien niets weg, 0-waste"
         }
       ]
     },
@@ -711,38 +700,38 @@
     "team": [
       {
         "name": "Reinout de Kraker",
-        "role": "Oprichter & Strategie",
+        "role": "OPRICHTER & RAKETMOTOR",
         "image": "/images/ons-verhaal/team-1.jpg",
         "alt": "Professionele headshot van Reinout de Kraker."
       },
       {
         "name": "Thomas Hilbrands",
-        "role": "Operations & Logistiek",
+        "role": "STRATEGIE & GOEDE IDEEËN",
         "image": "/images/ons-verhaal/team-2.jpg",
         "alt": "Professionele headshot van Thomas Hilbrands."
       },
       {
         "name": "Laurens van Dalen",
-        "role": "Commercieel Directeur",
+        "role": "OPERATIE",
         "image": "/images/ons-verhaal/team-3.jpg",
         "alt": "Professionele headshot van Laurens van Dalen."
       },
       {
         "name": "Jori Schara",
-        "role": "Impact Manager",
+        "role": "VOORZITTER & IMPACT MANAGER",
         "image": "/images/ons-verhaal/team-4.jpg",
         "alt": "Professionele headshot van Jori Schara."
       },
       {
         "name": "Stef Gallé",
-        "role": "Community Lead",
+        "role": "SECRETARIS & COACH",
         "image": "/images/ons-verhaal/team-5.jpg",
         "alt": "Professionele headshot van Stef Gallé."
       },
       {
         "name": "Martijn Bekking",
-        "role": "Financieel Adviseur",
-        "image": "/images/ons-verhaal/team-6.jpg",
+        "role": "PENNINGMEESTER & COACH",
+        "image": "/images/ons-verhaal/Martijn.jpeg",
         "alt": "Professionele headshot van Martijn Bekking."
       }
     ]
