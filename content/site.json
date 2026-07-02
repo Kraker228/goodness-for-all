@@ -397,17 +397,13 @@
   "contact": {
     "metaTitle": "Contact | Goodness for All",
     "metaDescription": "Heb je een vraag of wil je partner worden? Neem contact op.",
-    "title": "Neem contact op.",
+    "title": "Laat van je horen!",
     "text": "Samen bouwen we aan een buurt zonder drempels. Heb je een vraag of wil je partner worden? We horen het graag.",
     "detailsTitle": "Onze Basis",
     "linkedinLabel": "LinkedIn",
-    "linkedinHref": "#",
-    "mapImage": "/images/contact/map.jpg",
-    "mapLabel": "Gevestigd in Rotterdam",
-    "newsletterTitle": "Blijf op de hoogte.",
-    "newsletterText": "Ontvang maandelijks onze impact-updates.",
-    "newsletterPlaceholder": "E-mail",
-    "newsletterButton": "OK"
+    "linkedinHref": "https://www.linkedin.com/company/goodnessforall/",
+    "mapImage": "/images/contact/Vriezer.jpg",
+    "mapLabel": "Ook een vriezer op je werk?"
   },
   "help": {
     "metaTitle": "Doe mee | Goodness for All",

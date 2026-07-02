@@ -223,10 +223,6 @@ collections:
               - { label: LinkedIn URL, name: linkedinHref, widget: string }
               - { label: Kaartafbeelding, name: mapImage, widget: image }
               - { label: Kaartlabel, name: mapLabel, widget: string }
-              - { label: Nieuwsbrief titel, name: newsletterTitle, widget: string }
-              - { label: Nieuwsbrief tekst, name: newsletterText, widget: text }
-              - { label: Nieuwsbrief placeholder, name: newsletterPlaceholder, widget: string }
-              - { label: Nieuwsbrief knop, name: newsletterButton, widget: string }
 
           - label: Werken bij pagina
             name: help
