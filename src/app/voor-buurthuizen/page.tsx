@@ -70,22 +70,23 @@ export default function VoorBuurthuizenPage() {
                 />
               </div>
               <div className="aspect-square bg-harvest-orange flex flex-col justify-end p-gutter">
-                <h2 className="font-headline-lg text-headline-lg text-white leading-none">
+                <h2 className="title-baloo text-white">
                   {neighborhoods.visualTitle}
                 </h2>
                 <p className="text-evergreen font-bold mt-base">
                   {neighborhoods.visualText}
                 </p>
               </div>
-              <div className="aspect-square border-2 border-sandstone-beige flex items-center justify-center p-gutter">
-                <div className="text-center">
-                  <span className="material-symbols-outlined text-harvest-orange text-6xl mb-base">
-                    {neighborhoods.visualIcon}
-                  </span>
-                  <p className="text-sandstone-beige font-headline-md text-headline-md uppercase">
-                    {neighborhoods.visualIconText}
-                  </p>
-                </div>
+              <div className="aspect-square border-2 border-sandstone-beige flex flex-col items-center justify-center text-center p-gutter">
+                <span className="material-symbols-outlined text-harvest-orange text-6xl mb-base">
+                  {neighborhoods.visualIcon}
+                </span>
+                <h2 className="title-baloo text-sandstone-beige">
+                  {neighborhoods.visualIconTitle}
+                </h2>
+                <p className="text-sandstone-beige/80 font-body-md text-body-md mt-base">
+                  {neighborhoods.visualIconText}
+                </p>
               </div>
             </div>
           </div>

@@ -457,12 +457,13 @@
     "accessText": "Dit formulier kunnen alleen de buurthuizen invullen die al verbonden zijn. Wil jij hier ook bij? Neem contact op.",
     "contactLabel": "Neem contact op",
     "contactHref": "/contact",
-    "visualImage": "/images/voor-buurthuizen/meal.jpg",
-    "visualAlt": "Buurtbewoners delen samen een maaltijd",
-    "visualTitle": "GEZOND & VERS",
-    "visualText": "Dagelijks bereid door onze chefs.",
-    "visualIcon": "volunteer_activism",
-    "visualIconText": "Voor elkaar, door elkaar"
+    "visualImage": "/images/voor-buurthuizen/kinderen_koken_1.jpg",
+    "visualAlt": "Kinderen koken samen in het buurthuis",
+    "visualTitle": "0-WASTE",
+    "visualText": "Daarom kiezen we voor vriezen.",
+    "visualIcon": "eco",
+    "visualIconTitle": "100% plantaardig",
+    "visualIconText": "Super inclusief, past in bijna elk dieet of levensovertuiging."
   },
   "anbi": {
     "metaTitle": "ANBI-informatie | Goodness for All",
@@ -638,10 +639,6 @@
         "Falafel: Lebanese Bulgur"
       ],
       "organizations": [
-        "Incluzio",
-        "SOL",
-        "DOCK",
-        "WijZijn",
         "Incluzio Locatie \"De Nieuwe Gaffel\"",
         "Incluzio Locatie \"Het Middelpunt\"",
         "Incluzio Locatie \"Schiemond\"",
@@ -654,8 +651,7 @@
         "Villa Vonk",
         "de Mussen",
         "Adam",
-        "Bewonersgroep Kralingen-West",
-        "Andere maatschappelijke partner"
+        "Bewonersgroep Kralingen-West"
       ],
       "screens": {
         "welcomeTitle": "Goed eten voor iedereen bereikbaar maken.",
@@ -676,8 +672,9 @@
         "mixChoiceLabel": "Mix",
         "flavorsQuestion": "Kies je smaken:",
         "flavorsHint": "We doen ons best dit zo goed mogelijk in te vullen, maar kunnen niet altijd alle smaken garanderen.",
-        "notesQuestion": "Heb je verder nog vragen of opmerkingen? Bij spoed liever appen!",
-        "notesPlaceholder": "Bijv. 10x glutenvrij...",
+        "notesQuestion": "Heb je verder nog vragen of opmerkingen?",
+        "notesHint": "Bij spoed liever appen!",
+        "notesPlaceholder": "type hier je vraag",
         "contactQuestion": "Contactgegevens",
         "contactSubtitle": "Wie doet deze bestelling?",
         "firstNamePlaceholder": "Voornaam",
@@ -685,7 +682,8 @@
         "phonePlaceholder": "Telefoonnummer",
         "successTitle": "Bedankt voor je bestelling!",
         "successText": "We nemen zo snel mogelijk contact op voor de definitieve bevestiging.",
-        "rejectionTitle": "Helaas..."
+        "rejectionTitle": "Helaas...",
+        "flavorsAlert": "Kies aub minimaal 1 smaak."
       }
     }
   },
