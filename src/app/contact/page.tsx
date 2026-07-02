@@ -21,7 +21,7 @@ export default function ContactPage() {
       <main className="pt-24 pb-section-gap-lg">
         <section className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm border-b-2 border-evergreen">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-base">
-            <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-evergreen max-w-2xl">
+            <h1 className="title-baloo text-evergreen max-w-2xl">
               {contact.title}
             </h1>
             <p className="font-body-lg text-body-lg text-evergreen/80 max-w-md pb-1">
@@ -61,6 +61,8 @@ export default function ContactPage() {
                   <a
                     className="font-body-lg text-body-lg text-evergreen flex items-center gap-2 group"
                     href={contact.linkedinHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="font-bold underline decoration-evergreen group-hover:text-harvest-orange group-hover:decoration-harvest-orange transition-all">
                       {contact.linkedinLabel}
@@ -79,29 +81,6 @@ export default function ContactPage() {
               <div className="absolute bottom-4 left-4 bg-evergreen text-sandstone-beige px-4 py-2 font-label-sm text-label-sm uppercase">
                 {contact.mapLabel}
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-[1200px] mx-auto px-container-margin mt-section-gap-lg">
-          <div className="bg-asparagus p-section-gap-sm flex flex-col md:flex-row items-center justify-between gap-base border-2 border-evergreen">
-            <div>
-              <h4 className="font-headline-md text-headline-md text-evergreen">
-                {contact.newsletterTitle}
-              </h4>
-              <p className="font-body-md text-body-md text-evergreen/80">
-                {contact.newsletterText}
-              </p>
-            </div>
-            <div className="flex w-full md:w-auto mt-4 md:mt-0">
-              <input
-                className="bg-pure-mist border-2 border-evergreen border-r-0 p-base focus:outline-none focus:border-evergreen w-full md:w-64"
-                placeholder={contact.newsletterPlaceholder}
-                type="email"
-              />
-              <button className="bg-evergreen text-sandstone-beige px-base py-base border-2 border-evergreen font-cta text-cta uppercase active:scale-95 transition-transform">
-                {contact.newsletterButton}
-              </button>
             </div>
           </div>
         </section>
