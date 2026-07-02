@@ -451,7 +451,12 @@
     "metaTitle": "Voor buurthuizen | Goodness for All",
     "metaDescription": "Bestel gezonde, betaalbare maaltijden voor jouw buurthuis.",
     "title": "Maaltijden bestellen voor jouw buurthuis.",
-    "text": "Samen maken we een verschil in de buurt. Wij leveren gezonde, betaalbare maaltijden die mensen verbinden. Vul het onderstaande formulier in en we regelen de rest.",
+    "text": "Samen maken we een verschil in de buurt. Wij leveren gezonde maaltijden die mensen verbinden. De buurthuizen kunnen deze bereiden en samen laten eten, of bijvoorbeeld meegeven in een voedselpakket.",
+    "textForm": "Vul het onderstaande formulier in en we regelen de rest.",
+    "explanation": "Vul het formulier in en wij komen de maaltijden brengen. Om onze efficiënte manier van werken te ondersteunen, vragen we alleen de garantie dat er op het juiste moment iemand is om de maaltijden in de vriezer te leggen.",
+    "accessText": "Dit formulier kunnen alleen de buurthuizen invullen die al verbonden zijn. Wil jij hier ook bij? Neem contact op.",
+    "contactLabel": "Neem contact op",
+    "contactHref": "/contact",
     "visualImage": "/images/voor-buurthuizen/meal.jpg",
     "visualAlt": "Buurtbewoners delen samen een maaltijd",
     "visualTitle": "GEZOND & VERS",
@@ -582,11 +587,26 @@
       ],
       "interestsLabel": "Stuur mij informatie over:",
       "interests": [
-        { "id": "supporter", "label": "Impact Supporter worden" },
-        { "id": "builder", "label": "Impact Builder worden" },
-        { "id": "leider", "label": "Impact Leider worden" },
-        { "id": "gift", "label": "Een particuliere gift fiscaal aantrekkelijk realiseren" },
-        { "id": "algemeen", "label": "Algemene informatie" }
+        {
+          "id": "supporter",
+          "label": "Impact Supporter worden"
+        },
+        {
+          "id": "builder",
+          "label": "Impact Builder worden"
+        },
+        {
+          "id": "leider",
+          "label": "Impact Leider worden"
+        },
+        {
+          "id": "gift",
+          "label": "Een particuliere gift fiscaal aantrekkelijk realiseren"
+        },
+        {
+          "id": "algemeen",
+          "label": "Algemene informatie"
+        }
       ],
       "submitLabel": "Neem contact op",
       "sendingLabel": "Versturen...",
@@ -608,18 +628,33 @@
       "registrationHref": "#",
       "registrationLabel": "Registreer je hier",
       "flavors": [
-        "Gnocchi",
+        "Gnocchi Al Pesto",
         "Korean Noodles",
-        "Pasta Pesto",
-        "Lentil Curry",
-        "Stamppot",
-        "Burrito Bowl"
+        "Risotto Funghi",
+        "Tikka Masala",
+        "Thai Green Curry",
+        "Mexican Fiesta",
+        "Falafel: Mexican Fusion",
+        "Falafel: Lebanese Bulgur"
       ],
       "organizations": [
         "Incluzio",
         "SOL",
         "DOCK",
         "WijZijn",
+        "Incluzio Locatie \"De Nieuwe Gaffel\"",
+        "Incluzio Locatie \"Het Middelpunt\"",
+        "Incluzio Locatie \"Schiemond\"",
+        "Sol Locatie Riederkwartier",
+        "Sol Locatie Vuurplaat",
+        "Stichting Overwin de armoede",
+        "Speelcentrum Weena",
+        "Stichting Isaak en de Schittering",
+        "Warme huiskamer Crooswijk",
+        "Villa Vonk",
+        "de Mussen",
+        "Adam",
+        "Bewonersgroep Kralingen-West",
         "Andere maatschappelijke partner"
       ],
       "screens": {
@@ -636,13 +671,15 @@
         "pickupQuestion": "Vanwege de grootte vragen we je dit op te halen bij ons depot. Akkoord?",
         "deliveryRejection": "Helaas kunnen we de maaltijden alleen leveren als er iemand aanwezig is. Neem contact op voor alternatieven.",
         "pickupRejection": "Vanwege de omvang van de bestelling is ophalen noodzakelijk. Neem contact op om de mogelijkheden te bespreken.",
-        "choiceQuestion": "Zelf kiezen of een verrassingsmix?",
+        "choiceQuestion": "Wil je zelf maaltijden kiezen, of een mix van de meest gewilde smaken?",
         "selfChoiceLabel": "Zelf kiezen",
-        "mixChoiceLabel": "Verrassingsmix",
-        "flavorsQuestion": "Kies je smaken",
-        "notesQuestion": "Opmerkingen of dieetwensen?",
+        "mixChoiceLabel": "Mix",
+        "flavorsQuestion": "Kies je smaken:",
+        "flavorsHint": "We doen ons best dit zo goed mogelijk in te vullen, maar kunnen niet altijd alle smaken garanderen.",
+        "notesQuestion": "Heb je verder nog vragen of opmerkingen? Bij spoed liever appen!",
         "notesPlaceholder": "Bijv. 10x glutenvrij...",
         "contactQuestion": "Contactgegevens",
+        "contactSubtitle": "Wie doet deze bestelling?",
         "firstNamePlaceholder": "Voornaam",
         "lastNamePlaceholder": "Achternaam",
         "phonePlaceholder": "Telefoonnummer",

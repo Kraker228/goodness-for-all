@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OrderFlow from "@/components/forms/OrderFlow";
@@ -22,12 +23,35 @@ export default function VoorBuurthuizenPage() {
         <section className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm md:py-section-gap-lg">
           <div className="flex flex-col md:flex-row gap-section-gap-sm items-start">
             <div className="w-full md:w-1/2">
-              <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-evergreen mb-base">
+              <h1 className="title-baloo text-evergreen mb-base">
                 {neighborhoods.title}
               </h1>
               <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
                 {neighborhoods.text}
               </p>
+              <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl mt-base">
+                {neighborhoods.textForm}
+              </p>
+
+              {/* Uitlegblok: hoe werkt het */}
+              <div className="mt-gutter max-w-xl border-l-4 border-harvest-orange bg-sandstone-beige/50 p-gutter">
+                <p className="text-body-md font-body-md text-on-surface-variant">
+                  {neighborhoods.explanation}
+                </p>
+              </div>
+
+              {/* Toegangsblok + contactknop */}
+              <div className="mt-gutter max-w-xl">
+                <p className="text-body-md font-body-md text-on-surface-variant">
+                  {neighborhoods.accessText}
+                </p>
+                <Link
+                  href={neighborhoods.contactHref}
+                  className="mt-base inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+                >
+                  {neighborhoods.contactLabel}
+                </Link>
+              </div>
             </div>
             <div className="w-full md:w-1/2">
               <OrderFlow content={forms.order} />

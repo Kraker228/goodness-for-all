@@ -334,9 +334,12 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
           {/* Q6: SMAKENSELECTIE */}
           <Screen>
-            <h2 className="font-headline-md text-headline-md text-evergreen mb-4">
+            <h2 className="font-headline-md text-headline-md text-evergreen mb-2">
               {content.screens.flavorsQuestion}
             </h2>
+            <p className="text-sm text-evergreen/60 mb-4">
+              {content.screens.flavorsHint}
+            </p>
             <div className="grid grid-cols-2 gap-3 overflow-y-auto max-h-[250px] pr-2 custom-scrollbar">
               {content.flavors.map((flavor) => {
                 const selected = data.smaken.includes(flavor);
@@ -386,9 +389,12 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
           {/* Q8: CONTACTGEGEVENS */}
           <Screen>
-            <h2 className="font-headline-md text-headline-md text-evergreen mb-6">
+            <h2 className="font-headline-md text-headline-md text-evergreen mb-1">
               {content.screens.contactQuestion}
             </h2>
+            <p className="text-body-md text-evergreen/70 mb-6">
+              {content.screens.contactSubtitle}
+            </p>
             <div className="space-y-3">
               <input
                 className="w-full border-2 border-evergreen p-3 text-lg focus:outline-none"

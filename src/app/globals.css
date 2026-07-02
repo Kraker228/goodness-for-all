@@ -141,6 +141,20 @@
   line-height: 1;
 }
 
+/* Baloo 2 Bold title (buurthuizen page hero) */
+.title-baloo {
+  font-family: var(--font-baloo), cursive;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .title-baloo {
+    font-size: 40px;
+  }
+}
+
 .no-corners {
   border-radius: 0 !important;
 }
