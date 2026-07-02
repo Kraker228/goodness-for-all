@@ -123,6 +123,14 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
     }
   }
 
+  function proceedFromFlavors() {
+    if (data.smaken.length === 0) {
+      window.alert(content.screens.flavorsAlert);
+      return;
+    }
+    goTo(7);
+  }
+
   function toggleFlavor(flavor: string) {
     setData((d) => ({
       ...d,
@@ -334,10 +342,13 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
           {/* Q6: SMAKENSELECTIE */}
           <Screen>
-            <h2 className="font-headline-md text-headline-md text-evergreen mb-4">
+            <h2 className="font-headline-md text-headline-md text-evergreen mb-2">
               {content.screens.flavorsQuestion}
             </h2>
-            <div className="grid grid-cols-2 gap-3 overflow-y-auto max-h-[250px] pr-2 custom-scrollbar">
+            <p className="text-sm text-evergreen/60 mb-4">
+              {content.screens.flavorsHint}
+            </p>
+            <div className="grid grid-cols-2 gap-3">
               {content.flavors.map((flavor) => {
                 const selected = data.smaken.includes(flavor);
                 return (
@@ -356,7 +367,7 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
             </div>
             <button
               type="button"
-              onClick={() => goTo(7)}
+              onClick={proceedFromFlavors}
               className="mt-6 bg-evergreen text-white font-cta font-bold py-4 px-8 w-fit hover:bg-harvest-orange transition-colors"
             >
               {content.nextLabel}
@@ -365,9 +376,12 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
           {/* Q7: OPMERKINGEN */}
           <Screen>
-            <label className="font-headline-md text-headline-md text-evergreen mb-6 block">
+            <label className="font-headline-md text-headline-md text-evergreen mb-1 block">
               {content.screens.notesQuestion}
             </label>
+            <p className="text-sm font-normal text-evergreen/60 mb-6">
+              {content.screens.notesHint}
+            </p>
             <textarea
               className="w-full border-2 border-evergreen p-4 text-lg focus:outline-none bg-white"
               placeholder={content.screens.notesPlaceholder}
@@ -386,9 +400,12 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
           {/* Q8: CONTACTGEGEVENS */}
           <Screen>
-            <h2 className="font-headline-md text-headline-md text-evergreen mb-6">
+            <h2 className="font-headline-md text-headline-md text-evergreen mb-1">
               {content.screens.contactQuestion}
             </h2>
+            <p className="text-body-md text-evergreen/70 mb-6">
+              {content.screens.contactSubtitle}
+            </p>
             <div className="space-y-3">
               <input
                 className="w-full border-2 border-evergreen p-3 text-lg focus:outline-none"
