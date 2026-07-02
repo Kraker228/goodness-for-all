@@ -416,6 +416,13 @@
     "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap. Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact.",
     "image": "/images/ik-wil-helpen/hero.jpg",
     "imageAlt": "A focused group of diverse professionals working together in a bright, minimalist office space.",
+    "donationStrip": {
+      "donateText": "Elke €3 maakt een extra maaltijd mogelijk. Met €30 voed je 10 mensen.",
+      "donateButton": "Doneer direct",
+      "donateHref": "https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xuUs0QeyQbio6T_XijKyfg",
+      "contactText": "Heb je een ander idee om samen te werken, of wil je een grotere particuliere schenking doen? Neem dan contact op.",
+      "contactButton": "Neem contact op"
+    },
     "vacanciesTitle": "Huidige Vacatures",
     "vacanciesText": "Vind jouw plek in ons groeiende ecosysteem.",
     "openApplicationLabel": "OPEN SOLLICITATIE",
