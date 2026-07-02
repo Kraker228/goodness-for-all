@@ -47,15 +47,7 @@ export default function Header({ active, position = "sticky", settings }: Header
             </Link>
           </div>
           <nav className="hidden md:flex gap-base items-center">
-            <Link
-              className={`font-bold font-label-sm text-label-sm px-4 py-2 hover:bg-sandstone-beige transition-colors duration-200 ${
-                active === "/" ? "text-harvest-orange" : "text-evergreen"
-              }`}
-              href={settings.homeHref}
-            >
-              {settings.homeLabel}
-            </Link>
-            {navLinks.filter((l) => l.href !== "/contact").map((l) => (
+            {navLinks.filter((l) => l.href !== "/" && l.href !== "/contact").map((l) => (
               <Link
                 key={l.href}
                 className={`font-label-sm text-label-sm px-4 py-2 hover:bg-sandstone-beige transition-colors duration-200 ${

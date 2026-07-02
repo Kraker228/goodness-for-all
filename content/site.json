@@ -21,6 +21,11 @@
     "partnerStripAriaLabel": "Onze partners",
     "nav": [
       {
+        "href": "/",
+        "label": "Home",
+        "icon": "home"
+      },
+      {
         "href": "/ons-verhaal",
         "label": "Ons verhaal",
         "icon": "history_edu"
@@ -36,6 +41,11 @@
         "icon": "handshake"
       },
       {
+        "href": "/voor-buurthuizen",
+        "label": "Voor buurthuizen",
+        "icon": "cottage"
+      },
+      {
         "href": "/ik-wil-helpen",
         "label": "Doe mee",
         "icon": "work"
@@ -47,10 +57,6 @@
       }
     ],
     "footerLinks": [
-      {
-        "href": "/voor-buurthuizen",
-        "label": "Voor buurthuizen"
-      },
       {
         "href": "/anbi",
         "label": "ANBI-informatie"
