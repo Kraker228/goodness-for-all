@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -16,6 +17,42 @@ export default function IkWilHelpenPage() {
   return (
     <>
       <Header active="/ik-wil-helpen" settings={settings} />
+
+      <Reveal
+        as="section"
+        from="translate-y-8"
+        className="w-full bg-asparagus/20 border-b-2 border-evergreen"
+      >
+        <div className="max-w-[1200px] mx-auto px-container-margin py-gutter">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+            <div className="flex flex-col gap-2 md:pr-gutter md:border-r md:border-evergreen/20">
+              <p className="font-body-md text-body-md text-evergreen">
+                {help.donationStrip.donateText}
+              </p>
+              <a
+                href={help.donationStrip.donateHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block self-start bg-harvest-orange text-evergreen font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
+              >
+                {help.donationStrip.donateButton}
+              </a>
+            </div>
+            <div className="flex flex-col gap-2">
+              <p className="font-body-md text-body-md text-evergreen">
+                {help.donationStrip.contactText}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block self-start bg-transparent text-evergreen font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
+              >
+                {help.donationStrip.contactButton}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
       <main className="max-w-[1200px] mx-auto px-container-margin min-h-screen">
         <Reveal
           as="section"
@@ -64,26 +101,37 @@ export default function IkWilHelpenPage() {
               </a>
             </div>
           </div>
-          <div className="bg-pure-mist border-2 border-evergreen p-12 text-center flex flex-col items-center justify-center min-h-[300px]">
-            <span
-              className="material-symbols-outlined text-evergreen text-5xl mb-base"
-              style={{ fontVariationSettings: "'wght' 200" }}
-            >
-              {help.emptyIcon}
-            </span>
-            <p className="font-headline-md text-headline-md text-evergreen mb-gutter max-w-md">
-              {help.emptyTitle}
-            </p>
-            <p className="font-body-md text-body-md text-on-surface-variant mb-section-gap-sm">
-              {help.emptyText}
-            </p>
-            <div className="w-full h-px bg-evergreen/20 mb-section-gap-sm max-w-sm"></div>
-            <a
-              href={`mailto:${settings.email}`}
-              className="inline-block bg-evergreen text-sandstone-beige font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-harvest-orange hover:text-evergreen transition-all"
-            >
-              {help.emailButton}
-            </a>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-evergreen">
+            {help.jobs.map((job, index) => (
+              <div
+                key={job.title}
+                className={`p-gutter flex flex-col ${
+                  index < 2 ? "border-b md:border-b-0 md:border-r border-evergreen" : ""
+                } ${index === 0 ? "bg-sandstone-beige" : index === 1 ? "bg-pure-mist" : "bg-asparagus/20"}`}
+              >
+                <span
+                  className="material-symbols-outlined text-evergreen text-5xl mb-base"
+                  style={{ fontVariationSettings: "'wght' 200" }}
+                >
+                  {job.icon}
+                </span>
+                <h3 className="font-headline-md text-headline-md text-evergreen mb-base">
+                  {job.title}
+                </h3>
+                <p className="font-body-md text-body-md text-on-surface-variant mb-base">
+                  {job.text}
+                </p>
+                <p className="font-body-md text-body-md text-harvest-orange mb-gutter flex-1">
+                  {job.note}
+                </p>
+                <a
+                  href={`mailto:${settings.email}`}
+                  className="inline-block self-start bg-evergreen text-sandstone-beige font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-harvest-orange hover:text-evergreen transition-all"
+                >
+                  {help.emailButton}
+                </a>
+              </div>
+            ))}
           </div>
         </Reveal>
 

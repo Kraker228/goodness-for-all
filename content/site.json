@@ -37,7 +37,7 @@
       },
       {
         "href": "/ik-wil-helpen",
-        "label": "Werken bij",
+        "label": "Doe mee",
         "icon": "work"
       },
       {
@@ -410,19 +410,43 @@
     "newsletterButton": "OK"
   },
   "help": {
-    "metaTitle": "Werken bij | Goodness for All",
+    "metaTitle": "Doe mee | Goodness for All",
     "eyebrow": "CARRIÈRE",
     "title": "Ik wil helpen",
     "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap. Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact.",
     "image": "/images/ik-wil-helpen/hero.jpg",
     "imageAlt": "A focused group of diverse professionals working together in a bright, minimalist office space.",
+    "donationStrip": {
+      "donateText": "Elke €3 maakt een extra maaltijd mogelijk. Met €30 geef je 10 mensen deze week beter eten.",
+      "donateButton": "Doneer direct",
+      "donateHref": "https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xuUs0QeyQbio6T_XijKyfg",
+      "contactText": "Heb je een ander idee om samen te werken, of wil je een grotere particuliere schenking doen? Neem dan contact op.",
+      "contactButton": "Neem contact op"
+    },
     "vacanciesTitle": "Huidige Vacatures",
     "vacanciesText": "Vind jouw plek in ons groeiende ecosysteem.",
     "openApplicationLabel": "OPEN SOLLICITATIE",
     "openApplicationHref": "mailto:info@goodnessforall.nl",
-    "emptyIcon": "search_off",
-    "emptyTitle": "We zoeken mensen die kunnen helpen met promotie, logistiek en een co-founder.",
-    "emptyText": "Van een unieke bijbaan voor een paar uur in de week waar je écht verschil maakt, en ca. €20 per uur verdient, tot mede founder worden. Kom met een goed verhaal en we zijn in gesprek!",
+    "jobs": [
+      {
+        "icon": "rocket_launch",
+        "title": "Co-owner",
+        "text": "Word mede-eigenaar en bouw mee aan de koers, de organisatie en de groei van Goodness for All. Ca. 20 uur per week.",
+        "note": "Je houdt van aanpakken, hebt bij voorkeur ondernemerservaring en een mooi netwerk, en een goed gevoel bij onze missie."
+      },
+      {
+        "icon": "campaign",
+        "title": "Promotie bij verkoop",
+        "text": "Veel werknemers steunen de missie, en vinden de maaltijden handig en lekker. Wanneer we het verhaal actief brengen, gaat de verkoop omhoog, en dus onze impact: help je mee?",
+        "note": "Je voelt je comfortabel om mensen aan te spreken in het Nederlands en Engels, wordt niet verdrietig bij een nee, en bent ca. 2x per week tussen 15.00 en 18.30 uur beschikbaar."
+      },
+      {
+        "icon": "carpenter",
+        "title": "Logistieke hulp",
+        "text": "Variabele taken waarbij de handen uit de mouwen moeten. Een vriezer van A naar B? Wat printwerk? Een berichtje op social media?",
+        "note": "Variabele uren per week, waarin je open staat om dingen te proberen, te leren, en dingen voor elkaar krijgt zonder veel hulp. Of zoals de Tsjechen zeggen: Aje to."
+      }
+    ],
     "emailButton": "STUUR EEN E-MAIL",
     "culture": [
       {
