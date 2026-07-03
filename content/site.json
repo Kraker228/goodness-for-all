@@ -80,13 +80,13 @@
     "cards": [
       {
         "title": "Ons verhaal",
-        "text": "De één betaalt wat meer, zodat de ander minder betaalt. ",
+        "text": "De één betaalt wat meer, zodat de ander minder betaalt.",
         "accent": "Zo werkt het.",
         "href": "/ons-verhaal"
       },
       {
         "title": "Impact",
-        "text": "2.000 maaltijden per maand. ",
+        "text": "2.000 maaltijden per maand.",
         "accent": "Kijk naar wie we ze brengen",
         "href": "/impact"
       }
@@ -96,46 +96,18 @@
       "links": [
         {
           "href": "/partners",
-          "prefix": "Als bedrijf: ",
+          "prefix": "Als bedrijf:",
           "accent": "Word Impact Partner"
         },
         {
           "href": "/voor-buurthuizen",
-          "prefix": "Als buurthuis: ",
+          "prefix": "Als buurthuis:",
           "accent": "Help de maaltijden verspreiden"
         },
         {
           "href": "/ik-wil-helpen",
-          "prefix": "Als persoon: ",
+          "prefix": "Als persoon:",
           "accent": "Bekijk onze vacatures, deel ons verhaal, of doneer!"
-        }
-      ]
-    },
-    "hungerCarousel": {
-      "slides": [
-        {
-          "image": "/images/home/carrousel-1.jpg",
-          "imageAlt": "Twee mannen voor Huiskamer Crooswijk, een van hen met een duim omhoog",
-          "lead": "450.000",
-          "body": "mensen in Nederland ervaren wekelijks honger."
-        },
-        {
-          "image": "/images/home/carrousel-2.jpg",
-          "imageAlt": "Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis",
-          "lead": "Mensen eten ongezond",
-          "body": "Steeds hetzelfde, of slaan maaltijden over."
-        },
-        {
-          "image": "/images/home/carrousel-3.jpg",
-          "imageAlt": "Buurthuismedewerkers ontvangen een doos met maaltijden en tonen trots de verpakkingen",
-          "lead": "Hulp is te duur, te ver, te ingewikkeld.",
-          "body": "Of er speelt schaamte."
-        },
-        {
-          "image": null,
-          "imageAlt": null,
-          "lead": "Een solidaire oplossing.",
-          "body": "Geen vragen wie je bent. Dichtbij, vertrouwd, geen formulieren."
         }
       ]
     },
@@ -149,7 +121,35 @@
       "name": "Lysdaimarie Conep",
       "role": "Coördinator Huis van de Wijk De Kip"
     },
-    "partnerStripTitle": "Onze trotse partners"
+    "partnerStripTitle": "Onze trotse partners",
+    "hungerCarousel": {
+      "slides": [
+        {
+          "body": "mensen in Nederland ervaren wekelijks honger.",
+          "lead": "450.000",
+          "imageAlt": "Twee mannen voor Huiskamer Crooswijk, een van hen met een duim omhoog",
+          "image": "/images/home/carrousel-1.jpg"
+        },
+        {
+          "body": "Steeds hetzelfde, of slaan maaltijden over.",
+          "lead": "Mensen eten ongezond",
+          "imageAlt": "Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis",
+          "image": "/images/home/carrousel-2.jpg"
+        },
+        {
+          "body": "Of er speelt schaamte.",
+          "lead": "Hulp is te duur, te ver, te ingewikkeld.",
+          "imageAlt": "Buurthuismedewerkers ontvangen een doos met maaltijden en tonen trots de verpakkingen",
+          "image": "/images/home/carrousel-3.jpg"
+        },
+        {
+          "body": "Geen vragen wie je bent. Dichtbij, vertrouwd, geen formulieren.",
+          "lead": "Een solidaire oplossing.",
+          "imageAlt": null,
+          "image": null
+        }
+      ]
+    }
   },
   "partners": {
     "metaTitle": "Partners | Goodness for All",
@@ -182,9 +182,21 @@
         "featuredLabel": "",
         "dark": false,
         "features": [
-          { "type": "text", "text": "Logo vermelding op onze website." },
-          { "type": "meals", "count": "2.000" },
-          { "type": "text", "text": "Uitgebreide CSRD rapportage." }
+          {
+            "type": "text",
+            "text": "Logo vermelding op onze website.",
+            "count": ""
+          },
+          {
+            "type": "meals",
+            "text": "",
+            "count": "2.000"
+          },
+          {
+            "type": "text",
+            "text": "Uitgebreide CSRD rapportage.",
+            "count": ""
+          }
         ],
         "buttonLabel": "Start als Supporter",
         "buttonHref": "/partners?keuze=supporter#partner-formulier"
@@ -197,10 +209,26 @@
         "featuredLabel": "",
         "dark": false,
         "features": [
-          { "type": "text", "text": "Logo vermelding op onze website." },
-          { "type": "meals", "count": "5.000" },
-          { "type": "text", "text": "Uitgebreide CSRD rapportage." },
-          { "type": "freezer" }
+          {
+            "type": "text",
+            "text": "Logo vermelding op onze website.",
+            "count": ""
+          },
+          {
+            "type": "meals",
+            "text": "",
+            "count": "5.000"
+          },
+          {
+            "type": "text",
+            "text": "Uitgebreide CSRD rapportage.",
+            "count": ""
+          },
+          {
+            "type": "freezer",
+            "text": "",
+            "count": ""
+          }
         ],
         "buttonLabel": "Word Impact Builder",
         "buttonHref": "/partners?keuze=builder#partner-formulier"
@@ -213,12 +241,35 @@
         "featuredLabel": "",
         "dark": true,
         "features": [
-          { "type": "text", "text": "Logo vermelding op onze website." },
-          { "type": "meals", "count": "10.000" },
-          { "type": "text", "text": "Uitgebreide CSRD rapportage." },
-          { "type": "freezer" },
-          { "type": "text", "text": "Keynote \"Hoe bouw je in 2 jaar een impactonderneming\"." },
-          { "type": "text", "text": "Gepersonaliseerde video voor bedrijfscommunicatie." }
+          {
+            "type": "text",
+            "text": "Logo vermelding op onze website."
+          },
+          {
+            "type": "meals",
+            "text": "",
+            "count": "10.000"
+          },
+          {
+            "type": "text",
+            "text": "Uitgebreide CSRD rapportage.",
+            "count": ""
+          },
+          {
+            "type": "freezer",
+            "text": "",
+            "count": ""
+          },
+          {
+            "type": "text",
+            "text": "Keynote \"Hoe bouw je in 2 jaar een impactonderneming\".",
+            "count": ""
+          },
+          {
+            "type": "text",
+            "text": "Gepersonaliseerde video voor bedrijfscommunicatie.",
+            "count": ""
+          }
         ],
         "buttonLabel": "Leid de Impact",
         "buttonHref": "/partners?keuze=leider#partner-formulier"
@@ -282,6 +333,26 @@
     {
       "image": "/images/partners/logos/incluzio.png",
       "alt": "Incluzio"
+    },
+    {
+      "image": "/images/uploads/BitzenSnoek.webp",
+      "alt": "Bitz en Snoek"
+    },
+    {
+      "image": "/images/uploads/elise-mathilde.png",
+      "alt": "Stichting Elise Mathilde"
+    },
+    {
+      "image": "/images/uploads/fondsdbl.png",
+      "alt": "Fonds DBL"
+    },
+    {
+      "image": "/images/uploads/OranjeFonds.jpg",
+      "alt": "Oranje Fonds"
+    },
+    {
+      "image": "/images/uploads/StichtingTheia.png",
+      "alt": "Stichting Theia"
     }
   ],
   "impact": {
@@ -379,13 +450,13 @@
       "text": "Ons laatste onafhankelijke onderzoek toont aan dat de impact van een gezamenlijke maaltijd verder gaat dan alleen voeding. Het verlaagt de drempel naar verdere hulpverlening en versterkt de sociale cohesie in de wijk.",
       "buttonLabel": "Rapport downloaden",
       "buttonHref": "#",
-      "reportModalTitle": "Geen beledigende broccoli!",
-      "reportModalText": "We willen graag iedereen in Rotterdam, en Nederland voorzien in een goede maaltijd.\nWat we niet willen is vertellen hoe de wereld in elkaar zit, of wie wat zou moeten doen. Of onze oplossingen opdringen.\nDaarom zijn we nu een onderzoek aan het doen naar de behoeften van alle medewerkers van de buurthuizen, én natuurlijk die van de mensen die onze maaltijden eten. Wat gaat goed? Wat niet? Is het lekker, wat kan beter? Hoe ben je het beste geholpen?\n\nEind augustus, begin september hopen we hier de resultaten te delen én deze mee te nemen in hoe we werken.",
       "sroiEyebrow": "SROI Analyse",
       "sroiTitle": "9-33x Rendement",
       "sroiText": "Voor elke euro geïnvesteerd in onze programma's, genereert de maatschappij een waarde tussen de 9 en 33 euro door vermindering van eenzaamheid en verbeterde gezondheid.",
       "sroiNote": "* Gebaseerd op externe Social Return on Investment berekeningen 2023-2024.",
-      "sroiHref": "https://openresearch.amsterdam/nl/page/132143/voedselinitiatieven-maatschappelijke-kosten%E2%80%91baten-analyse-mkba"
+      "sroiHref": "https://openresearch.amsterdam/nl/page/132143/voedselinitiatieven-maatschappelijke-kosten%E2%80%91baten-analyse-mkba",
+      "reportModalText": "We willen graag iedereen in Rotterdam, en Nederland voorzien in een goede maaltijd.\nWat we niet willen is vertellen hoe de wereld in elkaar zit, of wie wat zou moeten doen. Of onze oplossingen opdringen.\nDaarom zijn we nu een onderzoek aan het doen naar de behoeften van alle medewerkers van de buurthuizen, én natuurlijk die van de mensen die onze maaltijden eten. Wat gaat goed? Wat niet? Is het lekker, wat kan beter? Hoe ben je het beste geholpen?\n\nEind augustus, begin september hopen we hier de resultaten te delen én deze mee te nemen in hoe we werken.",
+      "reportModalTitle": "Geen beledigende broccoli!"
     }
   },
   "contact": {
@@ -406,37 +477,10 @@
     "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap. Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact.",
     "image": "/images/ik-wil-helpen/hero.jpg",
     "imageAlt": "A focused group of diverse professionals working together in a bright, minimalist office space.",
-    "donationStrip": {
-      "donateText": "Elke €3 maakt een extra maaltijd mogelijk. Met €30 geef je 10 mensen deze week beter eten.",
-      "donateButton": "Doneer direct",
-      "donateHref": "https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xuUs0QeyQbio6T_XijKyfg",
-      "contactText": "Heb je een ander idee om samen te werken, of wil je een grotere particuliere schenking doen? Neem dan contact op.",
-      "contactButton": "Neem contact op"
-    },
     "vacanciesTitle": "Huidige Vacatures",
     "vacanciesText": "Vind jouw plek in ons groeiende ecosysteem.",
     "openApplicationLabel": "OPEN SOLLICITATIE",
     "openApplicationHref": "mailto:info@goodnessforall.nl",
-    "jobs": [
-      {
-        "icon": "rocket_launch",
-        "title": "Co-owner",
-        "text": "Word mede-eigenaar en bouw mee aan de koers, de organisatie en de groei van Goodness for All. Ca. 20 uur per week.",
-        "note": "Je houdt van aanpakken, hebt bij voorkeur ondernemerservaring en een mooi netwerk, en een goed gevoel bij onze missie."
-      },
-      {
-        "icon": "campaign",
-        "title": "Promotie bij verkoop",
-        "text": "Veel werknemers steunen de missie, en vinden de maaltijden handig en lekker. Wanneer we het verhaal actief brengen, gaat de verkoop omhoog, en dus onze impact: help je mee?",
-        "note": "Je voelt je comfortabel om mensen aan te spreken in het Nederlands en Engels, wordt niet verdrietig bij een nee, en bent ca. 2x per week tussen 15.00 en 18.30 uur beschikbaar."
-      },
-      {
-        "icon": "carpenter",
-        "title": "Logistieke hulp",
-        "text": "Variabele taken waarbij de handen uit de mouwen moeten. Een vriezer van A naar B? Wat printwerk? Een berichtje op social media?",
-        "note": "Variabele uren per week, waarin je open staat om dingen te proberen, te leren, en dingen voor elkaar krijgt zonder veel hulp. Of zoals de Tsjechen zeggen: Aje to."
-      }
-    ],
     "emailButton": "STUUR EEN E-MAIL",
     "culture": [
       {
@@ -459,29 +503,56 @@
       "text": "Bij Goodness for All zie je dat je echt een verschil maakt voor de mensen om de hoek. Eigenlijk maken we het makkelijk voor mensen om elkaar verder te helpen.",
       "name": "REINOUT DE KRAKER",
       "role": "Founder"
-    }
+    },
+    "donationStrip": {
+      "donateText": "Elke €3 maakt een extra maaltijd mogelijk. Met €30 geef je 10 mensen deze week beter eten.",
+      "donateButton": "Doneer direct",
+      "donateHref": "https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xuUs0QeyQbio6T_XijKyfg",
+      "contactText": "Heb je een ander idee om samen te werken, of wil je een grotere particuliere schenking doen? Neem dan contact op.",
+      "contactButton": "Neem contact op"
+    },
+    "jobs": [
+      {
+        "icon": "rocket_launch",
+        "title": "Co-owner",
+        "text": "Word mede-eigenaar en bouw mee aan de koers, de organisatie en de groei van Goodness for All. Ca. 20 uur per week.",
+        "note": "Je houdt van aanpakken, hebt bij voorkeur ondernemerservaring en een mooi netwerk, en een goed gevoel bij onze missie."
+      },
+      {
+        "icon": "campaign",
+        "title": "Promotie bij verkoop",
+        "text": "Veel werknemers steunen de missie, en vinden de maaltijden handig en lekker. Wanneer we het verhaal actief brengen, gaat de verkoop omhoog, en dus onze impact: help je mee?",
+        "note": "Je voelt je comfortabel om mensen aan te spreken in het Nederlands en Engels, wordt niet verdrietig bij een nee, en bent ca. 2x per week tussen 15.00 en 18.30 uur beschikbaar."
+      },
+      {
+        "icon": "carpenter",
+        "title": "Logistieke hulp",
+        "text": "Variabele taken waarbij de handen uit de mouwen moeten. Een vriezer van A naar B? Wat printwerk? Een berichtje op social media?",
+        "note": "Variabele uren per week, waarin je open staat om dingen te proberen, te leren, en dingen voor elkaar krijgt zonder veel hulp. Of zoals de Tsjechen zeggen: Aje to."
+      }
+    ]
   },
   "neighborhoods": {
     "metaTitle": "Voor buurthuizen | Goodness for All",
     "metaDescription": "Bestel gezonde, betaalbare maaltijden voor jouw buurthuis.",
     "title": "Maaltijden bestellen voor jouw buurthuis.",
     "text": "Samen maken we een verschil in de buurt. Wij leveren gezonde maaltijden die mensen verbinden. De buurthuizen kunnen deze bereiden en samen laten eten, of bijvoorbeeld meegeven in een voedselpakket.",
-    "textForm": "Vul het onderstaande formulier in en we regelen de rest.",
-    "explanation": "Vul het formulier in en wij komen de maaltijden brengen. Om onze efficiënte manier van werken te ondersteunen, vragen we alleen de garantie dat er op het juiste moment iemand is om de maaltijden in de vriezer te leggen.",
-    "accessText": "Dit formulier kunnen alleen de buurthuizen invullen die al verbonden zijn. Wil jij hier ook bij? Neem contact op.",
-    "contactLabel": "Neem contact op",
-    "contactHref": "/contact",
     "visualImage": "/images/voor-buurthuizen/kinderen_koken_1.jpg",
     "visualAlt": "Kinderen koken samen in het buurthuis",
     "visualTitle": "0-WASTE",
     "visualText": "Daarom kiezen we voor vriezen.",
     "visualIcon": "eco",
-    "visualIconTitle": "100% plantaardig",
     "visualIconText": "Super inclusief, past in bijna elk dieet of levensovertuiging.",
     "deliveryTitle": "De volgende levering is",
     "deliveryDate": "dinsdag 21 juli.",
     "deliveryLarge": "Meer dan 30 dozen? Ophalen tussen 10.00 en 12.00",
-    "deliverySmall": "Minder dan 30 dozen? bezorgd tussen 12.00 en 16.00."
+    "deliverySmall": "Minder dan 30 dozen? bezorgd tussen 12.00 en 16.00.",
+    "textForm": "Vul het onderstaande formulier in en we regelen de rest.",
+    "explanation": "Vul het formulier in en wij komen de maaltijden brengen. Om onze efficiënte manier van werken te ondersteunen, vragen we alleen de garantie dat er op het juiste moment iemand is om de maaltijden in de vriezer te leggen.",
+    "accessText": "Dit formulier kunnen alleen de buurthuizen invullen die al verbonden zijn. Wil jij hier ook bij? Neem contact op.",
+    "contactLabel": "Neem contact op",
+    "contactHref": "/contact",
+    "visualIconTitle": "100% plantaardig"
   },
   "anbi": {
     "metaTitle": "ANBI-informatie | Goodness for All",
@@ -605,32 +676,32 @@
           "type": "textarea"
         }
       ],
-      "interestsLabel": "Stuur mij informatie over:",
-      "interests": [
-        {
-          "id": "supporter",
-          "label": "Impact Supporter worden"
-        },
-        {
-          "id": "builder",
-          "label": "Impact Builder worden"
-        },
-        {
-          "id": "leider",
-          "label": "Impact Leider worden"
-        },
-        {
-          "id": "gift",
-          "label": "Een particuliere gift fiscaal aantrekkelijk realiseren"
-        },
-        {
-          "id": "algemeen",
-          "label": "Algemene informatie"
-        }
-      ],
       "submitLabel": "Neem contact op",
       "sendingLabel": "Versturen...",
-      "sentLabel": "Bericht verzonden!"
+      "sentLabel": "Bericht verzonden!",
+      "interests": [
+        {
+          "label": "Impact Supporter worden",
+          "id": "supporter"
+        },
+        {
+          "label": "Impact Builder worden",
+          "id": "builder"
+        },
+        {
+          "label": "Impact Leider worden",
+          "id": "leider"
+        },
+        {
+          "label": "Een particuliere gift fiscaal aantrekkelijk realiseren",
+          "id": "gift"
+        },
+        {
+          "label": "Algemene informatie",
+          "id": "algemeen"
+        }
+      ],
+      "interestsLabel": "Stuur mij informatie over:"
     },
     "order": {
       "backLabel": "Terug",
@@ -687,19 +758,19 @@
         "selfChoiceLabel": "Zelf kiezen",
         "mixChoiceLabel": "Mix",
         "flavorsQuestion": "Kies je smaken:",
-        "flavorsHint": "We doen ons best dit zo goed mogelijk in te vullen, maar kunnen niet altijd alle smaken garanderen.",
         "notesQuestion": "Heb je verder nog vragen of opmerkingen?",
-        "notesHint": "Bij spoed liever appen!",
         "notesPlaceholder": "type hier je vraag",
         "contactQuestion": "Contactgegevens",
-        "contactSubtitle": "Wie doet deze bestelling?",
         "firstNamePlaceholder": "Voornaam",
         "lastNamePlaceholder": "Achternaam",
         "phonePlaceholder": "Telefoonnummer",
         "successTitle": "Bedankt voor je bestelling!",
         "successText": "We nemen zo snel mogelijk contact op voor de definitieve bevestiging.",
         "rejectionTitle": "Helaas...",
-        "flavorsAlert": "Kies aub minimaal 1 smaak."
+        "flavorsAlert": "Kies aub minimaal 1 smaak.",
+        "contactSubtitle": "Wie doet deze bestelling?",
+        "notesHint": "Bij spoed liever appen!",
+        "flavorsHint": "We doen ons best dit zo goed mogelijk in te vullen, maar kunnen niet altijd alle smaken garanderen."
       }
     }
   },
