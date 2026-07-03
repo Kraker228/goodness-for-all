@@ -486,16 +486,16 @@
   "anbi": {
     "metaTitle": "ANBI-informatie | Goodness for All",
     "title": "Transparantie.",
-    "text": "Als non-profit organisatie geloven wij in volledige openheid over onze bedrijfsvoering en bestedingen. Hieronder vindt u onze ANBI-gegevens en officiële documentatie.",
+    "text": "Als non-profit stichting geloven wij in volledige openheid over onze bedrijfsvoering en bestedingen. Hieronder vindt u onze gegevens. Wij hebben de ANBI status momenteel in aanvraag.",
     "cards": [
       {
         "icon": "corporate_fare",
-        "title": "Officiële naam",
+        "title": "Naam",
         "tone": "sandstone",
         "downloadLabel": "",
         "downloadHref": "",
         "lines": [
-          "Stichting Goodness for All Foundation Nederland"
+          "Stichting Goodness for All"
         ]
       },
       {
@@ -515,6 +515,7 @@
         "tone": "sandstone",
         "downloadLabel": "Contact",
         "downloadHref": "/contact",
+        "buttonIcon": "",
         "lines": [
           "Van der Duyn van Maasdamweg 480",
           "Rotterdam",
@@ -526,7 +527,7 @@
         "title": "Actueel beleidsplan",
         "tone": "sandstone",
         "downloadLabel": "Download PDF",
-        "downloadHref": "#",
+        "downloadHref": "/images/uploads/beleidsplan-goodness-for-all-2026.pdf",
         "lines": [
           "Onze strategische visie en operationele doelen voor 2024-2026."
         ]
@@ -536,7 +537,7 @@
         "title": "Jaarverslag",
         "tone": "mist",
         "downloadLabel": "Download PDF",
-        "downloadHref": "#",
+        "downloadHref": "/images/uploads/activiteitenverslag-en-financiele-verantwoording-2025.pdf",
         "lines": [
           "Verslaglegging van onze activiteiten en bereikte impact van afgelopen jaar."
         ]

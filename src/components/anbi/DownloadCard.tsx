@@ -10,6 +10,11 @@ type DownloadCardProps = {
   downloadLabel?: string;
   /** Optional CMS-managed href for downloads or related actions. */
   downloadHref?: string;
+  /**
+   * Material symbol shown on the button. Defaults to "download".
+   * Pass an empty string to render the button without an icon.
+   */
+  buttonIcon?: string;
   /** Stagger delay (ms) before the reveal fires once in view. */
   delay?: number;
   /** Alternating tile background tone. */
@@ -27,6 +32,7 @@ export default function DownloadCard({
   children,
   downloadLabel,
   downloadHref,
+  buttonIcon = "download",
   delay = 0,
   tone,
 }: DownloadCardProps) {
@@ -87,7 +93,9 @@ export default function DownloadCard({
           href={downloadHref}
           className="w-full bg-evergreen hover:bg-harvest-orange hover:text-evergreen text-sandstone-beige font-cta text-cta py-4 uppercase tracking-widest transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
         >
-          <span className="material-symbols-outlined text-sm">download</span>
+          {buttonIcon && (
+            <span className="material-symbols-outlined text-sm">{buttonIcon}</span>
+          )}
           {downloadLabel}
         </a>
       ) : downloadLabel ? (
