@@ -156,6 +156,10 @@
     "hero": {
       "leftTitle": "Het is ook jullie stad.",
       "leftText": "Samen bouwen we aan een stad zonder honger. Uw organisatie kan het verschil maken voor duizenden buurtgenoten, en zo bijdragen aan een prettiger vestigingsklimaat en fijne werkplek.",
+      "impactTitle": "Het model werkt.",
+      "impactParagraph1": "Inmiddels leveren we duizenden maaltijden per maand aan wie dat nodig heeft.",
+      "impactBold": "Dit systeem heeft een boost nodig.",
+      "impactParagraph2": "We hebben nu een hyper-efficiënte keten opgebouwd. €3 all-in per maaltijd voor de mensen die het het hardste nodig hebben.",
       "rightTitle": "Wordt Goodness for All Impact Partner",
       "badges": [
         "CSRD PROOF",
@@ -167,6 +171,8 @@
     },
     "pricingTitle": "Kies uw impact niveau",
     "pricingText": "Transparante bijdragen, meetbaar resultaat.",
+    "mealsTooltip": "Extra maaltijden in aanvulling op de aantallen die we nu realiseren",
+    "freezerTooltip": "Vanuit de vriezer verkoop van maaltijden voor thuis. Elke verkochte maaltijd = 1 extra maaltijd uitgedeeld",
     "plans": [
       {
         "name": "Impact Supporter",
@@ -176,9 +182,9 @@
         "featuredLabel": "",
         "dark": false,
         "features": [
-          "Logo vermelding op onze website.",
-          "Elk jaar 2.000 maaltijden namens jouw bedrijf gedistribueerd.",
-          "Uitgebreide CSRD rapportage."
+          { "type": "text", "text": "Logo vermelding op onze website." },
+          { "type": "meals", "count": "2.000" },
+          { "type": "text", "text": "Uitgebreide CSRD rapportage." }
         ],
         "buttonLabel": "Start als Supporter",
         "buttonHref": "/partners?keuze=supporter#partner-formulier"
@@ -191,11 +197,10 @@
         "featuredLabel": "",
         "dark": false,
         "features": [
-          "Logo vermelding op onze website.",
-          "Elk jaar 5.000 maaltijden namens jouw bedrijf gedistribueerd.",
-          "Uitgebreide CSRD rapportage.",
-          "1 vriezer op jullie werkplek, gepromoot, bijgevuld en onderhouden door ons. Directe verkoop van maaltijden aan werknemers.",
-          "Elke verkochte maaltijd is +1 maaltijd gedistribueerd."
+          { "type": "text", "text": "Logo vermelding op onze website." },
+          { "type": "meals", "count": "5.000" },
+          { "type": "text", "text": "Uitgebreide CSRD rapportage." },
+          { "type": "freezer" }
         ],
         "buttonLabel": "Word Impact Builder",
         "buttonHref": "/partners?keuze=builder#partner-formulier"
@@ -208,49 +213,32 @@
         "featuredLabel": "",
         "dark": true,
         "features": [
-          "Logo vermelding op onze website.",
-          "Elk jaar 10.000 maaltijden namens jouw bedrijf gedistribueerd.",
-          "Uitgebreide CSRD rapportage.",
-          "1 vriezer op jullie werkplek, gepromoot, bijgevuld en onderhouden door ons. Directe verkoop van maaltijden aan werknemers.",
-          "Elke verkochte maaltijd is +1 maaltijd gedistribueerd.",
-          "Keynote \"Hoe bouw je in 2 jaar een impactonderneming\".",
-          "Gepersonaliseerde video voor bedrijfscommunicatie."
+          { "type": "text", "text": "Logo vermelding op onze website." },
+          { "type": "meals", "count": "10.000" },
+          { "type": "text", "text": "Uitgebreide CSRD rapportage." },
+          { "type": "freezer" },
+          { "type": "text", "text": "Keynote \"Hoe bouw je in 2 jaar een impactonderneming\"." },
+          { "type": "text", "text": "Gepersonaliseerde video voor bedrijfscommunicatie." }
         ],
         "buttonLabel": "Leid de Impact",
         "buttonHref": "/partners?keuze=leider#partner-formulier"
       }
     ],
     "freezer": {
-      "image": "/images/partners/freezer.jpg",
-      "alt": "Een moderne, strakke Goodness for All vrieskast in een licht, eigentijds Rotterdams kantoor, gevuld met kleurrijke gezonde maaltijden.",
-      "title": "Directe impact in uw kantoor.",
-      "text": "Met de GfA vrieskast op locatie biedt u niet alleen gezonde opties aan uw medewerkers, maar toont u elke dag uw betrokkenheid bij de stad.",
-      "quote": "De vrieskast is een dagelijkse reminder aan onze missie om Rotterdam sterker te maken.",
-      "quoteAuthor": "— HR Directeur, Rotterdamse Partner"
+      "youtubeId": "R7HVhg1y9sI",
+      "playLabel": "Video afspelen",
+      "title": "Directe impact zichtbaar in uw kantoor.",
+      "intro": "De vriezer van Goodness for All dient drie doelen:",
+      "points": [
+        "Het partnership met Goodness for All is voor iedereen zichtbaar, voelbaar en te proeven!",
+        "Het biedt je collega's de mogelijkheid ook thuis snel, lekker en gezond te eten, en niet in de haast in snack-verleiding te trappen.",
+        "Bijna iedereen wil stadsgenoten die het minder breed hebben, aan goed eten helpen. Deze maaltijden maken dat wel heel eenvoudig."
+      ],
+      "outro": "De maaltijden zijn voor thuis, dus concurreren niet met de catering. Je warmt ze even op in de pan, en met 9 smaken is er voldoende variatie. Men koopt direct bij Goodness for All, dus geen gedoe. Wij onderhouden de vriezer en vullen deze aan.",
+      "quote": "Wij steunen graag innovatieve projecten in de stad. Zeker als het onze stadsgenoten voedt op een solidaire, duurzame en effectieve manier. Onze collega's genoten van de lekkere, snelle maaltijden, ikzelf zeker, ik kan het iedereen aanraden!",
+      "quoteAuthor": "Eleonoor Hintzen-Cuppen, Senior Consultant bij Rebel"
     },
-    "logoGridTitle": "Zij gingen je voor",
-    "logoGrid": [
-      {
-        "image": "/images/partners/logos/havenbedrijf.png",
-        "alt": "Havenbedrijf Rotterdam"
-      },
-      {
-        "image": "/images/partners/logos/erasmus-mc.png",
-        "alt": "Erasmus MC"
-      },
-      {
-        "image": "/images/partners/logos/coolblue.png",
-        "alt": "Coolblue"
-      },
-      {
-        "image": "/images/partners/logos/unilever.png",
-        "alt": "Unilever"
-      },
-      {
-        "image": "/images/partners/logos/port-base.png",
-        "alt": "Port Base"
-      }
-    ],
+    "logoGridTitle": "Wij werken al samen met",
     "formTitle": "Impact maken?",
     "formText": "Vul het formulier in en we nemen binnen 24 uur contact op."
   },

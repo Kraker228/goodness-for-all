@@ -122,11 +122,17 @@ collections:
                 fields:
                   - { label: Linker titel, name: leftTitle, widget: string }
                   - { label: Linker tekst, name: leftText, widget: text }
+                  - { label: Onderblok titel, name: impactTitle, widget: string }
+                  - { label: Onderblok alinea 1, name: impactParagraph1, widget: text }
+                  - { label: Onderblok vetgedrukte zin, name: impactBold, widget: string }
+                  - { label: Onderblok alinea 2, name: impactParagraph2, widget: text }
                   - { label: Rechter titel, name: rightTitle, widget: string }
                   - { label: Badges, name: badges, widget: list, field: { label: Badge, name: badge, widget: string } }
                   - { label: Rechter tekst, name: rightText, widget: text }
               - { label: Pakketten titel, name: pricingTitle, widget: string }
               - { label: Pakketten tekst, name: pricingText, widget: text }
+              - { label: Tooltip maaltijden, name: mealsTooltip, widget: text }
+              - { label: Tooltip vriezer, name: freezerTooltip, widget: text }
               - label: Impact pakketten
                 name: plans
                 widget: list
@@ -137,26 +143,28 @@ collections:
                   - { label: Uitgelicht, name: featured, widget: boolean, required: false }
                   - { label: Uitgelicht label, name: featuredLabel, widget: string, required: false }
                   - { label: Donkere kaart, name: dark, widget: boolean, required: false }
-                  - { label: Features, name: features, widget: list, field: { label: Feature, name: feature, widget: string } }
+                  - label: Features
+                    name: features
+                    widget: list
+                    fields:
+                      - { label: Type, name: type, widget: select, options: [text, meals, freezer] }
+                      - { label: Tekst (bij type text), name: text, widget: string, required: false }
+                      - { label: Aantal maaltijden (bij type meals), name: count, widget: string, required: false }
                   - { label: Knoplabel, name: buttonLabel, widget: string }
                   - { label: Knop URL, name: buttonHref, widget: string }
-              - label: Vrieskast
+              - label: Vrieskast video en tekst
                 name: freezer
                 widget: object
                 fields:
-                  - { label: Afbeelding, name: image, widget: image }
-                  - { label: Alt-tekst, name: alt, widget: string }
+                  - { label: YouTube video ID, name: youtubeId, widget: string }
+                  - { label: Aria-label afspeelknop, name: playLabel, widget: string }
                   - { label: Titel, name: title, widget: string }
-                  - { label: Tekst, name: text, widget: text }
+                  - { label: Intro, name: intro, widget: text }
+                  - { label: Punten, name: points, widget: list, field: { label: Punt, name: point, widget: string } }
+                  - { label: Outro, name: outro, widget: text }
                   - { label: Quote, name: quote, widget: text }
                   - { label: Quote auteur, name: quoteAuthor, widget: string }
               - { label: Logogrid titel, name: logoGridTitle, widget: string }
-              - label: Logogrid
-                name: logoGrid
-                widget: list
-                fields:
-                  - { label: Logo afbeelding, name: image, widget: image }
-                  - { label: Alt-tekst, name: alt, widget: string }
               - { label: Formulier titel, name: formTitle, widget: string }
               - { label: Formulier tekst, name: formText, widget: text }
 
