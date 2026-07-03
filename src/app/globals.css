@@ -165,7 +165,7 @@
   display: none;
 }
 
-/* Infinite left-to-right partner marquee.
+/* Infinite right-to-left partner marquee.
    Track holds two identical halves; translating one full half left
    loops seamlessly. Pauses on hover, respects reduced-motion. */
 .partner-marquee {
@@ -178,10 +178,10 @@
 }
 @keyframes partner-marquee {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 /* Users who prefer reduced motion still get the carousel, just calmer. */
