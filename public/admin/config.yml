@@ -81,20 +81,20 @@ collections:
                 fields:
                   - { label: Titel, name: title, widget: string }
                   - { label: Tekst, name: text, widget: text }
+                  - { label: Accent (gekleurde tekst na de tekst), name: accent, widget: string }
                   - { label: URL, name: href, widget: string }
-                  - { label: Material icon, name: icon, widget: string }
               - label: Doe mee kaart
                 name: joinCard
                 widget: object
                 fields:
                   - { label: Titel, name: title, widget: string }
-                  - { label: Material icon, name: icon, widget: string }
                   - label: Links
                     name: links
                     widget: list
                     fields:
                       - { label: URL, name: href, widget: string }
-                      - { label: Label, name: label, widget: string }
+                      - { label: Prefix (gewone tekst), name: prefix, widget: string }
+                      - { label: Accent (gekleurde tekst), name: accent, widget: string }
               - label: Teller
                 name: counter
                 widget: object
@@ -422,12 +422,12 @@ collections:
                 fields:
                   - { label: Titel, name: title, widget: string }
                   - { label: Zakelijke bedrag, name: corporateAmount, widget: string }
-                  - { label: Zakelijke titel, name: corporateTitle, widget: string }
-                  - { label: Zakelijke tekst, name: corporateText, widget: string }
+                  - { label: Zakelijke afbeelding, name: corporateImage, widget: image }
+                  - { label: Zakelijke caption, name: corporateCaption, widget: text }
                   - { label: Pijl icon, name: arrowIcon, widget: string }
                   - { label: Buurt bedrag, name: communityAmount, widget: string }
-                  - { label: Buurt titel, name: communityTitle, widget: string }
-                  - { label: Buurt tekst, name: communityText, widget: string }
+                  - { label: Buurt afbeelding, name: communityImage, widget: image }
+                  - { label: Buurt caption, name: communityCaption, widget: text }
                   - { label: Afsluitende tekst, name: closingText, widget: text }
               - label: Maaltijdsectie
                 name: meal
@@ -436,19 +436,14 @@ collections:
                   - { label: Eyebrow, name: eyebrow, widget: string }
                   - { label: Titel, name: title, widget: string }
                   - { label: Tekst, name: text, widget: text }
-                  - label: Statistieken
-                    name: stats
+                  - { label: Afbeelding, name: image, widget: image }
+                  - { label: Afbeelding alt, name: imageAlt, widget: string }
+                  - label: Punten
+                    name: points
                     widget: list
                     fields:
-                      - { label: Waarde, name: value, widget: string }
+                      - { label: Material icon, name: icon, widget: string }
                       - { label: Label, name: label, widget: string }
-                  - label: Slides
-                    name: slides
-                    widget: list
-                    fields:
-                      - { label: Afbeelding, name: image, widget: image }
-                      - { label: Alt, name: alt, widget: string }
-                      - { label: Caption, name: caption, widget: string }
               - { label: Team titel, name: teamTitle, widget: string }
               - label: Team
                 name: team
