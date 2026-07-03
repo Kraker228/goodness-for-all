@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Counter from "@/components/home/Counter";
@@ -112,6 +113,16 @@ export default function HomePage() {
           <p className="font-body-lg text-body-lg opacity-80 max-w-xl mx-auto">
             {home.counter.text}
           </p>
+        </div>
+      </section>
+
+      <section className="bg-white py-section-gap-lg overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-container-margin">
+          <div className="sk-ww-linkedin-profile-post w-full" data-embed-id="25694442" />
+          <Script
+            src="https://widgets.sociablekit.com/linkedin-profile-posts/widget.js"
+            strategy="afterInteractive"
+          />
         </div>
       </section>
 
