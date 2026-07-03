@@ -116,7 +116,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#2D4A3E] py-section-gap-lg overflow-hidden">
+      <section className="bg-evergreen py-section-gap-lg overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-container-margin">
           <div className="sk-ww-linkedin-profile-post w-full" data-embed-id="25694442" />
           <Script
