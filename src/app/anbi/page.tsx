@@ -58,12 +58,6 @@ export default function AnbiPage() {
             </p>
           </div>
           <div className="flex gap-base">
-            <a
-              href={`mailto:${settings.email}`}
-              className="bg-harvest-orange text-evergreen font-cta text-cta py-4 px-8 uppercase tracking-widest hover:bg-evergreen hover:text-sandstone-beige transition-all duration-300 active:scale-95"
-            >
-              {anbi.mailButton}
-            </a>
             <Link
               href={anbi.contactHref}
               className="bg-evergreen text-sandstone-beige font-cta text-cta py-4 px-8 uppercase tracking-widest hover:bg-asparagus transition-all duration-300 active:scale-95"
