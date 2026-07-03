@@ -300,6 +300,7 @@ collections:
                   - { label: Tone, name: tone, widget: select, options: [sandstone, mist] }
                   - { label: Download label, name: downloadLabel, widget: string, required: false }
                   - { label: Download/contact URL, name: downloadHref, widget: string, required: false }
+                  - { label: Knop-icoon (leeg = geen icoon, standaard "download"), name: buttonIcon, widget: string, required: false }
                   - { label: Regels, name: lines, widget: list, field: { label: Regel, name: line, widget: string } }
               - { label: CTA titel, name: ctaTitle, widget: string }
               - { label: CTA tekst, name: ctaText, widget: text }

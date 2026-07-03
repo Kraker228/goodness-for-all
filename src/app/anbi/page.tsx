@@ -39,6 +39,7 @@ export default function AnbiPage() {
               delay={index * 100}
               downloadLabel={card.downloadLabel || undefined}
               downloadHref={card.downloadHref || undefined}
+              buttonIcon={(card as { buttonIcon?: string }).buttonIcon}
             >
               {card.lines.map((line) => (
                 <p key={line}>{line}</p>
