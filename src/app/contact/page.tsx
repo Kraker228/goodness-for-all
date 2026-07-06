@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/forms/ContactForm";
+import DonationStrip from "@/components/DonationStrip";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -12,13 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { settings, contact, forms } = getSiteContent();
+  const { settings, contact, forms, help } = getSiteContent();
 
   return (
     <>
       <Header active="/contact" position="fixed" settings={settings} />
 
-      <main className="pt-24 pb-section-gap-lg">
+      <main className="pt-40 pb-section-gap-lg">
         <section className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm border-b-2 border-evergreen">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-base">
             <h1 className="title-baloo text-evergreen max-w-2xl">
@@ -84,6 +85,11 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* Groene donatiebalk, net onder het contactformulier */}
+        <div className="mt-section-gap-lg">
+          <DonationStrip content={help.donationStrip} />
+        </div>
       </main>
 
       <Footer />

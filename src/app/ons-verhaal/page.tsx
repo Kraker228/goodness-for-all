@@ -90,7 +90,7 @@ export default function OnsVerhaalPage() {
         </div>
       </section>
 
-      {/* 3. Subsidy scroll section */}
+      {/* 3. "De een betaalt voor de ander" kader */}
       <SubsidyFlowScroll content={story.subsidy} />
 
       <main className="max-w-[1200px] mx-auto px-container-margin">
@@ -124,6 +124,12 @@ export default function OnsVerhaalPage() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href="/impact"
+                className="mt-base inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+              >
+                Bekijk de buurthuizen
+              </Link>
             </div>
           </Reveal>
         </section>

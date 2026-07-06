@@ -25,46 +25,83 @@ export default function Header({ active, position = "sticky", settings }: Header
       <header
         className={`bg-surface border-b-2 border-evergreen w-full ${positionClass} z-[90]`}
       >
-        <div className="flex flex-wrap gap-y-3 justify-between items-center w-full px-container-margin py-base max-w-[1200px] mx-auto">
-          <div className="flex items-center gap-4">
-            <button
-              aria-label={settings.openMenuLabel}
-              className="material-symbols-outlined text-evergreen cursor-pointer active:scale-95 transition-transform"
-              onClick={() => setOpen(true)}
-            >
-              menu
-            </button>
+        <div className="w-full px-container-margin py-base max-w-[1200px] mx-auto">
+          {/* Rij 1: logo (op mobiel gecentreerd, op desktop links naast de
+              hamburger) en de knoppen rechts op desktop. */}
+          <div className="relative flex items-center justify-center md:justify-between min-h-[3rem]">
+            {/* Hamburger (op desktop met het logo links ernaast) */}
+            <div className="flex items-center gap-4 absolute left-0 top-1/2 -translate-y-1/2 md:static md:translate-y-0">
+              <button
+                aria-label={settings.openMenuLabel}
+                className="material-symbols-outlined text-evergreen cursor-pointer active:scale-95 transition-transform text-3xl md:text-2xl"
+                onClick={() => setOpen(true)}
+              >
+                menu
+              </button>
+              <Link
+                href={settings.homeHref}
+                aria-label={settings.homeAriaLabel}
+                className="hidden md:block"
+              >
+                <img
+                  src={settings.logo}
+                  alt={settings.logoAlt}
+                  width={545}
+                  height={168}
+                  className="h-9 w-auto"
+                />
+              </Link>
+            </div>
+
+            {/* Gecentreerd logo op mobiel */}
             <Link
               href={settings.homeHref}
               aria-label={settings.homeAriaLabel}
+              className="md:hidden"
             >
               <img
                 src={settings.logo}
                 alt={settings.logoAlt}
                 width={545}
                 height={168}
-                className="h-8 w-auto"
+                className="h-14 w-auto"
               />
             </Link>
-          </div>
-          <nav className="hidden md:flex gap-base items-center">
-            {navLinks.filter((l) => l.href !== "/" && l.href !== "/contact").map((l) => (
+
+            <div className="hidden md:inline-grid grid-cols-2 gap-3">
+              <DeelMissieButton />
               <Link
-                key={l.href}
-                className={`font-label-sm text-label-sm px-4 py-2 hover:bg-sandstone-beige transition-colors duration-200 ${
-                  active === l.href ? "text-harvest-orange font-bold" : "text-evergreen"
-                }`}
-                href={l.href}
+                href={settings.contactButtonHref}
+                className="flex w-full items-center justify-center bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all whitespace-nowrap"
               >
-                {l.label}
+                {settings.contactButton}
               </Link>
-            ))}
-          </nav>
-          <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3 w-full sm:w-auto">
+            </div>
+          </div>
+
+          {/* Rij 2 (desktop): navigatie gecentreerd */}
+          <div className="hidden md:flex justify-center mt-base">
+            <nav className="flex gap-base items-center">
+              {navLinks.filter((l) => l.href !== "/" && l.href !== "/contact").map((l) => (
+                <Link
+                  key={l.href}
+                  className={`font-label-sm text-label-sm px-4 py-2 hover:bg-sandstone-beige transition-colors duration-200 ${
+                    active === l.href ? "text-harvest-orange font-bold" : "text-evergreen"
+                  }`}
+                  href={l.href}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Mobiel en tablet: knoppen op een eigen rij, even breed */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:hidden mt-3">
             <DeelMissieButton />
             <Link
               href={settings.contactButtonHref}
-              className="bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all inline-block whitespace-nowrap"
+              className="flex w-full items-center justify-center bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all whitespace-nowrap"
             >
               {settings.contactButton}
             </Link>

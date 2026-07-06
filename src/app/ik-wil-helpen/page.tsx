@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import DonationStrip from "@/components/DonationStrip";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -18,40 +18,7 @@ export default function IkWilHelpenPage() {
     <>
       <Header active="/ik-wil-helpen" settings={settings} />
 
-      <Reveal
-        as="section"
-        from="translate-y-8"
-        className="w-full bg-asparagus/20 border-b-2 border-evergreen"
-      >
-        <div className="max-w-[1200px] mx-auto px-container-margin py-gutter">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-            <div className="flex flex-col gap-2 md:pr-gutter md:border-r md:border-evergreen/20">
-              <p className="font-body-md text-body-md text-evergreen">
-                {help.donationStrip.donateText}
-              </p>
-              <a
-                href={help.donationStrip.donateHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block self-start bg-harvest-orange text-evergreen font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
-              >
-                {help.donationStrip.donateButton}
-              </a>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="font-body-md text-body-md text-evergreen">
-                {help.donationStrip.contactText}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block self-start bg-transparent text-evergreen font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
-              >
-                {help.donationStrip.contactButton}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </Reveal>
+      <DonationStrip content={help.donationStrip} />
 
       <main className="max-w-[1200px] mx-auto px-container-margin min-h-screen">
         <Reveal
