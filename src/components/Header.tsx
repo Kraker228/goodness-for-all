@@ -29,7 +29,7 @@ export default function Header({ active, position = "sticky", settings }: Header
           <div className="flex items-center gap-4">
             <button
               aria-label={settings.openMenuLabel}
-              className="material-symbols-outlined text-evergreen cursor-pointer active:scale-95 transition-transform"
+              className="material-symbols-outlined text-evergreen cursor-pointer active:scale-95 transition-transform text-2xl md:text-base"
               onClick={() => setOpen(true)}
             >
               menu
@@ -43,7 +43,7 @@ export default function Header({ active, position = "sticky", settings }: Header
                 alt={settings.logoAlt}
                 width={545}
                 height={168}
-                className="h-8 w-auto"
+                className="h-10 w-auto md:h-8"
               />
             </Link>
           </div>

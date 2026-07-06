@@ -272,7 +272,6 @@ collections:
               - { label: SEO titel, name: metaTitle, widget: string }
               - { label: SEO omschrijving, name: metaDescription, widget: text }
               - { label: Titel, name: title, widget: string }
-              - { label: Tekst, name: text, widget: text }
               - { label: Visual afbeelding, name: visualImage, widget: image }
               - { label: Visual alt, name: visualAlt, widget: string }
               - { label: Visual titel, name: visualTitle, widget: string }

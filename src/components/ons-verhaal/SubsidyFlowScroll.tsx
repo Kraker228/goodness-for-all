@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -12,8 +12,27 @@ import type { SiteContent } from "@/lib/content";
 
 type SubsidyFlowContent = SiteContent["story"]["subsidy"];
 
+// Tailwind's mobiele bereik: alles onder de `md`-breakpoint (768px).
+const MOBILE_QUERY = "(max-width: 767.98px)";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  return isMobile;
+}
+
 export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowContent }) {
   const reduceMotion = useReducedMotion() ?? false;
+  const isMobile = useIsMobile();
+  const segments = isMobile ? MOBILE_SEGMENTS : SEGMENTS;
   const runwayRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: runwayRef,
@@ -21,7 +40,7 @@ export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowCon
   });
 
   return (
-    <section ref={runwayRef} className="relative h-[200vh]">
+    <section ref={runwayRef} className="relative h-[155vh] md:h-[200vh]">
       <div className="sticky top-0 h-screen flex items-center">
         <div className="w-full max-w-[1200px] mx-auto px-container-margin">
           <div className="bg-sandstone-beige p-12 border-2 border-evergreen">
@@ -30,12 +49,16 @@ export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowCon
             </h2>
 
             <div className="flex flex-col md:flex-row justify-around items-start gap-6 relative">
-              <Connector progress={scrollYProgress} reduceMotion={reduceMotion} />
+              <Connector
+                progress={scrollYProgress}
+                range={segments.community}
+                reduceMotion={reduceMotion}
+              />
 
               {/* Corporate card — €8 */}
               <Piece
                 progress={scrollYProgress}
-                range={SEGMENTS.corporate}
+                range={segments.corporate}
                 reduceMotion={reduceMotion}
               >
                 <div className="z-10 text-center w-full md:w-96">
@@ -58,7 +81,7 @@ export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowCon
 
               <Piece
                 progress={scrollYProgress}
-                range={SEGMENTS.arrow}
+                range={segments.arrow}
                 reduceMotion={reduceMotion}
                 className="self-center"
               >
@@ -70,7 +93,7 @@ export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowCon
               {/* Community card — €1 */}
               <Piece
                 progress={scrollYProgress}
-                range={SEGMENTS.community}
+                range={segments.community}
                 reduceMotion={reduceMotion}
               >
                 <div className="z-10 text-center w-full md:w-96">
@@ -94,7 +117,7 @@ export default function SubsidyFlowScroll({ content }: { content: SubsidyFlowCon
 
             <Piece
               progress={scrollYProgress}
-              range={SEGMENTS.closing}
+              range={segments.closing}
               reduceMotion={reduceMotion}
               className="mt-12 text-center max-w-2xl mx-auto"
             >
@@ -115,6 +138,19 @@ const SEGMENTS = {
   arrow:     [0.12, 0.2],
   community: [0.2,  0.35],
   closing:   [0.35, 0.5],
+} as const;
+
+// Mobiele varianten (alleen onder de md-breakpoint). De sectie is daar korter
+// (h-[155vh], dus 55vh sticky-scroll i.p.v. 100vh), zodat de lege aanloop vóór
+// het eerste plaatje en de uitloop ná het laatste korter zijn. Elk plaatje
+// houdt exact dezelfde scrollafstand (corporate 10vh, arrow 8vh, community en
+// closing elk 15vh), waardoor de onderlinge timing en overgangssnelheid tussen
+// de plaatjes identiek blijven aan desktop.
+const MOBILE_SEGMENTS = {
+  corporate: [0.0182, 0.2],
+  arrow:     [0.2,    0.3455],
+  community: [0.3455, 0.6182],
+  closing:   [0.6182, 0.8909],
 } as const;
 
 type PieceProps = {
@@ -140,12 +176,14 @@ function Piece({ progress, range, reduceMotion, className = "", children }: Piec
 
 function Connector({
   progress,
+  range,
   reduceMotion,
 }: {
   progress: MotionValue<number>;
+  range: readonly [number, number];
   reduceMotion: boolean;
 }) {
-  const [start, end] = SEGMENTS.community;
+  const [start, end] = range;
   const scaleX = useTransform(progress, [start, end, 1], [0, 1, 1]);
   const opacity = useTransform(progress, [start, end, 1], [0, 1, 1]);
 

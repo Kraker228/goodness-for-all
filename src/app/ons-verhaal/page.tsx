@@ -93,6 +93,10 @@ export default function OnsVerhaalPage() {
       {/* 3. Subsidy scroll section */}
       <SubsidyFlowScroll content={story.subsidy} />
 
+      {/* Kleine achtergrondstrook op mobiel, zodat de foto hieronder niet over
+          het werkingsprincipe-kader heen valt. Desktop blijft ongemoeid. */}
+      <div aria-hidden className="md:hidden h-6 bg-background" />
+
       <main className="max-w-[1200px] mx-auto px-container-margin">
         {/* Distribution section */}
         <section className="py-section-gap-lg">
@@ -124,6 +128,12 @@ export default function OnsVerhaalPage() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href="/impact"
+                className="mt-base inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+              >
+                Bekijk de buurthuizen
+              </Link>
             </div>
           </Reveal>
         </section>

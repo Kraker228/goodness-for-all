@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Red_Hat_Display, Baloo_2 } from "next/font/google";
 import { getSiteContent } from "@/lib/content";
+import MobileScrollReset from "@/components/MobileScrollReset";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -74,7 +75,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className="text-evergreen overflow-x-hidden">{children}</body>
+      <body className="text-evergreen overflow-x-hidden">
+        <MobileScrollReset />
+        {children}
+      </body>
     </html>
   );
 }

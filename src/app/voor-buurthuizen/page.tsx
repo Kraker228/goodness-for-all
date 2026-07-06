@@ -27,9 +27,6 @@ export default function VoorBuurthuizenPage() {
                 {neighborhoods.title}
               </h1>
               <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
-                {neighborhoods.text}
-              </p>
-              <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl mt-base">
                 {neighborhoods.textForm}
               </p>
 
