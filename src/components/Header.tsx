@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import DeelMissieButton from "@/components/DeelMissieButton";
 import type { SiteSettings } from "@/lib/content";
 
 type HeaderProps = {
@@ -24,7 +25,7 @@ export default function Header({ active, position = "sticky", settings }: Header
       <header
         className={`bg-surface border-b-2 border-evergreen w-full ${positionClass} z-[90]`}
       >
-        <div className="flex justify-between items-center w-full px-container-margin py-base max-w-[1200px] mx-auto">
+        <div className="flex flex-wrap gap-y-3 justify-between items-center w-full px-container-margin py-base max-w-[1200px] mx-auto">
           <div className="flex items-center gap-4">
             <button
               aria-label={settings.openMenuLabel}
@@ -59,12 +60,15 @@ export default function Header({ active, position = "sticky", settings }: Header
               </Link>
             ))}
           </nav>
-          <Link
-            href={settings.contactButtonHref}
-            className="bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all inline-block"
-          >
-            {settings.contactButton}
-          </Link>
+          <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3 w-full sm:w-auto">
+            <DeelMissieButton />
+            <Link
+              href={settings.contactButtonHref}
+              className="bg-evergreen text-sandstone-beige hover:bg-harvest-orange hover:text-evergreen px-6 py-2 font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all inline-block whitespace-nowrap"
+            >
+              {settings.contactButton}
+            </Link>
+          </div>
         </div>
       </header>
 

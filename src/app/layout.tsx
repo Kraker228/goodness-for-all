@@ -23,9 +23,41 @@ const baloo = Baloo_2({
 
 const site = getSiteContent();
 
+// Basis-URL voor absolute metadata-URL's (og:url, og:image). Op Vercel wordt
+// automatisch het productiedomein gebruikt, lokaal of elders overschrijfbaar
+// via NEXT_PUBLIC_SITE_URL. De fallback is het huidige domein.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://www.goodnessforall.nl");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: site.settings.defaultMetaTitle,
   description: site.settings.defaultMetaDescription,
+  openGraph: {
+    type: "website",
+    siteName: site.settings.siteName,
+    title: site.settings.defaultMetaTitle,
+    description: site.settings.defaultMetaDescription,
+    url: "/",
+    locale: "nl_NL",
+    images: [
+      {
+        url: "/images/home/hero.jpg",
+        width: 512,
+        height: 384,
+        alt: site.settings.logoAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.settings.defaultMetaTitle,
+    description: site.settings.defaultMetaDescription,
+    images: ["/images/home/hero.jpg"],
+  },
 };
 
 export default function RootLayout({
