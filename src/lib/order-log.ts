@@ -124,16 +124,34 @@ function toCsvLine(row: OrderLogRow): string {
   return CSV_HEADERS.map((header) => toCsvValue(row[header])).join(",");
 }
 
+function amsterdamTimestamp(date = new Date()): string {
+  const parts = new Intl.DateTimeFormat("nl-NL", {
+    timeZone: "Europe/Amsterdam",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).formatToParts(date);
+
+  const get = (type: Intl.DateTimeFormatPartTypes) =>
+    parts.find((part) => part.type === type)?.value ?? "";
+
+  return `${get("year")}-${get("month")}-${get("day")} ${get("hour")}:${get("minute")}:${get("second")}`;
+}
+
 function toOrderRow(order: OrderSubmission): OrderLogRow {
   return {
-    ingediend_op: new Date().toISOString(),
+    ingediend_op: amsterdamTimestamp(),
     vraag_1_organisatie: order.organisatie,
     vraag_2_aantal_doosjes: order.aantalDoosjes,
     vraag_2_totaal_maaltijden: order.totaalMaaltijden,
     vraag_3_4_bevestiging_type: order.bevestigingType,
     vraag_3_4_bevestiging_antwoord: order.bevestigingStatus ? "ja" : "nee",
     vraag_5_keuze_type: order.keuzeType,
-    vraag_6_smaken: order.smaken.join(" | "),
+    vraag_6_smaken: order.smaken.join(", "),
     vraag_7_opmerkingen: order.opmerkingen,
     vraag_8_voornaam: order.voornaam,
     vraag_8_achternaam: order.achternaam,

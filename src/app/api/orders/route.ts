@@ -11,6 +11,13 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: "Ongeldige JSON ontvangen." }, { status: 400 });
   }
 
+  // Honeypot: een verborgen veld dat mensen niet invullen maar bots wel. Is het
+  // gevuld, dan doen we alsof alles goed ging (200) maar schrijven we niets weg.
+  const honeypot = (payload as { website?: unknown } | null)?.website;
+  if (typeof honeypot === "string" && honeypot.trim() !== "") {
+    return Response.json({ ok: true }, { status: 200 });
+  }
+
   try {
     const order = parseOrderSubmission(payload);
     const result = await logOrderSubmission(order);

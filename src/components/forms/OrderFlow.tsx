@@ -4,12 +4,12 @@ import { useState } from "react";
 import type { SiteContent } from "@/lib/content";
 
 /**
- * Multi-step meal order form for buurthuizen — a faithful React port of the
+ * Multi-step meal order form for buurthuizen, a faithful React port of the
  * original Stitch inline flow. Step indices match the original:
  *   0 welcome, 1 organisatie, 2 aantal, 3 leveringsbevestiging,
  *   4 ophaalbevestiging, 5 smakenkeuze, 6 smakenselectie, 7 opmerkingen,
  *   8 contactgegevens, 9 success, 10 rejection.
- * Submit is stubbed (see submitOrder) — no live endpoint shipped.
+ * Submit gaat via POST naar /api/orders (zie submitOrder).
  */
 
 const STEP_HEIGHT = 600;
@@ -53,6 +53,8 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
   const [rejectionText, setRejectionText] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  // Honeypot tegen spambots: blijft leeg bij echte gebruikers.
+  const [honeypot, setHoneypot] = useState("");
 
   function goTo(index: number) {
     setHistory((h) => [...h, index]);
@@ -157,6 +159,7 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
         },
         body: JSON.stringify({
           ...data,
+          website: honeypot,
           source: "voor-buurthuizen",
         }),
       });
@@ -181,6 +184,7 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
     setCalcText("");
     setRejectionText("");
     setSubmitError("");
+    setHoneypot("");
     setHistory([0]);
     setStep(0);
   }
@@ -189,6 +193,34 @@ export default function OrderFlow({ content }: { content: OrderFlowContent }) {
 
   return (
     <div className="w-full">
+      {/* Honeypot: visueel verborgen en niet focusbaar. Bots vullen dit vaak in,
+          echte gebruikers zien het niet. Serverside wordt zo'n inzending genegeerd. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          width: 1,
+          height: 1,
+          padding: 0,
+          margin: -1,
+          overflow: "hidden",
+          clip: "rect(0 0 0 0)",
+          whiteSpace: "nowrap",
+          border: 0,
+        }}
+      >
+        <label htmlFor="order-website">Website (niet invullen)</label>
+        <input
+          id="order-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       {/* Progress / back controls (between steps) */}
       <div
         className={`mb-8 ${showNav ? "flex" : "hidden"} items-center justify-between`}
