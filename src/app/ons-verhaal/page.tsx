@@ -90,12 +90,8 @@ export default function OnsVerhaalPage() {
         </div>
       </section>
 
-      {/* 3. Subsidy scroll section */}
+      {/* 3. "De een betaalt voor de ander" kader */}
       <SubsidyFlowScroll content={story.subsidy} />
-
-      {/* Kleine achtergrondstrook op mobiel, zodat de foto hieronder niet over
-          het werkingsprincipe-kader heen valt. Desktop blijft ongemoeid. */}
-      <div aria-hidden className="md:hidden h-6 bg-background" />
 
       <main className="max-w-[1200px] mx-auto px-container-margin">
         {/* Distribution section */}

@@ -18,7 +18,7 @@ export default function ContactPage() {
     <>
       <Header active="/contact" position="fixed" settings={settings} />
 
-      <main className="pt-24 pb-section-gap-lg">
+      <main className="pt-40 pb-section-gap-lg">
         <section className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm border-b-2 border-evergreen">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-base">
             <h1 className="title-baloo text-evergreen max-w-2xl">

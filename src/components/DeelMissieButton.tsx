@@ -61,7 +61,7 @@ export default function DeelMissieButton() {
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center justify-center border-2 border-evergreen text-evergreen hover:bg-evergreen hover:text-sandstone-beige px-6 py-[6px] font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all whitespace-nowrap"
+      className="flex w-full items-center justify-center border-2 border-evergreen text-evergreen hover:bg-evergreen hover:text-sandstone-beige px-6 py-[6px] font-cta text-cta uppercase tracking-widest cursor-pointer active:scale-95 transition-all whitespace-nowrap"
     >
       {label}
     </button>
