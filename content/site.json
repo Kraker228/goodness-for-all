@@ -62,7 +62,7 @@
         "label": "ANBI-informatie"
       },
       {
-        "href": "#",
+        "href": "/privacy",
         "label": "Privacy"
       }
     ]
@@ -878,6 +878,38 @@
         "role": "PENNINGMEESTER & COACH",
         "image": "/images/ons-verhaal/Martijn.jpeg",
         "alt": "Professionele headshot van Martijn Bekking."
+      }
+    ]
+  },
+  "privacy": {
+    "metaTitle": "Privacy | Goodness for All",
+    "metaDescription": "Lees hoe Goodness for All zorgvuldig en met gezond verstand omgaat met je gegevens.",
+    "title": "Privacy",
+    "intro": "Bij Goodness for All gaan we zorgvuldig en met gezond verstand om met je gegevens. Hieronder leggen we in het kort uit wat we doen.",
+    "sections": [
+      {
+        "heading": "Wie zijn we",
+        "body": "Goodness for All is een sociale onderneming uit Rotterdam. Wil je ons bereiken over je gegevens? Mail dan naar info@goodnessforall.nl"
+      },
+      {
+        "heading": "Welke gegevens en waarom",
+        "body": "Als je iets bij ons bestelt, je aanmeldt of contact met ons opneemt, vragen we alleen de gegevens die we nodig hebben, zoals je naam en contactgegevens. We gebruiken die om onze dienst te leveren, om je op de hoogte te houden en om af en toe contact met je op te nemen met vragen over ons werk en hoe we het beter kunnen doen."
+      },
+      {
+        "heading": "Delen met anderen",
+        "body": "We verkopen je gegevens nooit. We delen ze alleen als dat nodig is om onze dienst te laten werken, bijvoorbeeld met een buurthuis of een partner die ons helpt, of als de wet ons daartoe verplicht."
+      },
+      {
+        "heading": "Hoe lang we ze bewaren",
+        "body": "We bewaren je gegevens zolang we ze nodig hebben voor onze dienstverlening en om contact met je te houden, en daarna niet langer dan redelijk is. Wil je dat we je gegevens eerder verwijderen? Laat het ons weten, dan regelen we dat."
+      },
+      {
+        "heading": "Cookies",
+        "body": "Onze website gebruikt nauwelijks cookies en we volgen je niet voor advertenties."
+      },
+      {
+        "heading": "Jouw rechten",
+        "body": "Je mag altijd vragen welke gegevens we van je hebben, ze laten aanpassen of laten verwijderen. Ook mag je bezwaar maken tegen het gebruik ervan. Stuur ons een mailtje, dan helpen we je snel. Ben je ergens niet tevreden over? Dan kun je ook een klacht indienen bij de Autoriteit Persoonsgegevens."
       }
     ]
   }

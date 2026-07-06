@@ -308,6 +308,21 @@ collections:
               - { label: Contactknop, name: contactButton, widget: string }
               - { label: Contactknop URL, name: contactHref, widget: string }
 
+          - label: Privacy pagina
+            name: privacy
+            widget: object
+            fields:
+              - { label: SEO titel, name: metaTitle, widget: string }
+              - { label: SEO omschrijving, name: metaDescription, widget: text }
+              - { label: Titel, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Secties
+                name: sections
+                widget: list
+                fields:
+                  - { label: Kop, name: heading, widget: string }
+                  - { label: Tekst, name: body, widget: text }
+
           - label: Formulieren
             name: forms
             widget: object
