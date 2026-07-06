@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/forms/ContactForm";
+import DonationStrip from "@/components/DonationStrip";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { settings, contact, forms } = getSiteContent();
+  const { settings, contact, forms, help } = getSiteContent();
 
   return (
     <>
@@ -84,6 +85,11 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* Groene donatiebalk, net onder het contactformulier */}
+        <div className="mt-section-gap-lg">
+          <DonationStrip content={help.donationStrip} />
+        </div>
       </main>
 
       <Footer />
