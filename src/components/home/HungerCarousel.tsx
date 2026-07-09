@@ -58,7 +58,7 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
         are siblings of this div at section level and will always paint on top.
       */}
       <div
-        className="h-[400px] md:h-[480px] relative"
+        className="h-[440px] md:h-[480px] relative"
         style={{ isolation: "isolate" }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -76,8 +76,8 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
             {slide.image ? (
               /* ── Photo slide: split layout ─────────────────────── */
               <div className="flex flex-col md:block h-full">
-                {/* Photo: top 55% mobile, left 65% desktop */}
-                <div className="h-[55%] md:absolute md:left-0 md:top-0 md:w-[65%] md:h-full">
+                {/* Photo: top 46% mobile, left 65% desktop */}
+                <div className="h-[46%] md:absolute md:left-0 md:top-0 md:w-[65%] md:h-full">
                   <img
                     src={slide.image}
                     alt={slide.imageAlt ?? ""}
@@ -97,11 +97,11 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
 
                   {/* Main solid evergreen text area */}
                   <div className="bg-evergreen w-full md:flex-1 flex flex-col justify-center px-8 py-6 md:pl-6 md:pr-12 md:py-0">
-                    <span className="hero-title text-white leading-none mb-3 text-[52px] md:text-[68px]">
+                    <span className="hero-title text-white leading-none mb-3 text-[36px] md:text-[68px]">
                       {slide.lead}
                     </span>
                     {slide.body && (
-                      <p className="hero-title font-bold text-[28px] md:text-[36px] text-white/90">
+                      <p className="hero-title font-bold text-[19px] md:text-[36px] text-white/90">
                         {slide.body}
                       </p>
                     )}
@@ -111,11 +111,11 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
             ) : (
               /* ── Solid Evergreen slide (card 4) ─────────────────── */
               <div className="h-full flex flex-col items-center justify-center px-8 md:px-20 text-center bg-evergreen">
-                <span className="hero-title text-white leading-none mb-4 text-[44px] md:text-[64px]">
+                <span className="hero-title text-white leading-none mb-4 text-[34px] md:text-[64px]">
                   {slide.lead}
                 </span>
                 {slide.body && (
-                  <p className="hero-title font-bold text-[28px] md:text-[36px] text-white/90 max-w-lg">
+                  <p className="hero-title font-bold text-[19px] md:text-[36px] text-white/90 max-w-lg">
                     {slide.body}
                   </p>
                 )}
