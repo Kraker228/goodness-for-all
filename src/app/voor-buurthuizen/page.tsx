@@ -42,16 +42,36 @@ export default function VoorBuurthuizenPage() {
                 <p className="text-body-md font-body-md text-on-surface-variant">
                   {neighborhoods.accessText}
                 </p>
+
+                {/* Desktop: oranje contactknop (ongewijzigd) */}
                 <Link
                   href={neighborhoods.contactHref}
-                  className="mt-base inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+                  className="mt-base hidden md:inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
                 >
                   {neighborhoods.contactLabel}
                 </Link>
+
+                {/* Mobiel: contact wordt een subtiele tekstlink en de prominente
+                    knop stuurt mensen naar het bestelformulier (scrollt de
+                    datumbalk naar boven zodat het formulier zichtbaar is). */}
+                <div className="md:hidden mt-base flex flex-col items-start gap-base">
+                  <Link
+                    href={neighborhoods.contactHref}
+                    className="text-body-md font-body-md text-evergreen underline underline-offset-4"
+                  >
+                    {neighborhoods.contactLabel}
+                  </Link>
+                  <a
+                    href="#bestellen"
+                    className="inline-block bg-harvest-orange text-evergreen px-8 py-4 font-cta text-cta uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+                  >
+                    Bestellen
+                  </a>
+                </div>
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <div className="bg-evergreen p-gutter mb-gutter">
+              <div id="bestellen" className="scroll-mt-[168px] bg-evergreen p-gutter mb-gutter">
                 <p className="title-baloo text-white">
                   {neighborhoods.deliveryTitle}{" "}
                   <span className="text-harvest-orange">{neighborhoods.deliveryDate}</span>
