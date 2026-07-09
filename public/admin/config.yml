@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: sirprikkel/goodness-for-all
+  repo: Kraker228/goodness-for-all
   branch: master
   base_url: https://goodness-for-all.vercel.app
   auth_endpoint: api/cms/auth
