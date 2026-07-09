@@ -61,7 +61,7 @@ Local development appends to `content/buurthuis-bestellingen.csv` unless Google 
 
 ```bash
 ORDER_LOG_GITHUB_TOKEN=github_pat_...
-ORDER_LOG_GITHUB_REPO=sirprikkel/goodness-for-all
+ORDER_LOG_GITHUB_REPO=Kraker228/goodness-for-all
 ORDER_LOG_GITHUB_BRANCH=master
 ORDER_LOG_GITHUB_PATH=content/buurthuis-bestellingen.csv
 ```

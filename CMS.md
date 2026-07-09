@@ -7,7 +7,7 @@ De CMS staat op `/admin` van de actieve Vercel deployment.
 
 De content staat in `content/site.json`. Sveltia CMS schrijft wijzigingen als commits naar:
 
-- Repository: `sirprikkel/goodness-for-all`
+- Repository: `Kraker228/goodness-for-all`
 - Branch: `master`
 - OAuth: via de eigen Vercel/Next routes `/api/cms/auth` en `/api/cms/callback`, niet via Netlify
 
@@ -40,7 +40,7 @@ Een goede configuratie geeft een `github.com/login/oauth/authorize` URL terug. A
 
 ## Toegang voor klant
 
-Geef de klant een GitHub-account met schrijfrechten op `sirprikkel/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw als de GitHub-koppeling actief is.
+Geef de klant een GitHub-account met schrijfrechten op `Kraker228/goodness-for-all`. Daarna kan de klant via `/admin` inloggen en wijzigingen publiceren. Elke publicatie maakt een commit naar `master`; Vercel bouwt daarna opnieuw als de GitHub-koppeling actief is.
 
 ## Buurthuisbestellingen in Google Sheets
 
@@ -62,7 +62,7 @@ De klant hoeft voor bestellingen dus alleen toegang te krijgen tot deze Google S
 
 ## Nieuw Vercel-project aanmaken
 
-Gebruik de terminal waarin `vercel whoami` `sirprikkel-8693` toont:
+Gebruik de terminal waarin `vercel whoami` jouw eigen Vercel-account toont:
 
 ```bash
 cd C:\Users\pimme\Agents\goodness-for-all
@@ -71,14 +71,14 @@ vercel link
 vercel deploy --prod
 ```
 
-Kies bij `vercel link` het Sirprikkel-account/team en maak een nieuw project aan voor deze repo.
+Kies bij `vercel link` je eigen account/team en maak een nieuw project aan voor deze repo.
 
 ## Vercel GitHub-koppeling
 
-Voor automatische deployments moet de Vercel GitHub App toegang hebben tot `sirprikkel/goodness-for-all`.
+Voor automatische deployments moet de Vercel GitHub App toegang hebben tot `Kraker228/goodness-for-all`.
 
 - GitHub: Settings -> Applications -> Installed GitHub Apps -> Vercel -> Configure
-- Voeg `sirprikkel/goodness-for-all` toe of kies "All repositories"
+- Voeg `Kraker228/goodness-for-all` toe of kies "All repositories"
 - Koppel daarna in Vercel project settings -> Git de repository
 
 Tot die koppeling werkt, kun je productie handmatig deployen met:

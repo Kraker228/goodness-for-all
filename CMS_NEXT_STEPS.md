@@ -27,7 +27,7 @@ npm run build
 
 ## Externe acties die nog nodig zijn
 
-1. Maak een nieuw Vercel-project onder het Sirprikkel-account.
+1. Maak een nieuw Vercel-project onder je eigen account.
 
 ```bash
 cd C:\Users\pimme\Agents\goodness-for-all
@@ -44,10 +44,10 @@ vercel deploy --prod
 - Deploy daarna opnieuw naar productie
 - Test met `npm run cms:auth:check -- https://<jouw-vercel-domein>`
 
-3. Geef de Vercel GitHub App toegang tot `sirprikkel/goodness-for-all`.
+3. Geef de Vercel GitHub App toegang tot `Kraker228/goodness-for-all`.
 
 - GitHub: Settings -> Applications -> Installed GitHub Apps -> Vercel -> Configure
-- Voeg `sirprikkel/goodness-for-all` toe
+- Voeg `Kraker228/goodness-for-all` toe
 - Koppel in Vercel project settings -> Git de repo voor automatische deploys
 
 4. Test Sveltia met het echte klantaccount.

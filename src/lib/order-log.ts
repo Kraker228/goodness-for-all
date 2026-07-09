@@ -400,7 +400,7 @@ async function appendGithubCsv(line: string, attempt = 1): Promise<string> {
     throw new Error("ORDER_LOG_GITHUB_TOKEN ontbreekt.");
   }
 
-  const repo = getEnv("ORDER_LOG_GITHUB_REPO") ?? "sirprikkel/goodness-for-all";
+  const repo = getEnv("ORDER_LOG_GITHUB_REPO") ?? "Kraker228/goodness-for-all";
   const branch = getEnv("ORDER_LOG_GITHUB_BRANCH") ?? "master";
   const filePath = getEnv("ORDER_LOG_GITHUB_PATH") ?? "content/buurthuis-bestellingen.csv";
   const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
