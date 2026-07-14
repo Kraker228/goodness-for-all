@@ -23,8 +23,10 @@ export default function PartnerHero({ content }: { content: PartnerHeroContent }
               {content.impactParagraph1}
             </p>
             <p className="mt-4 text-body-md text-body-md text-on-surface-variant">
-              <strong className="text-evergreen">{content.impactBold}</strong>{" "}
               {content.impactParagraph2}
+            </p>
+            <p className="mt-4 text-body-md text-body-md text-on-surface-variant">
+              {content.impactParagraph3}
             </p>
           </div>
         </div>

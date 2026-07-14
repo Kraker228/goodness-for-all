@@ -124,8 +124,8 @@ collections:
                   - { label: Linker tekst, name: leftText, widget: text }
                   - { label: Onderblok titel, name: impactTitle, widget: string }
                   - { label: Onderblok alinea 1, name: impactParagraph1, widget: text }
-                  - { label: Onderblok vetgedrukte zin, name: impactBold, widget: string }
                   - { label: Onderblok alinea 2, name: impactParagraph2, widget: text }
+                  - { label: Onderblok alinea 3, name: impactParagraph3, widget: text }
                   - { label: Rechter titel, name: rightTitle, widget: string }
                   - { label: Badges, name: badges, widget: list, field: { label: Badge, name: badge, widget: string } }
                   - { label: Rechter tekst, name: rightText, widget: text }
