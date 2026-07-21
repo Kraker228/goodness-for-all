@@ -137,4 +137,15 @@ export const IMPACT_LOCATIONS: ImpactLocation[] = [
     link: "https://hotspothutspot.nl/hotspot-hutspot-dc/",
     position: [51.94083162391044, 4.496350222951345],
   },
+  {
+    title: "Stichting Krachtvrouwen Oude Westen",
+    subtitle: "Stichting",
+    city: "Rotterdam",
+    // Postcode 3014 TD (Oude Westen). De coördinaten zijn een benadering op
+    // wijkniveau: bij de laatste update was er geen geocoder bereikbaar om de
+    // PC6-centroïde exact op te halen. Positie graag visueel controleren.
+    address: "Josephlaan 62, 3014 TD Rotterdam",
+    link: "https://krachtvrouwenoudewesten.nl/",
+    position: [51.9172, 4.4642],
+  },
 ];
