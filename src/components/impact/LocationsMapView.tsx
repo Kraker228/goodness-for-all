@@ -26,7 +26,7 @@ const orangeIcon = L.divIcon({
   popupAnchor: [0, -34],
 });
 
-// Begrenzing rond alle 14 locaties (Rotterdam + Den Haag), zodat ze allemaal
+// Begrenzing rond alle 15 locaties (Rotterdam + Den Haag), zodat ze allemaal
 // goed zichtbaar zijn bij het laden van de kaart.
 const bounds = L.latLngBounds(IMPACT_LOCATIONS.map((loc) => loc.position));
 
