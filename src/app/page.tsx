@@ -27,6 +27,8 @@ export default function HomePage() {
           <div
             className="w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${home.hero.image})` }}
+            role="img"
+            aria-label={home.hero.imageAlt}
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>

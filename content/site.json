@@ -71,8 +71,9 @@
     "metaTitle": "Goodness for All | Iedereen een gezonde maaltijd",
     "metaDescription": "Geen honger meer in Nederland. De één betaalt wat meer voor lekker en gemakkelijk, zodat de ander eindelijk óók beter kan eten.",
     "hero": {
-      "image": "/images/home/hero.jpg",
-      "title": "Iedereen een gezonde maaltijd.",
+      "image": "/images/home/hero-beter-eten.webp",
+      "imageAlt": "[We leveren nu ook met trots aan Amina Hussen Krachtvrouwen Oude Westen]",
+      "title": "Beter eten voor iedereen.",
       "text": "Geen honger meer in Nederland. De één betaalt wat meer voor lekker en gemakkelijk, zodat de ander eindelijk óók beter kan eten.",
       "buttonLabel": "Lees ons verhaal",
       "buttonHref": "/ons-verhaal"
@@ -547,7 +548,7 @@
     "visualIcon": "eco",
     "visualIconText": "Super inclusief, past in bijna elk dieet of levensovertuiging.",
     "deliveryTitle": "De volgende levering is",
-    "deliveryDate": "maandag 20 juli.",
+    "deliveryDate": "maandag 21 september.",
     "deliveryLarge": "Meer dan 30 dozen? Ophalen tussen 10.00 en 12.00",
     "deliverySmall": "Minder dan 30 dozen? bezorgd tussen 12.00 en 16.00.",
     "textForm": "Vul het onderstaande formulier in en we regelen de rest.",
