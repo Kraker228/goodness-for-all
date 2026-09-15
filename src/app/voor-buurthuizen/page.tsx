@@ -76,7 +76,7 @@ export default function VoorBuurthuizenPage() {
                   {neighborhoods.deliveryTitle}{" "}
                   <span className="text-harvest-orange">{neighborhoods.deliveryDate}</span>
                 </p>
-                <p className="text-body-md font-body-md text-white/90 mt-base">
+                <p className="text-body-md font-body-md font-bold text-white/90 mt-base">
                   {neighborhoods.deliveryLarge}
                   <br />
                   {neighborhoods.deliverySmall}
