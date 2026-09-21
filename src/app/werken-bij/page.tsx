@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WerkenBijPage() {
   const { settings, help } = getSiteContent();
-  const { stagesCta, stages } = help;
+  const { vacaturesCta, stagesCta, stages } = help;
 
   return (
     <>
@@ -30,27 +30,38 @@ export default function WerkenBijPage() {
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-7">
-              <span className="inline-block bg-asparagus text-evergreen font-label-sm text-label-sm px-4 py-1 mb-base">
-                {help.eyebrow}
-              </span>
               <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-evergreen mb-gutter">
                 {help.title}
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
                 {help.text}
               </p>
-              {/* Stages-knop: springt naar de stages-sectie verderop */}
-              <div className="mt-gutter flex flex-col items-start gap-base">
-                <a
-                  href={stagesCta.buttonHref}
-                  className="inline-flex items-center gap-3 bg-harvest-orange text-evergreen font-cta text-2xl px-10 py-5 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
-                >
-                  <span className="material-symbols-outlined text-3xl">school</span>
-                  {stagesCta.buttonLabel}
-                </a>
-                <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
-                  {stagesCta.note}
-                </p>
+              {/* Twee knoppen: naar de vacatures of naar de stages-sectie */}
+              <div className="mt-section-gap-sm grid grid-cols-1 sm:grid-cols-2 gap-gutter max-w-2xl">
+                <div className="flex flex-col gap-base">
+                  <a
+                    href={vacaturesCta.buttonHref}
+                    className="flex w-full items-center justify-center gap-3 bg-evergreen text-sandstone-beige font-cta text-xl px-6 py-5 border-2 border-evergreen hover:bg-harvest-orange hover:text-evergreen transition-all"
+                  >
+                    <span className="material-symbols-outlined text-2xl">work</span>
+                    {vacaturesCta.buttonLabel}
+                  </a>
+                  <p className="font-body-md text-body-md text-on-surface-variant">
+                    {vacaturesCta.note}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-base">
+                  <a
+                    href={stagesCta.buttonHref}
+                    className="flex w-full items-center justify-center gap-3 bg-harvest-orange text-evergreen font-cta text-xl px-6 py-5 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
+                  >
+                    <span className="material-symbols-outlined text-2xl">school</span>
+                    {stagesCta.buttonLabel}
+                  </a>
+                  <p className="font-body-md text-body-md text-on-surface-variant">
+                    {stagesCta.note}
+                  </p>
+                </div>
               </div>
             </div>
             <div className="md:col-span-5 relative aspect-square">
@@ -64,6 +75,7 @@ export default function WerkenBijPage() {
           </div>
         </Reveal>
 
+        <div id="vacatures" className="scroll-mt-24" aria-hidden />
         <Reveal as="section" from="translate-y-8" className="py-section-gap-lg">
           <div className="flex justify-between items-end mb-section-gap-sm">
             <div>

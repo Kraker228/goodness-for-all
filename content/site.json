@@ -479,8 +479,8 @@
     "metaTitle": "Werken bij | Goodness for All",
     "metaDescription": "Werken bij Goodness for All: sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact. Bekijk onze vacatures en unieke stages met directe impact.",
     "eyebrow": "CARRIÈRE",
-    "title": "Werken bij",
-    "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap. Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact.",
+    "title": "Bouwen aan Goodness for All",
+    "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap: Je collega's, je gezin, de buren.",
     "image": "/images/ik-wil-helpen/hero.jpg",
     "imageAlt": "A focused group of diverse professionals working together in a bright, minimalist office space.",
     "vacanciesTitle": "Huidige Vacatures",
@@ -537,6 +537,11 @@
         "note": "Variabele uren per week, waarin je open staat om dingen te proberen, te leren, en dingen voor elkaar krijgt zonder veel hulp. Of zoals de Tsjechen zeggen: Aje to."
       }
     ],
+    "vacaturesCta": {
+      "buttonLabel": "Vacatures",
+      "buttonHref": "#vacatures",
+      "note": "Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact."
+    },
     "stagesCta": {
       "buttonLabel": "Stages",
       "buttonHref": "#stages",

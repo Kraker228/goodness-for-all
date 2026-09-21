@@ -265,6 +265,13 @@ collections:
                   - { label: Quote, name: text, widget: text }
                   - { label: Naam, name: name, widget: string }
                   - { label: Rol, name: role, widget: string }
+              - label: Vacatures-knop (bovenaan)
+                name: vacaturesCta
+                widget: object
+                fields:
+                  - { label: Knoptekst, name: buttonLabel, widget: string }
+                  - { label: Knop-anker/URL, name: buttonHref, widget: string }
+                  - { label: Toelichting, name: note, widget: text }
               - label: Stages-knop (bovenaan)
                 name: stagesCta
                 widget: object
