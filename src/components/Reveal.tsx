@@ -15,7 +15,7 @@ type RevealProps = {
 
 /**
  * Fade + translate-in on scroll, mirroring the IntersectionObserver pattern
- * used inline across the original Stitch pages (ons-verhaal, ik-wil-helpen, anbi).
+ * used inline across the original Stitch pages (ons-verhaal, werken-bij, anbi).
  */
 export default function Reveal({
   children,

@@ -212,7 +212,7 @@ export default function OnsVerhaalPage() {
               <div className="mt-4">
                 <h3 className="font-headline-md text-evergreen">Kom jij ons team versterken</h3>
                 <Link
-                  href="/ik-wil-helpen"
+                  href="/werken-bij"
                   className="font-label-sm text-label-sm text-harvest-orange uppercase hover:underline"
                 >
                   kom in contact
