@@ -237,6 +237,7 @@ collections:
             widget: object
             fields:
               - { label: SEO titel, name: metaTitle, widget: string }
+              - { label: SEO omschrijving, name: metaDescription, widget: text }
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Titel, name: title, widget: string }
               - { label: Tekst, name: text, widget: text }
@@ -264,6 +265,70 @@ collections:
                   - { label: Quote, name: text, widget: text }
                   - { label: Naam, name: name, widget: string }
                   - { label: Rol, name: role, widget: string }
+              - label: Vacatures-knop (bovenaan)
+                name: vacaturesCta
+                widget: object
+                fields:
+                  - { label: Knoptekst, name: buttonLabel, widget: string }
+                  - { label: Knop-anker/URL, name: buttonHref, widget: string }
+                  - { label: Toelichting, name: note, widget: text }
+              - label: Stages-knop (bovenaan)
+                name: stagesCta
+                widget: object
+                fields:
+                  - { label: Knoptekst, name: buttonLabel, widget: string }
+                  - { label: Knop-anker/URL, name: buttonHref, widget: string }
+                  - { label: Toelichting, name: note, widget: text }
+              - label: Stages-sectie
+                name: stages
+                widget: object
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Intro, name: intro, widget: text }
+                  - label: Kolommen
+                    name: columns
+                    widget: list
+                    fields:
+                      - { label: Icon (kop), name: icon, widget: string }
+                      - { label: Titel, name: title, widget: string }
+                      - label: Items
+                        name: items
+                        widget: list
+                        fields:
+                          - { label: Icon, name: icon, widget: string }
+                          - { label: Label, name: label, widget: string }
+                          - { label: Tekst, name: text, widget: text }
+                  - label: Voor elk niveau
+                    name: level
+                    widget: object
+                    fields:
+                      - { label: Icon, name: icon, widget: string }
+                      - { label: Titel, name: title, widget: string }
+                      - { label: Tekst, name: text, widget: text }
+                  - label: Vergoeding
+                    name: compensation
+                    widget: object
+                    fields:
+                      - { label: Icon, name: icon, widget: string }
+                      - { label: Titel, name: title, widget: string }
+                      - { label: Tekst, name: text, widget: text }
+                  - { label: Partnerlabel, name: partnersLabel, widget: string }
+                  - label: Partnerlogo's
+                    name: partners
+                    widget: list
+                    fields:
+                      - { label: Afbeelding, name: image, widget: image, required: false }
+                      - { label: Tekst (als er geen logo is), name: text, widget: string, required: false }
+                      - { label: Alt-tekst, name: alt, widget: string }
+                  - label: Interesse-blok
+                    name: cta
+                    widget: object
+                    fields:
+                      - { label: Titel, name: title, widget: string }
+                      - { label: Tekst voor e-mail, name: textBefore, widget: text }
+                      - { label: E-mailadres, name: email, widget: string }
+                      - { label: Tekst na e-mail, name: textAfter, widget: text }
+                      - { label: Knoptekst, name: buttonLabel, widget: string }
 
           - label: Buurthuizen pagina
             name: neighborhoods

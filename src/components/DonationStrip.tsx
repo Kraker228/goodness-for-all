@@ -6,7 +6,7 @@ type DonationStripContent = SiteContent["help"]["donationStrip"];
 
 /**
  * Groene donatiebalk met de "Doneer direct"-knop. Wordt gedeeld door de
- * "Doe mee"-pagina (bovenaan) en de contactpagina (onder het formulier), zodat
+ * "Werken bij"-pagina (bovenaan) en de contactpagina (onder het formulier), zodat
  * beide identiek blijven.
  */
 export default function DonationStrip({ content }: { content: DonationStripContent }) {

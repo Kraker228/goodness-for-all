@@ -46,8 +46,8 @@
         "icon": "cottage"
       },
       {
-        "href": "/ik-wil-helpen",
-        "label": "Doe mee",
+        "href": "/werken-bij",
+        "label": "Werken bij",
         "icon": "work"
       },
       {
@@ -106,7 +106,7 @@
           "accent": "Help de maaltijden verspreiden"
         },
         {
-          "href": "/ik-wil-helpen",
+          "href": "/werken-bij",
           "prefix": "Als persoon:",
           "accent": "Bekijk onze vacatures, deel ons verhaal, of doneer!"
         }
@@ -476,10 +476,11 @@
     "mapLabel": "Ook een vriezer op je werk?"
   },
   "help": {
-    "metaTitle": "Doe mee | Goodness for All",
+    "metaTitle": "Werken bij | Goodness for All",
+    "metaDescription": "Werken bij Goodness for All: sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact. Bekijk onze vacatures en unieke stages met directe impact.",
     "eyebrow": "CARRIÈRE",
-    "title": "Ik wil helpen",
-    "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap. Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact.",
+    "title": "Bouwen aan Goodness for All",
+    "text": "We bouwen aan iets wat werkt. Geen ingewikkelde structuren, maar direct resultaat voor de gemeenschap: Je collega's, je gezin, de buren.",
     "image": "/images/ik-wil-helpen/hero.jpg",
     "imageAlt": "A focused group of diverse professionals working together in a bright, minimalist office space.",
     "vacanciesTitle": "Huidige Vacatures",
@@ -535,7 +536,70 @@
         "text": "Variabele taken waarbij de handen uit de mouwen moeten. Een vriezer van A naar B? Wat printwerk? Een berichtje op social media?",
         "note": "Variabele uren per week, waarin je open staat om dingen te proberen, te leren, en dingen voor elkaar krijgt zonder veel hulp. Of zoals de Tsjechen zeggen: Aje to."
       }
-    ]
+    ],
+    "vacaturesCta": {
+      "buttonLabel": "Vacatures",
+      "buttonHref": "#vacatures",
+      "note": "Sluit je aan bij een team dat gelooft in radicale toegankelijkheid en eerlijke impact."
+    },
+    "stagesCta": {
+      "buttonLabel": "Stages",
+      "buttonHref": "#stages",
+      "note": "Dit zijn unieke stages: directe impact, en een leerervaring die je overal een voorsprong geeft. Bij je volgende sollicitatie, of wanneer je bij ons doorgroeit."
+    },
+    "stages": {
+      "title": "Stages",
+      "intro": "Elke stage bij Goodness for All is een eigen mix van praktische klussen en onderzoekende uitdagingen, samengesteld rond jouw ambitie en de eisen van je opleiding. Geen theoretische casus of koffie halen: je maakt meteen het verschil, en je doet kennis op die je de rest van je leven gebruikt.",
+      "columns": [
+        {
+          "icon": "construction",
+          "title": "Praktisch: direct aan de slag",
+          "items": [
+            { "icon": "storefront", "label": "Verkoop op kantoren", "text": "medewerkers aanspreken en de maaltijden verkopen bij de vriezer." },
+            { "icon": "local_shipping", "label": "Logistiek", "text": "maaltijden vervoeren en vriezers vullen bij buurthuizen en kantoren." },
+            { "icon": "groups", "label": "Buurthuis-event", "text": "een proef- en bestelmiddag organiseren en trekken bij een buurthuis." },
+            { "icon": "photo_camera", "label": "Communicatie & content", "text": "social media, foto's en posters maken." }
+          ]
+        },
+        {
+          "icon": "science",
+          "title": "Onderzoek: impact vergroten",
+          "items": [
+            { "icon": "calendar_month", "label": "Verkoopritme", "text": "is een intekenmaand met één verkoopweek beter dan doorlopende verkoop?" },
+            { "icon": "meeting_room", "label": "Binnenkomen bij bedrijven", "text": "welke route en boodschap opent de deur bij een nieuwe partner?" },
+            { "icon": "psychology", "label": "Motivatie van kopers", "text": "waarom kopen medewerkers, en wat overtuigt de rest?" },
+            { "icon": "hub", "label": "Rolverdeling in de wijk", "text": "buurthuizen, gemeente en Goodness for All op elkaar afstemmen." },
+            { "icon": "tune", "label": "Verhouding tussen de stromen", "text": "bij welke prijs en welk volume is het model robuust?" },
+            { "icon": "location_city", "label": "Opschalen naar een nieuwe stad", "text": "een draaiboek voor de volgende stad." },
+            { "icon": "lightbulb", "label": "Jouw eigen onderzoeksvraag", "text": "heb je een onderwerp dat hier past? Graag." }
+          ]
+        }
+      ],
+      "level": {
+        "icon": "school",
+        "title": "Passende uitdaging voor elk niveau",
+        "text": "Van VMBO tot ROC, van bachelor tot master: we bieden voldoende ruimte voor je eigen ideeën, en voldoende kader en begeleiding om je opleiding gerust te stellen, én versteld te doen staan."
+      },
+      "compensation": {
+        "icon": "payments",
+        "title": "Vergoeding",
+        "text": "Richtlijn: €400 per maand plus een redelijke onkostenvergoeding, afhankelijk van context, aantal uren en de duur van de stage."
+      },
+      "partnersLabel": "In samenwerking met",
+      "partners": [
+        { "image": "/images/werken-bij/logos/roc-mondriaan.webp", "text": "", "alt": "ROC Mondriaan" },
+        { "image": "/images/werken-bij/logos/zadkine.jpg", "text": "", "alt": "Zadkine" },
+        { "image": "/images/werken-bij/logos/tu-delft.webp", "text": "", "alt": "TU Delft" },
+        { "image": "/images/werken-bij/logos/erasmus-universiteit-rotterdam.webp", "text": "", "alt": "Erasmus Universiteit Rotterdam" }
+      ],
+      "cta": {
+        "title": "Interesse?",
+        "textBefore": "Stuur een mail naar ",
+        "email": "info@goodnessforall.nl",
+        "textAfter": " met je naam, je opleiding, de periode waarin je (of je student) een stageplek zoekt of aanbiedt, en een telefoonnummer. Dan gaan we meteen in gesprek over hoe we dat samen realiseren.",
+        "buttonLabel": "STUUR EEN E-MAIL"
+      }
+    }
   },
   "neighborhoods": {
     "metaTitle": "Voor buurthuizen | Goodness for All",
