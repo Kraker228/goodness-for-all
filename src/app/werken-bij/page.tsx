@@ -39,6 +39,19 @@ export default function WerkenBijPage() {
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
                 {help.text}
               </p>
+              {/* Stages-knop: springt naar de stages-sectie verderop */}
+              <div className="mt-gutter flex flex-col items-start gap-base">
+                <a
+                  href={stagesCta.buttonHref}
+                  className="inline-flex items-center gap-3 bg-harvest-orange text-evergreen font-cta text-2xl px-10 py-5 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
+                >
+                  <span className="material-symbols-outlined text-3xl">school</span>
+                  {stagesCta.buttonLabel}
+                </a>
+                <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                  {stagesCta.note}
+                </p>
+              </div>
             </div>
             <div className="md:col-span-5 relative aspect-square">
               <div className="absolute inset-0 border-2 border-evergreen translate-x-4 translate-y-4 -z-10"></div>
@@ -48,26 +61,6 @@ export default function WerkenBijPage() {
                 src={help.image}
               />
             </div>
-          </div>
-        </Reveal>
-
-        {/* CTA-blok: springt naar de stages-sectie verderop */}
-        <Reveal
-          as="section"
-          from="translate-y-8"
-          className="py-section-gap-sm border-b border-evergreen/10"
-        >
-          <div className="flex flex-col items-start gap-gutter">
-            <a
-              href={stagesCta.buttonHref}
-              className="inline-flex items-center gap-3 bg-harvest-orange text-evergreen font-cta text-2xl px-10 py-5 border-2 border-evergreen hover:bg-evergreen hover:text-sandstone-beige transition-all"
-            >
-              <span className="material-symbols-outlined text-3xl">school</span>
-              {stagesCta.buttonLabel}
-            </a>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
-              {stagesCta.note}
-            </p>
           </div>
         </Reveal>
 
@@ -185,7 +178,7 @@ export default function WerkenBijPage() {
 
           <Reveal from="translate-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-evergreen mb-section-gap-sm">
-              <div className="p-gutter md:p-8 bg-asparagus/20 border-b md:border-b-0 md:border-r border-evergreen">
+              <div className="p-gutter md:p-8 bg-pure-mist border-b md:border-b-0 md:border-r border-evergreen">
                 <span className="material-symbols-outlined text-evergreen text-4xl mb-base">
                   {stages.level.icon}
                 </span>
