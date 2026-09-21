@@ -582,7 +582,7 @@
       },
       "partnersLabel": "In samenwerking met",
       "partners": [
-        { "image": "", "text": "ROC Mondriaan", "alt": "ROC Mondriaan" },
+        { "image": "/images/werken-bij/logos/roc-mondriaan.webp", "text": "", "alt": "ROC Mondriaan" },
         { "image": "/images/werken-bij/logos/zadkine.jpg", "text": "", "alt": "Zadkine" },
         { "image": "/images/werken-bij/logos/tu-delft.webp", "text": "", "alt": "TU Delft" },
         { "image": "/images/werken-bij/logos/erasmus-universiteit-rotterdam.webp", "text": "", "alt": "Erasmus Universiteit Rotterdam" }
