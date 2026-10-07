@@ -51,6 +51,11 @@
         "icon": "work"
       },
       {
+        "href": "/actie",
+        "label": "Actie",
+        "icon": "campaign"
+      },
+      {
         "href": "/contact",
         "label": "Contact",
         "icon": "mail"
@@ -983,6 +988,154 @@
       {
         "heading": "Jouw rechten",
         "body": "Je mag altijd vragen welke gegevens we van je hebben, ze laten aanpassen of laten verwijderen. Ook mag je bezwaar maken tegen het gebruik ervan. Stuur ons een mailtje, dan helpen we je snel. Ben je ergens niet tevreden over? Dan kun je ook een klacht indienen bij de Autoriteit Persoonsgegevens."
+      }
+    ]
+  },
+  "actie": {
+    "metaTitle": "8x Good News for All | Goodness for All",
+    "metaDescription": "Verzamel de letters uit acht LinkedIn-video's en maak kans dat we je een maaltijd komen brengen, plus 5 maaltijden voor een buurthuis.",
+    "title": "8x Good News for All",
+    "tagline": "Verzamel de letters. Ik kom je een maaltijd brengen.",
+    "intro": "Goodness for All heeft veel nieuws. Daarom delen we op LinkedIn acht nieuwsberichten, van 13 oktober tot en met 5 november, elke dinsdag en donderdag. Aan het eind van de video's staan letters. Samen vormen ze een zin die precies zegt waar wij voor staan.",
+    "stepsTitle": "Zo doe je mee",
+    "steps": [
+      "Geef een reactie onder elk van de acht berichten. Duimpje of hartje is genoeg, een vraag of opmerking is welkom!",
+      "Verzamel alle letters aan het einde van elke video van bericht 1 tot en met 7.",
+      "Zet onder bericht 8 de zin die je van deze 21 letters kunt maken, én vertel ons de meest originele reden waarom koken er bij jou een keertje niet van komt!"
+    ],
+    "lateNote": "Later ingestapt? Geen probleem. Tot de deadline kun je nog reageren op eerdere berichten.",
+    "termsLinkLabel": "Bekijk de actievoorwaarden",
+    "linkedinLabel": "Volg mij op LinkedIn",
+    "linkedinUrl": "https://www.linkedin.com/in/dekraker/",
+    "videosTitle": "Alle berichten bij elkaar",
+    "videosText": "Hier vind je alle video's van de reeks, met de letters aan het eind. Elke dinsdag en donderdag komt er een bij. Een bericht gemist? Hier kun je het terugkijken.",
+    "videoPlaceholderLabel": "Video volgt op",
+    "playLabel": "Speel video af",
+    "videos": [
+      {
+        "number": 1,
+        "date": "dinsdag 13 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 2,
+        "date": "donderdag 15 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 3,
+        "date": "dinsdag 20 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 4,
+        "date": "donderdag 22 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 5,
+        "date": "dinsdag 27 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 6,
+        "date": "donderdag 29 oktober",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 7,
+        "date": "dinsdag 3 november",
+        "youtubeUrl": ""
+      },
+      {
+        "number": 8,
+        "date": "donderdag 5 november",
+        "youtubeUrl": ""
+      }
+    ],
+    "termsTitle": "Actie voorwaarden",
+    "termsIntro": "Doe je mee, dan maak je kans dat ik een Goodness for All maaltijd bij je kom brengen, én dat ik er namens jou 5 naar een buurthuis breng.",
+    "prizeTitle": "Wat je wint",
+    "prizeText": "Ik kom je een Goodness for All maaltijd brengen: lekker, gezond en plantaardig, uit de vriezer. Dat doe ik op maandag 16 november, op een van de twintig plekken in de Randstad die je zelf kiest. En voor elke winnaar gaan er 5 maaltijden naar een buurthuis naar keuze. Zo eet jij één keer beter, en eten vijf mensen in jouw buurthuis mee.",
+    "locationsTitle": "De bezorgplekken",
+    "locationsText": "De twintig bezorgplekken in de Randstad volgen binnenkort. Tijdsloten volgen na de loting.",
+    "locations": [],
+    "datesTitle": "Belangrijke data",
+    "dates": [
+      {
+        "date": "13 oktober",
+        "label": "bericht 1"
+      },
+      {
+        "date": "5 november",
+        "label": "bericht 8, de finale"
+      },
+      {
+        "date": "8 november, 23.59 uur",
+        "label": "deadline"
+      },
+      {
+        "date": "10 november",
+        "label": "loting en bericht aan de winnaars"
+      },
+      {
+        "date": "16 november",
+        "label": "bezorgdag"
+      }
+    ],
+    "faqTitle": "Goed om te weten",
+    "faq": [
+      {
+        "question": "Wie organiseert dit?",
+        "answer": "Stichting Goodness for All, Van der Duijn van Maasdamweg 480, Rotterdam (KvK 73004521)."
+      },
+      {
+        "question": "Wie mag meedoen?",
+        "answer": "Iedereen van 18 jaar of ouder, met een eigen, persoonlijk LinkedIn-profiel. Meedoen is gratis, je hoeft niets te kopen. Mensen die bij Goodness for All werken of de actie mee organiseren, doen niet mee."
+      },
+      {
+        "question": "Wanneer telt mijn deelname?",
+        "answer": "Als je vóór zondag 8 november 23.59 uur op alle acht berichten hebt gereageerd, en onder bericht 8 de juiste zin en je reden hebt gezet."
+      },
+      {
+        "question": "Wat als er meer dan 100 deelnemers zijn?",
+        "answer": "Dan loten we op 10 november 100 winnaars, eerlijk en op video. Zijn het er 100 of minder, dan wint iedereen. Je kunt één keer winnen."
+      },
+      {
+        "question": "Hoe hoor ik of ik gewonnen heb?",
+        "answer": "Je krijgt op 10 november een bericht via LinkedIn met een link naar een kort formulier. Daarin kies je je bezorgplek en je buurthuis. Reageer binnen 3 dagen, anders gaat je prijs naar iemand anders."
+      },
+      {
+        "question": "Wat is de prijs precies?",
+        "answer": "Eén diepvriesmaaltijd van Goodness for All, met een winkelwaarde van €5,50. Je kunt de prijs niet omruilen voor geld of aan iemand anders geven."
+      },
+      {
+        "question": "Wat als ik er op 16 november niet kan zijn?",
+        "answer": "Dan gaat jouw maaltijd ook naar het buurthuis. Niets gaat verloren."
+      },
+      {
+        "question": "Wanneer krijgt het buurthuis de maaltijden?",
+        "answer": "Uiterlijk 31 december 2026. Je kiest uit de buurthuizen op onze [impactpagina](/impact). Deze 5 maaltijden zijn voor het buurthuis, niet voor jou."
+      },
+      {
+        "question": "Kan er iets veranderen?",
+        "answer": "Bij overmacht, zoals extreem weer of grote verkeersproblemen, kunnen we een plek of tijdslot aanpassen. Dat laten we je dan vooraf weten."
+      },
+      {
+        "question": "Wat zit er in de maaltijd?",
+        "answer": "Ingrediënten en allergie-informatie vind je op [www.lazy-meals.com](https://www.lazy-meals.com)."
+      },
+      {
+        "question": "Wat doen jullie met mijn gegevens?",
+        "answer": "We gebruiken je naam, telefoonnummer en keuzes alleen voor deze actie, en verwijderen ze uiterlijk 31 december 2026. Foto's of video's op de bezorgdag maken we alleen als jij dat goed vindt."
+      },
+      {
+        "question": "Mag dit zomaar?",
+        "answer": "Ja. Dit is een klein promotioneel kansspel volgens de Gedragscode Promotionele Kansspelen. De totale prijswaarde is €550. Wie misbruik maakt van de actie, bijvoorbeeld met nepprofielen, sluiten we uit. LinkedIn heeft niets met deze actie te maken."
+      },
+      {
+        "question": "Vragen of klachten?",
+        "answer": "Mail naar [info@goodnessforall.nl](mailto:info@goodnessforall.nl), we reageren binnen twee weken. Waar deze tekst niets over zegt, beslist Stichting Goodness for All."
       }
     ]
   }

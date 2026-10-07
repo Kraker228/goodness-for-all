@@ -387,6 +387,63 @@ collections:
                   - { label: Kop, name: heading, widget: string }
                   - { label: Tekst, name: body, widget: text }
 
+          - label: Actie pagina (8x Good News for All)
+            name: actie
+            widget: object
+            fields:
+              - { label: SEO titel, name: metaTitle, widget: string }
+              - { label: SEO omschrijving, name: metaDescription, widget: text }
+              - { label: Titel, name: title, widget: string }
+              - { label: Ondertitel, name: tagline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Stappen titel, name: stepsTitle, widget: string }
+              - label: Stappen
+                name: steps
+                widget: list
+                field: { label: Stap, name: step, widget: text }
+              - { label: Later ingestapt tekst, name: lateNote, widget: text }
+              - { label: Link naar voorwaarden label, name: termsLinkLabel, widget: string }
+              - { label: LinkedIn knoplabel, name: linkedinLabel, widget: string }
+              - { label: LinkedIn URL, name: linkedinUrl, widget: string }
+              - { label: Video's titel, name: videosTitle, widget: string }
+              - { label: Video's tekst, name: videosText, widget: text }
+              - { label: Placeholder tekst (voor de datum), name: videoPlaceholderLabel, widget: string }
+              - { label: Play-knop label, name: playLabel, widget: string }
+              - label: Video's
+                name: videos
+                widget: list
+                hint: "Plak de YouTube-link in een bericht zodra de video online staat; zolang het veld leeg is, toont de site een placeholder."
+                fields:
+                  - { label: Nummer, name: number, widget: number }
+                  - { label: Datum, name: date, widget: string }
+                  - { label: YouTube-link, name: youtubeUrl, widget: string, required: false }
+              - { label: Voorwaarden titel, name: termsTitle, widget: string }
+              - { label: Voorwaarden intro, name: termsIntro, widget: text }
+              - { label: Prijs titel, name: prizeTitle, widget: string }
+              - { label: Prijs tekst, name: prizeText, widget: text }
+              - { label: Bezorgplekken titel, name: locationsTitle, widget: string }
+              - { label: Bezorgplekken tekst, name: locationsText, widget: text }
+              - label: Bezorgplekken
+                name: locations
+                widget: list
+                required: false
+                field: { label: Plek, name: location, widget: string }
+              - { label: Data titel, name: datesTitle, widget: string }
+              - label: Belangrijke data
+                name: dates
+                widget: list
+                fields:
+                  - { label: Datum, name: date, widget: string }
+                  - { label: Omschrijving, name: label, widget: string }
+              - { label: Goed om te weten titel, name: faqTitle, widget: string }
+              - label: Goed om te weten
+                name: faq
+                widget: list
+                hint: "Links kun je schrijven als [tekst](https://adres)."
+                fields:
+                  - { label: Vraag, name: question, widget: string }
+                  - { label: Antwoord, name: answer, widget: text }
+
           - label: Formulieren
             name: forms
             widget: object
