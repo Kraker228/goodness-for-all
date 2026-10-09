@@ -180,6 +180,7 @@ collections:
             widget: object
             fields:
               - { label: SEO titel, name: metaTitle, widget: string }
+              - { label: Teller tussenstand (pauze), name: counterPauseValue, widget: number, required: false, hint: "De teller telt eerst tot dit getal, wacht 2 seconden en telt dan door naar de eindwaarde met confetti. Leeg laten om direct door te tellen." }
               - { label: Teller waarde, name: counterValue, widget: number }
               - { label: Teller label, name: counterLabel, widget: string }
               - { label: Teller tekst, name: counterText, widget: string }
@@ -247,9 +248,6 @@ collections:
               - { label: Vacatures tekst, name: vacanciesText, widget: text }
               - { label: Open sollicitatie knop, name: openApplicationLabel, widget: string }
               - { label: Open sollicitatie URL, name: openApplicationHref, widget: string }
-              - { label: Leeg icoon, name: emptyIcon, widget: string }
-              - { label: Leeg titel, name: emptyTitle, widget: text }
-              - { label: Leeg tekst, name: emptyText, widget: text }
               - { label: E-mail knop, name: emailButton, widget: string }
               - label: Cultuurblokken
                 name: culture

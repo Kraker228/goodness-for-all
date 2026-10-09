@@ -27,6 +27,7 @@ export default function ImpactPage() {
             <div className="mb-4">
               <Counter
                 end={impact.counterValue}
+                pauseAt={impact.counterPauseValue}
                 suffix=""
                 className="text-[80px] md:text-[120px] hero-title font-bold leading-none text-white block"
               />

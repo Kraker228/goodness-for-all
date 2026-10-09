@@ -375,7 +375,8 @@
   ],
   "impact": {
     "metaTitle": "Impact | Goodness for All",
-    "counterValue": 9942,
+    "counterPauseValue": 9942,
+    "counterValue": 10054,
     "counterLabel": "maaltijden in totaal uitgedeeld",
     "counterText": "via de buurthuizen. Op naar de 100.000!",
     "locationsTitle": "Impact Locaties",
