@@ -16,14 +16,7 @@ type Props = {
 
 export default function HungerCarousel({ slides, interval = 4000 }: Props) {
   const [active, setActive] = useState(0);
-  const [reduceMotion, setReduceMotion] = useState(false);
   const touchStartX = useRef<number | null>(null);
-
-  useEffect(() => {
-    setReduceMotion(
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    );
-  }, []);
 
   const advance = useCallback(
     (dir: 1 | -1) => {
@@ -33,10 +26,10 @@ export default function HungerCarousel({ slides, interval = 4000 }: Props) {
   );
 
   useEffect(() => {
-    if (reduceMotion) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = setInterval(() => advance(1), interval);
     return () => clearInterval(timer);
-  }, [reduceMotion, advance, interval]);
+  }, [advance, interval]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
