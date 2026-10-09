@@ -180,6 +180,7 @@ collections:
             widget: object
             fields:
               - { label: SEO titel, name: metaTitle, widget: string }
+              - { label: Teller tussenstand (pauze), name: counterPauseValue, widget: number, required: false, hint: "De teller telt eerst tot dit getal, wacht 2 seconden en telt dan door naar de eindwaarde met confetti. Leeg laten om direct door te tellen." }
               - { label: Teller waarde, name: counterValue, widget: number }
               - { label: Teller label, name: counterLabel, widget: string }
               - { label: Teller tekst, name: counterText, widget: string }
