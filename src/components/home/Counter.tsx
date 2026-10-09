@@ -26,6 +26,7 @@ export default function Counter({
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const [value, setValue] = useState(0);
+  const [celebrating, setCelebrating] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -54,10 +55,12 @@ export default function Counter({
         return;
       }
       animate(0, pauseAt, duration, () => {
-        timeout = setTimeout(
-          () => animate(pauseAt, end, finalDuration, () => fireConfetti()),
-          pauseMs,
-        );
+        timeout = setTimeout(() => {
+          animate(pauseAt, end, finalDuration, () => {
+            setCelebrating(true);
+            fireConfetti();
+          });
+        }, pauseMs);
       });
     });
     observer.observe(el);
@@ -70,8 +73,12 @@ export default function Counter({
 
   return (
     <span ref={ref} className={className}>
-      {value.toLocaleString("nl-NL")}
-      {suffix}
+      <span
+        className={`inline-block transition-transform duration-500 ease-out ${celebrating ? "scale-[1.15]" : ""}`}
+      >
+        {value.toLocaleString("nl-NL")}
+        {suffix}
+      </span>
     </span>
   );
 }

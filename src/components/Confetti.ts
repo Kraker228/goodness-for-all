@@ -1,5 +1,5 @@
 /** Fires a one-off full-screen confetti burst on a temporary canvas. */
-export function fireConfetti(durationMs = 4500) {
+export function fireConfetti(durationMs = 6000) {
   if (typeof window === "undefined") return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -23,10 +23,11 @@ export function fireConfetti(durationMs = 4500) {
   resize();
   window.addEventListener("resize", resize);
 
-  const colors = ["#ed961d", "#334e1f", "#f1e9d2", "#ffffff", "#f7c873"];
+  // Saturated colours that stand out on both the green and the beige sections.
+  const colors = ["#ed961d", "#334e1f", "#e8453c", "#f7c32e", "#ffffff", "#2f9e8f"];
   const w = window.innerWidth;
   const h = window.innerHeight;
-  const count = Math.min(260, Math.round(w / 5));
+  const count = Math.min(450, Math.round(w / 3));
 
   // Two cannons in the bottom corners plus a gentle shower from the top.
   const particles = Array.from({ length: count }, (_, i) => {
@@ -42,7 +43,7 @@ export function fireConfetti(durationMs = 4500) {
       x = fromLeft ? 0 : w;
       y = h;
       const angle = -(Math.PI / 4 + Math.random() * (Math.PI / 6));
-      const speed = 12 + Math.random() * 10 * Math.min(1, h / 700);
+      const speed = (16 + Math.random() * 12) * Math.min(1.2, Math.max(0.7, h / 800));
       vx = Math.cos(angle) * speed * (fromLeft ? 1 : -1);
       vy = Math.sin(angle) * speed;
     }
@@ -51,7 +52,7 @@ export function fireConfetti(durationMs = 4500) {
       y,
       vx,
       vy,
-      size: 6 + Math.random() * 6,
+      size: 12 + Math.random() * 10,
       color: colors[Math.floor(Math.random() * colors.length)],
       rotation: Math.random() * Math.PI * 2,
       spin: (Math.random() - 0.5) * 0.3,
@@ -64,14 +65,14 @@ export function fireConfetti(durationMs = 4500) {
   const step = (ts: number) => {
     if (start === null) start = ts;
     const elapsed = ts - start;
-    const fade = Math.max(0, Math.min(1, (durationMs - elapsed) / 800));
+    const fade = Math.max(0, Math.min(1, (durationMs - elapsed) / 1000));
 
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     ctx.globalAlpha = fade;
     for (const p of particles) {
-      p.vy += 0.25;
-      p.vx *= 0.99;
-      p.vy *= 0.99;
+      p.vy += 0.22;
+      p.vx *= 0.985;
+      p.vy *= 0.985;
       p.x += p.vx;
       p.y += p.vy;
       p.rotation += p.spin;
