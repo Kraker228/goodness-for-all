@@ -78,40 +78,6 @@
       "buttonLabel": "Lees ons verhaal",
       "buttonHref": "/ons-verhaal"
     },
-    "cards": [
-      {
-        "title": "Ons verhaal",
-        "text": "De één betaalt wat meer, zodat de ander minder betaalt.",
-        "accent": "Zo werkt het.",
-        "href": "/ons-verhaal"
-      },
-      {
-        "title": "Impact",
-        "text": "2.000 maaltijden per maand.",
-        "accent": "Kijk naar wie we ze brengen",
-        "href": "/impact"
-      }
-    ],
-    "joinCard": {
-      "title": "Doe mee",
-      "links": [
-        {
-          "href": "/partners",
-          "prefix": "Als bedrijf:",
-          "accent": "Word Impact Partner"
-        },
-        {
-          "href": "/voor-buurthuizen",
-          "prefix": "Als buurthuis:",
-          "accent": "Help de maaltijden verspreiden"
-        },
-        {
-          "href": "/werken-bij",
-          "prefix": "Als persoon:",
-          "accent": "Bekijk onze vacatures, deel ons verhaal, of doneer!"
-        }
-      ]
-    },
     "counter": {
       "value": 2000,
       "label": "maaltijden per maand",

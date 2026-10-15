@@ -62,70 +62,6 @@ export default function HomePage() {
 
       <HungerCarousel slides={home.hungerCarousel.slides} />
 
-      <section className="py-section-gap-lg max-w-[1200px] mx-auto px-container-margin">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
-          {home.cards.map((card) => (
-            <Link
-              key={card.href}
-              href={card.href}
-              className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300"
-            >
-              <div>
-                <h3 className="hero-title font-bold text-headline-md mb-4 uppercase tracking-tight">
-                  {card.title}
-                </h3>
-                <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
-                  {card.text}
-                  <span className="underline text-harvest-orange">
-                    {card.accent}
-                  </span>
-                </p>
-              </div>
-            </Link>
-          ))}
-
-          <div className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300">
-            <div>
-              <h3 className="hero-title font-bold text-headline-md mb-4 uppercase tracking-tight">
-                {home.joinCard.title}
-              </h3>
-              <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
-                {home.joinCard.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    className="block"
-                    href={link.href}
-                  >
-                    {link.prefix}
-                    <span className="underline text-harvest-orange">
-                      {link.accent}
-                    </span>
-                  </Link>
-                ))}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-evergreen py-section-gap-lg text-sandstone-beige">
-        <div className="max-w-[1200px] mx-auto px-container-margin text-center">
-          <div className="mb-4">
-            <Counter
-              end={home.counter.value}
-              className="text-[80px] md:text-[120px] hero-title font-bold leading-none text-white block"
-            />
-            <span className="text-2xl md:text-4xl hero-title font-bold text-white/90 uppercase tracking-widest block -mt-1">
-              {home.counter.label}
-            </span>
-          </div>
-          <div className="h-1 w-24 bg-harvest-orange mx-auto mb-8" />
-          <p className="font-body-lg text-body-lg opacity-80 max-w-xl mx-auto">
-            {home.counter.text}
-          </p>
-        </div>
-      </section>
-
       <section className="bg-pure-mist py-section-gap-lg overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-container-margin">
           <div className="max-w-3xl mb-section-gap-sm">
@@ -185,6 +121,24 @@ export default function HomePage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-evergreen py-section-gap-lg text-sandstone-beige">
+        <div className="max-w-[1200px] mx-auto px-container-margin text-center">
+          <div className="mb-4">
+            <Counter
+              end={home.counter.value}
+              className="text-[80px] md:text-[120px] hero-title font-bold leading-none text-white block"
+            />
+            <span className="text-2xl md:text-4xl hero-title font-bold text-white/90 uppercase tracking-widest block -mt-1">
+              {home.counter.label}
+            </span>
+          </div>
+          <div className="h-1 w-24 bg-harvest-orange mx-auto mb-8" />
+          <p className="font-body-lg text-body-lg opacity-80 max-w-xl mx-auto">
+            {home.counter.text}
+          </p>
         </div>
       </section>
 

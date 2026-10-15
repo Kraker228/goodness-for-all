@@ -75,26 +75,6 @@ collections:
                   - { label: Tekst, name: text, widget: text }
                   - { label: Knoplabel, name: buttonLabel, widget: string }
                   - { label: Knop URL, name: buttonHref, widget: string }
-              - label: Bento kaarten
-                name: cards
-                widget: list
-                fields:
-                  - { label: Titel, name: title, widget: string }
-                  - { label: Tekst, name: text, widget: text }
-                  - { label: Accent (gekleurde tekst na de tekst), name: accent, widget: string }
-                  - { label: URL, name: href, widget: string }
-              - label: Doe mee kaart
-                name: joinCard
-                widget: object
-                fields:
-                  - { label: Titel, name: title, widget: string }
-                  - label: Links
-                    name: links
-                    widget: list
-                    fields:
-                      - { label: URL, name: href, widget: string }
-                      - { label: Prefix (gewone tekst), name: prefix, widget: string }
-                      - { label: Accent (gekleurde tekst), name: accent, widget: string }
               - label: Teller
                 name: counter
                 widget: object
