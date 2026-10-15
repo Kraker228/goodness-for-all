@@ -93,42 +93,42 @@
       "videos": [
         {
           "number": 1,
-          "date": "dinsdag 13 oktober",
+          "date": "donderdag 15 oktober",
           "youtubeUrl": "https://youtube.com/shorts/GE8mg9i6Wqo"
         },
         {
           "number": 2,
-          "date": "donderdag 15 oktober",
-          "youtubeUrl": ""
-        },
-        {
-          "number": 3,
           "date": "dinsdag 20 oktober",
           "youtubeUrl": ""
         },
         {
-          "number": 4,
+          "number": 3,
           "date": "donderdag 22 oktober",
           "youtubeUrl": ""
         },
         {
-          "number": 5,
+          "number": 4,
           "date": "dinsdag 27 oktober",
           "youtubeUrl": ""
         },
         {
-          "number": 6,
+          "number": 5,
           "date": "donderdag 29 oktober",
           "youtubeUrl": ""
         },
         {
-          "number": 7,
+          "number": 6,
           "date": "dinsdag 3 november",
           "youtubeUrl": ""
         },
         {
-          "number": 8,
+          "number": 7,
           "date": "donderdag 5 november",
+          "youtubeUrl": ""
+        },
+        {
+          "number": 8,
+          "date": "dinsdag 10 november",
           "youtubeUrl": ""
         }
       ]
