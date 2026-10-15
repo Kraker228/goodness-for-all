@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Counter from "@/components/home/Counter";
 import HungerCarousel from "@/components/home/HungerCarousel";
 import PartnerStrip from "@/components/home/PartnerStrip";
+import YouTubeFacade from "@/components/partners/YouTubeFacade";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   title: site.home.metaTitle,
   description: site.home.metaDescription,
 };
+
+/** Haalt het video-ID uit een YouTube-link (watch, youtu.be, shorts, embed). */
+function youTubeId(url: string): string | null {
+  const match = url
+    .trim()
+    .match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/);
+  return match ? match[1] : null;
+}
 
 export default function HomePage() {
   const { settings, home } = getSiteContent();
@@ -54,48 +62,64 @@ export default function HomePage() {
 
       <HungerCarousel slides={home.hungerCarousel.slides} />
 
-      <section className="py-section-gap-lg max-w-[1200px] mx-auto px-container-margin">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
-          {home.cards.map((card) => (
-            <Link
-              key={card.href}
-              href={card.href}
-              className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300"
-            >
-              <div>
-                <h3 className="hero-title font-bold text-headline-md mb-4 uppercase tracking-tight">
-                  {card.title}
-                </h3>
-                <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
-                  {card.text}
-                  <span className="underline text-harvest-orange">
-                    {card.accent}
-                  </span>
-                </p>
-              </div>
-            </Link>
-          ))}
-
-          <div className="h-full bg-white border-2 border-evergreen p-8 flex flex-col justify-between hover:bg-sandstone-beige transition-colors duration-300">
-            <div>
-              <h3 className="hero-title font-bold text-headline-md mb-4 uppercase tracking-tight">
-                {home.joinCard.title}
-              </h3>
-              <p className="font-body-md text-lg md:text-body-md text-evergreen/80">
-                {home.joinCard.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    className="block"
-                    href={link.href}
-                  >
-                    {link.prefix}
-                    <span className="underline text-harvest-orange">
-                      {link.accent}
+      <section className="bg-pure-mist py-section-gap-lg overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-container-margin">
+          <div className="max-w-3xl mb-section-gap-sm">
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-evergreen mb-base">
+              {home.goodNews.title}
+            </h2>
+            <p className="font-body-lg text-body-lg text-on-surface-variant">
+              {home.goodNews.text}{" "}
+              <a
+                href={home.goodNews.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-harvest-orange font-semibold underline hover:no-underline"
+              >
+                {home.goodNews.linkLabel}
+              </a>
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+            {home.goodNews.videos.map((video) => {
+              const id = video.youtubeUrl ? youTubeId(video.youtubeUrl) : null;
+              const label = `${video.number}/${home.goodNews.videos.length}`;
+              return (
+                <figure key={video.number} className="flex flex-col">
+                  {/* Video's zijn staand opgenomen in 1536x1920, dus 4:5. */}
+                  <div className="relative aspect-[4/5] border-2 border-evergreen overflow-hidden bg-evergreen">
+                    {id ? (
+                      <YouTubeFacade
+                        videoId={id}
+                        title={`${home.goodNews.title} ${label}`}
+                        playLabel={`${home.goodNews.playLabel} ${label}`}
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                        <span className="absolute top-2 left-3 font-label-sm text-label-sm uppercase tracking-widest text-sandstone-beige/70">
+                          Good News for All
+                        </span>
+                        <span className="font-headline-lg text-6xl leading-none text-harvest-orange">
+                          {video.number}
+                        </span>
+                        <span className="font-label-sm text-label-sm text-sandstone-beige mt-1">
+                          / {home.goodNews.videos.length}
+                        </span>
+                        <span className="absolute bottom-0 right-0 w-10 h-10 bg-harvest-orange/20 rotate-45 translate-x-5 translate-y-5" />
+                      </div>
+                    )}
+                  </div>
+                  <figcaption className="mt-base font-body-md text-body-md text-evergreen">
+                    <span className="font-bold">Bericht {label}</span>
+                    <span className="block text-on-surface-variant">
+                      {id
+                        ? video.date
+                        : `${home.goodNews.videoPlaceholderLabel} ${video.date}`}
                     </span>
-                  </Link>
-                ))}
-              </p>
-            </div>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -115,16 +139,6 @@ export default function HomePage() {
           <p className="font-body-lg text-body-lg opacity-80 max-w-xl mx-auto">
             {home.counter.text}
           </p>
-        </div>
-      </section>
-
-      <section className="bg-evergreen py-section-gap-lg overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-container-margin">
-          <div className="sk-ww-linkedin-profile-post w-full" data-embed-id="25694442" />
-          <Script
-            src="https://widgets.sociablekit.com/linkedin-profile-posts/widget.js"
-            strategy="afterInteractive"
-          />
         </div>
       </section>
 
