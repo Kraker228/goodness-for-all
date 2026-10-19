@@ -49,6 +49,14 @@ export const IMPACT_LOCATIONS: ImpactLocation[] = [
     position: [51.90432443864011, 4.441851986360766],
   },
   {
+    title: 'Incluzio Locatie "Millinxparkhuis"',
+    subtitle: "Incluzio",
+    city: "Rotterdam",
+    address: "Millinxstraat 69, 3081 PE Rotterdam",
+    link: "https://www.incluziorotterdam.nl/district/huis-van-de-wijk-millinxparkhuis/",
+    position: [51.8929, 4.4813],
+  },
+  {
     title: "Sol Locatie Riederkwartier",
     subtitle: "SOL",
     city: "Rotterdam",
