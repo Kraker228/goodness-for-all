@@ -84,19 +84,26 @@ export default function HomePage() {
             {home.goodNews.videos.map((video) => {
               const id = video.youtubeUrl ? youTubeId(video.youtubeUrl) : null;
               const label = `${video.number}/${home.goodNews.videos.length}`;
+              const title = id && video.title ? video.title : `Bericht ${label}`;
               return (
-                <figure key={video.number} className="flex flex-col">
+                // Subgrid: video, titel en datum delen per rij dezelfde
+                // tracks, zodat bijschriften uitgelijnd blijven, ook als een
+                // titel over meerdere regels loopt.
+                <figure
+                  key={video.number}
+                  className="grid grid-rows-subgrid row-span-3 gap-y-0"
+                >
                   {/* Video's zijn staand opgenomen in 1536x1920, dus 4:5. */}
                   <div className="relative aspect-[4/5] border-2 border-evergreen overflow-hidden bg-evergreen">
                     {id ? (
                       <YouTubeFacade
                         videoId={id}
-                        title={`${home.goodNews.title} ${label}`}
+                        title={title}
                         playLabel={`${home.goodNews.playLabel} ${label}`}
                       />
                     ) : (
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                        <span className="absolute top-2 left-3 font-label-sm text-label-sm uppercase tracking-widest text-sandstone-beige/70">
+                        <span className="absolute top-2 left-2 md:left-3 whitespace-nowrap font-label-sm text-[10px] md:text-label-sm uppercase tracking-widest text-sandstone-beige/70">
                           Good News for All
                         </span>
                         <span className="font-headline-lg text-6xl leading-none text-harvest-orange">
@@ -109,9 +116,11 @@ export default function HomePage() {
                       </div>
                     )}
                   </div>
-                  <figcaption className="mt-base font-body-md text-body-md text-evergreen">
-                    <span className="font-bold">Bericht {label}</span>
-                    <span className="block text-on-surface-variant">
+                  <figcaption className="grid grid-rows-subgrid row-span-2 gap-y-0 font-body-md text-body-md">
+                    <span className="mt-base font-bold leading-snug text-evergreen">
+                      {title}
+                    </span>
+                    <span className="mt-1 text-on-surface-variant">
                       {id
                         ? video.date
                         : `${home.goodNews.videoPlaceholderLabel} ${video.date}`}
