@@ -98,6 +98,7 @@ collections:
                     hint: "Plak de YouTube-link (ook Shorts) zodra de video online staat; zolang het veld leeg is, toont de site een placeholder."
                     fields:
                       - { label: Nummer, name: number, widget: number }
+                      - { label: Titel, name: title, widget: string, required: false, hint: "Wordt getoond zodra de video gevuld is; anders 'Bericht x/8'." }
                       - { label: Datum, name: date, widget: string }
                       - { label: YouTube-link, name: youtubeUrl, widget: string, required: false }
               - label: Quote

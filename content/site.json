@@ -93,41 +93,49 @@
       "videos": [
         {
           "number": 1,
+          "title": "We hebben meer dan 10.000 maaltijden verspreid!",
           "date": "donderdag 15 oktober",
           "youtubeUrl": "https://youtube.com/shorts/GE8mg9i6Wqo"
         },
         {
           "number": 2,
+          "title": "We staan nu ook in de Maastoren!",
           "date": "dinsdag 20 oktober",
-          "youtubeUrl": ""
+          "youtubeUrl": "https://youtube.com/shorts/FCdjxOX3BY4"
         },
         {
           "number": 3,
+          "title": "",
           "date": "donderdag 22 oktober",
           "youtubeUrl": ""
         },
         {
           "number": 4,
+          "title": "",
           "date": "dinsdag 27 oktober",
           "youtubeUrl": ""
         },
         {
           "number": 5,
+          "title": "",
           "date": "donderdag 29 oktober",
           "youtubeUrl": ""
         },
         {
           "number": 6,
+          "title": "",
           "date": "dinsdag 3 november",
           "youtubeUrl": ""
         },
         {
           "number": 7,
+          "title": "",
           "date": "donderdag 5 november",
           "youtubeUrl": ""
         },
         {
           "number": 8,
+          "title": "",
           "date": "dinsdag 10 november",
           "youtubeUrl": ""
         }
