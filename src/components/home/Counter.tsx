@@ -8,10 +8,18 @@ type CounterProps = {
   duration?: number;
   className?: string;
   suffix?: string;
-  /** Optional intermediate value: count to it, hold, then continue to `end` with confetti. */
-  pauseAt?: number;
-  pauseMs?: number;
-  finalDuration?: number;
+  /**
+   * Optional milestone between 0 and `end`: the counter slows down for the
+   * last few numbers before it, fires confetti on the milestone and then
+   * continues to `end` at normal speed.
+   */
+  milestone?: number;
+  /** How many numbers before the milestone are shown one by one. */
+  slowSteps?: number;
+  /** Delay per number during the slow-down. */
+  slowStepMs?: number;
+  /** How long the counter rests on the milestone before continuing. */
+  milestoneHoldMs?: number;
 };
 
 /** Count-up animation that fires once when scrolled into view. */
@@ -20,9 +28,10 @@ export default function Counter({
   duration = 2000,
   className = "",
   suffix = "+",
-  pauseAt,
-  pauseMs = 2000,
-  finalDuration = 1500,
+  milestone,
+  slowSteps = 3,
+  slowStepMs = 700,
+  milestoneHoldMs = 1200,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const [value, setValue] = useState(0);
@@ -31,9 +40,13 @@ export default function Counter({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const staged = pauseAt !== undefined && pauseAt > 0 && pauseAt < end;
+    const staged =
+      milestone !== undefined && milestone > slowSteps && milestone <= end;
     let frame = 0;
-    let timeout: ReturnType<typeof setTimeout> | undefined;
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+    const later = (fn: () => void, ms: number) => {
+      timeouts.push(setTimeout(fn, ms));
+    };
 
     const animate = (from: number, to: number, ms: number, done?: () => void) => {
       let start: number | null = null;
@@ -54,22 +67,35 @@ export default function Counter({
         animate(0, end, duration);
         return;
       }
-      animate(0, pauseAt, duration, () => {
-        timeout = setTimeout(() => {
-          animate(pauseAt, end, finalDuration, () => {
-            setCelebrating(true);
-            fireConfetti();
-          });
-        }, pauseMs);
+
+      // Same speed (numbers per ms) before and after the milestone.
+      const slowFrom = milestone - slowSteps - 1;
+      const rate = slowFrom / duration;
+      const restDuration = Math.max(1000, (end - milestone) / rate);
+
+      animate(0, slowFrom, duration, () => {
+        // Slow down: show the last numbers before the milestone one by one.
+        for (let i = 1; i <= slowSteps; i++) {
+          later(() => setValue(slowFrom + i), i * slowStepMs);
+        }
+        later(() => {
+          setValue(milestone);
+          setCelebrating(true);
+          fireConfetti();
+          later(() => {
+            setCelebrating(false);
+            if (end > milestone) animate(milestone, end, restDuration);
+          }, milestoneHoldMs);
+        }, (slowSteps + 1) * slowStepMs);
       });
     });
     observer.observe(el);
     return () => {
       observer.disconnect();
       window.cancelAnimationFrame(frame);
-      if (timeout) clearTimeout(timeout);
+      timeouts.forEach(clearTimeout);
     };
-  }, [end, duration, pauseAt, pauseMs, finalDuration]);
+  }, [end, duration, milestone, slowSteps, slowStepMs, milestoneHoldMs]);
 
   return (
     <span ref={ref} className={className}>

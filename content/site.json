@@ -105,38 +105,38 @@
         },
         {
           "number": 3,
-          "title": "",
+          "title": "Folkert is begonnen!",
           "date": "donderdag 22 oktober",
           "youtubeUrl": ""
         },
         {
           "number": 4,
           "title": "",
-          "date": "dinsdag 27 oktober",
+          "date": "dinsdag 10 november",
           "youtubeUrl": ""
         },
         {
           "number": 5,
           "title": "",
-          "date": "donderdag 29 oktober",
+          "date": "dinsdag 17 november",
           "youtubeUrl": ""
         },
         {
           "number": 6,
           "title": "",
-          "date": "dinsdag 3 november",
+          "date": "dinsdag 24 november",
           "youtubeUrl": ""
         },
         {
           "number": 7,
           "title": "",
-          "date": "donderdag 5 november",
+          "date": "dinsdag 1 december",
           "youtubeUrl": ""
         },
         {
           "number": 8,
           "title": "",
-          "date": "dinsdag 10 november",
+          "date": "dinsdag 8 december",
           "youtubeUrl": ""
         }
       ]
@@ -394,8 +394,8 @@
   ],
   "impact": {
     "metaTitle": "Impact | Goodness for All",
-    "counterPauseValue": 9942,
-    "counterValue": 10054,
+    "counterMilestoneValue": 10000,
+    "counterValue": 12599,
     "counterLabel": "maaltijden in totaal uitgedeeld",
     "counterText": "via de buurthuizen. Op naar de 100.000!",
     "locationsTitle": "Impact Locaties",
