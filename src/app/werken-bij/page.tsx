@@ -19,7 +19,6 @@ export default function WerkenBijPage() {
     <>
       <Header active="/werken-bij" settings={settings} />
 
-
       <main className="max-w-[1200px] mx-auto px-container-margin min-h-screen">
         <Reveal
           as="section"
