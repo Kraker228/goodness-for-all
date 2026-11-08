@@ -550,6 +550,122 @@
       "contactText": "Heb je een ander idee om samen te werken, of wil je een grotere particuliere schenking doen? Neem dan contact op.",
       "contactButton": "Neem contact op"
     },
+    "featuredJob": {
+      "eyebrow": "Uitgelichte vacature",
+      "title": "Wie helpt ons de mensen te bereiken die we nog missen?",
+      "intro": "Voor €1 krijgen Rotterdammers die het krap hebben bij ons een gezonde maaltijd. Nog lang niet iedereen die daar baat bij heeft, weet ons te vinden. Daar zoeken we jou voor.",
+      "profileTitle": "Jij bent:",
+      "profile": [
+        "thuis in het Rotterdamse maatschappelijke veld, met ervaring en een netwerk",
+        "ondernemend: je ziet wat al lukt en wat nog niet",
+        "een doener: je organiseert zelf acties, en bedenkt en realiseert verbeteringen"
+      ],
+      "meta": [
+        "Freelance, met uitzicht op vast",
+        "€1.500 – €2.000 per maand",
+        "Rotterdam, veel in de buurthuizen"
+      ],
+      "toggleLabel": "Lees de hele vacature",
+      "toggleLabelOpen": "Minder tonen",
+      "roleTitle": "Aanpakker voor buurthuizen en impact",
+      "sections": [
+        {
+          "title": "Wat we doen",
+          "paragraphs": [
+            "Goodness for All is een sociale onderneming en ANBI-stichting. We verkopen gezonde, plantaardige maaltijden aan bedrijven. Met die opbrengst financieren we maaltijden die buurthuizen en lokale organisaties voor €1 uitgeven aan mensen die ze goed kunnen gebruiken. Zo’n 14 buurthuizen en organisaties doen al mee, en we willen groeien naar Den Haag, Amsterdam, Utrecht en verder.",
+            "Aan maaltijden geen gebrek. De uitdaging is dat ze terechtkomen bij de mensen die er baat bij hebben. Daar ga jij het verschil maken."
+          ],
+          "items": []
+        },
+        {
+          "title": "Geen verkoopfunctie",
+          "paragraphs": [
+            "De verkoop aan bedrijven doen we apart. Jij werkt aan de sociale kant. In het welzijnswerk worden organisaties al overspoeld met aanbod, en wij willen niet nóg een partij zijn die bepaalt wat bewoners nodig hebben. Buurthuizen, welzijnsorganisaties en bewonersinitiatieven kennen hun buurt het best. Wij sluiten aan bij wat er al gebeurt en bij wat bewoners zelf willen.",
+            "Onze maaltijden zijn daarbij een middel, geen doel. Een maaltijd lost eenzaamheid niet op, maar kan wel een laagdrempelige aanleiding zijn: een reden om binnen te lopen, aan te schuiven of een praatje te maken. En tijd is in het welzijnswerk het kostbaarst, niet het eten. Een kant-en-klare, gezonde maaltijd scheelt een eettafel of inloop veel kook- en regelwerk. Jouw rol is uitzoeken waar onze maaltijden zo’n simpele, nuttige schakel kunnen zijn, en dat goed regelen."
+          ],
+          "items": []
+        },
+        {
+          "title": "Wat ga je doen?",
+          "paragraphs": [
+            "Het werk bestaat uit twee soorten taken: praktische taken die elke maand terugkomen en gewoon goed moeten lopen, en ontwikkeltaken waarin je onderzoekt, uitprobeert en dingen opzet die er nog niet zijn. Waar nodig stuur je anderen aan, zoals vrijwilligers, coördinatoren of externe partijen."
+          ],
+          "items": [
+            {
+              "label": "De maandelijkse levering",
+              "text": "Je verzamelt de bestellingen van de buurthuizen, vertaalt ze naar één order bij onze leverancier Lazy en zorgt dat de levering bij Hotspot Hutspot goed wordt gesorteerd en bezorgd. Bestelt een locatie niets? Dan vraag je door: waarom niet, en hoe kunnen we helpen? Het kost niet veel tijd, maar het is de basis van het contact met onze partners."
+            },
+            {
+              "label": "Aansluiten bij wat er al is",
+              "text": "Je zoekt lopende eet- en ontmoetinitiatieven op, zoals aanschuiftafels en buurtmaaltijden, en kijkt samen met hen of en hoe onze maaltijden het makkelijker maken. Je werkt samen met partijen die bewoners al kennen, zoals welzijnsorganisaties, huisartsen, schuldhulpverlening en buurtcoaches."
+            },
+            {
+              "label": "Drempels wegnemen",
+              "text": "Veel mensen die een maaltijd goed kunnen gebruiken, weten niet dat het bestaat of ervaren een drempel. Samen met locaties zoek je uit waar dat zit en probeer je kleine acties uit om het op te lossen. Je houdt ook in de gaten dat de maaltijden goed terechtkomen."
+            },
+            {
+              "label": "Het netwerk uitbreiden",
+              "text": "Je breidt het netwerk uit naar Den Haag, Amsterdam, Utrecht en eventueel andere plekken. Je maakt heldere afspraken en eenvoudige instructies voor nieuwe locaties, en denkt mee over samenwerkingen en subsidieaanvragen, bijvoorbeeld om de inzet van vrijwilligers of coördinatoren te bekostigen."
+            },
+            {
+              "label": "Continu leren",
+              "text": "Wat werkt, wat niet? Je zet ervaringen om in een betere aanpak en laat zien wat het oplevert."
+            }
+          ]
+        },
+        {
+          "title": "Wanneer ben je succesvol?",
+          "paragraphs": [
+            "Als onze maaltijden vaker terechtkomen bij mensen die ze goed kunnen gebruiken, en buurthuizen en initiatieven zeggen dat het hun werk makkelijker maakt. In de eerste maand spreken we samen concrete doelen af. Daarbij kijken we onder meer naar:"
+          ],
+          "items": [
+            {
+              "label": "Bereik",
+              "text": "hoeveel maaltijden er per maand worden uitgegeven, en hoeveel nieuwe mensen daarmee de weg naar een buurthuis of initiatief vinden"
+            },
+            {
+              "label": "Partners",
+              "text": "hoeveel locaties actief en regelmatig bestellen, en welke nieuwe samenwerkingen er bijkomen"
+            },
+            {
+              "label": "Groei",
+              "text": "de eerste locaties buiten Rotterdam, met een aanpak die we kunnen herhalen"
+            }
+          ]
+        },
+        {
+          "title": "Wat we bieden",
+          "paragraphs": [
+            "Je start als freelancer, met een maandelijkse vergoeding van €1.500 tot €2.000. Het aantal uren bespreken we samen. Dat kan één persoon zijn die na een paar maanden doorgroeit naar een fulltimerol en een vast dienstverband. Het kunnen ook twee mensen zijn die ieder hun eigen kracht meebrengen: bijvoorbeeld iemand die sterk is in de praktische kant en de relaties met buurthuizen, en iemand die vooral graag onderzoekt, ontwikkelt en opschaalt. Je werkt vanuit Rotterdam, met veel tijd in de buurthuizen zelf."
+          ],
+          "items": []
+        },
+        {
+          "title": "Hoe we werken",
+          "paragraphs": [
+            "We bestaan zo’n anderhalf jaar en zijn nog volop aan het ontdekken. Onze werkwijze is simpel: kijken wat er is, wat werkt en wat niet, dan een verbetering bedenken en uitvoeren, en weer kijken. Je krijgt veel vrijheid voor eigen initiatief, een korte lijn met de oprichter en directe invloed op hoe de organisatie zich ontwikkelt."
+          ],
+          "items": []
+        },
+        {
+          "title": "Wie ben jij?",
+          "paragraphs": [
+            "Iemand die bekend is met het sociale domein en welzijnsorganisaties. Je hebt ervaring in of rond wijkwerk, welzijn, buurtinitiatieven, eet- en ontmoetprojecten of voedselhulp, en je werkt vanuit wat bewoners zelf nodig hebben. Je hebt een netwerk in Rotterdam, bij buurthuizen, welzijnsorganisaties of de gemeente, of je bouwt dat snel op. Kennis van andere steden is een pre.",
+            "Je bent een aanpakker: je wacht niet op een plan, maar maakt er een, probeert iets uit en stuurt bij. Dat heb je eerder laten zien, in een baan, een project of een eigen initiatief. Je bent goed met mensen, van vrijwilligers tot professionals: je luistert, bouwt vertrouwen op en vraagt door als iets niet loopt. En je bent betrouwbaar en zelfstandig, werkt prima in een klein team en pakt de maandelijkse levering consequent op.",
+            "Heb je niet alles op dit lijstje? Reageer toch. We zoeken vooral energie, ondernemerschap en de wil om te leren."
+          ],
+          "items": []
+        },
+        {
+          "title": "Interesse?",
+          "paragraphs": [
+            "Stuur een korte mail of bericht met waarom dit je aanspreekt, een voorbeeld van iets wat je zelf hebt aangepakt en wat daarvan terechtkwam, en je beschikbaarheid. Geef ook aan of je je meer thuis voelt in de praktische kant, de ontwikkelkant of allebei."
+          ],
+          "items": []
+        }
+      ],
+      "buttonLabel": "REAGEER PER E-MAIL"
+    },
     "jobs": [
       {
         "icon": "rocket_launch",

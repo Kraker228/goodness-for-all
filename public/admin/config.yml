@@ -248,6 +248,33 @@ collections:
               - { label: Open sollicitatie knop, name: openApplicationLabel, widget: string }
               - { label: Open sollicitatie URL, name: openApplicationHref, widget: string }
               - { label: E-mail knop, name: emailButton, widget: string }
+              - label: Uitgelichte vacature (boven de vacatureblokken)
+                name: featuredJob
+                widget: object
+                fields:
+                  - { label: Label, name: eyebrow, widget: string }
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Intro, name: intro, widget: text }
+                  - { label: Titel profiel, name: profileTitle, widget: string }
+                  - { label: Profiel (bullets), name: profile, widget: list }
+                  - { label: Kenmerken (labels), name: meta, widget: list }
+                  - { label: Uitklapknop, name: toggleLabel, widget: string }
+                  - { label: Uitklapknop (open), name: toggleLabelOpen, widget: string }
+                  - { label: Functietitel, name: roleTitle, widget: string }
+                  - label: Uitgeklapte secties
+                    name: sections
+                    widget: list
+                    fields:
+                      - { label: Titel, name: title, widget: string }
+                      - { label: Alinea's, name: paragraphs, widget: list, field: { label: Alinea, name: text, widget: text } }
+                      - label: Punten
+                        name: items
+                        widget: list
+                        required: false
+                        fields:
+                          - { label: Label, name: label, widget: string }
+                          - { label: Tekst, name: text, widget: text }
+                  - { label: Knoptekst, name: buttonLabel, widget: string }
               - label: Cultuurblokken
                 name: culture
                 widget: list

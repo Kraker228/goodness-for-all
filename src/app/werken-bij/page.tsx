@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WerkenBijPage() {
   const { settings, help } = getSiteContent();
-  const { vacaturesCta, stagesCta, stages } = help;
+  const { vacaturesCta, stagesCta, stages, featuredJob } = help;
 
   return (
     <>
@@ -95,6 +95,110 @@ export default function WerkenBijPage() {
               </a>
             </div>
           </div>
+          {/* Uitgelichte vacature: valt meer op dan de drie blokken eronder */}
+          <article className="relative mb-section-gap-sm">
+            <div
+              className="absolute inset-0 border-2 border-evergreen bg-evergreen translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4"
+              aria-hidden
+            ></div>
+            <div className="relative bg-harvest-orange border-2 border-evergreen p-gutter md:p-10">
+              <p className="font-label-sm text-label-sm text-evergreen uppercase tracking-wider mb-base flex items-center gap-2">
+                <span className="material-symbols-outlined text-xl">star</span>
+                {featuredJob.eyebrow}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <div className="md:col-span-7">
+                  <h3 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-evergreen mb-gutter leading-tight">
+                    {featuredJob.title}
+                  </h3>
+                  <p className="font-body-lg text-body-lg text-evergreen max-w-xl">
+                    {featuredJob.intro}
+                  </p>
+                  <ul className="mt-gutter flex flex-wrap gap-2">
+                    {featuredJob.meta.map((item) => (
+                      <li
+                        key={item}
+                        className="font-body-md text-body-md text-evergreen bg-sandstone-beige border-2 border-evergreen px-3 py-1"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="md:col-span-5 bg-sandstone-beige border-2 border-evergreen p-gutter self-start">
+                  <p className="font-headline-md text-headline-md text-evergreen mb-base">
+                    {featuredJob.profileTitle}
+                  </p>
+                  <ul className="flex flex-col gap-base">
+                    {featuredJob.profile.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span className="material-symbols-outlined text-harvest-orange shrink-0 mt-0.5">
+                          check_circle
+                        </span>
+                        <p className="font-body-md text-body-md text-on-surface-variant">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <details className="group mt-gutter border-t-2 border-evergreen pt-gutter">
+                <summary className="flex cursor-pointer list-none items-center gap-2 font-cta text-cta text-evergreen uppercase [&::-webkit-details-marker]:hidden">
+                  <span className="material-symbols-outlined transition-transform group-open:rotate-180">
+                    expand_more
+                  </span>
+                  <span className="group-open:hidden">{featuredJob.toggleLabel}</span>
+                  <span className="hidden group-open:inline">{featuredJob.toggleLabelOpen}</span>
+                </summary>
+                <div className="mt-gutter bg-sandstone-beige border-2 border-evergreen p-gutter md:p-8">
+                  <h4 className="font-headline-md text-headline-md text-evergreen mb-gutter">
+                    {featuredJob.roleTitle}
+                  </h4>
+                  <div className="flex flex-col gap-gutter max-w-3xl">
+                    {featuredJob.sections.map((section) => (
+                      <div key={section.title}>
+                        <h5 className="font-label-sm text-label-sm text-evergreen uppercase tracking-wider mb-base">
+                          {section.title}
+                        </h5>
+                        {section.paragraphs.map((paragraph) => (
+                          <p
+                            key={paragraph}
+                            className="font-body-md text-body-md text-on-surface-variant mb-base"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                        {section.items.length > 0 && (
+                          <ul className="flex flex-col gap-base">
+                            {section.items.map((item) => (
+                              <li key={item.label} className="flex items-start gap-3">
+                                <span className="material-symbols-outlined text-harvest-orange shrink-0 mt-0.5">
+                                  arrow_right
+                                </span>
+                                <p className="font-body-md text-body-md text-on-surface-variant">
+                                  <span className="font-bold text-evergreen">{item.label}:</span>{" "}
+                                  {item.text}
+                                </p>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href={`mailto:${settings.email}`}
+                    className="mt-gutter inline-block bg-evergreen text-sandstone-beige font-cta text-cta px-gutter py-4 border-2 border-evergreen hover:bg-harvest-orange hover:text-evergreen transition-all"
+                  >
+                    {featuredJob.buttonLabel}
+                  </a>
+                </div>
+              </details>
+            </div>
+          </article>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-evergreen">
             {help.jobs.map((job, index) => (
               <div
