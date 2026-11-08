@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import DonationStrip from "@/components/DonationStrip";
 import { getSiteContent } from "@/lib/content";
 
 const site = getSiteContent();
@@ -20,7 +19,6 @@ export default function WerkenBijPage() {
     <>
       <Header active="/werken-bij" settings={settings} />
 
-      <DonationStrip content={help.donationStrip} />
 
       <main className="max-w-[1200px] mx-auto px-container-margin min-h-screen">
         <Reveal
