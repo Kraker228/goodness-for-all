@@ -5,7 +5,7 @@ const sectionTitle =
 
 export function WhySection() {
   return (
-    <section className="bg-surface py-section-gap-sm md:py-section-gap-lg">
+    <section className="bg-surface py-section-gap-sm md:py-section-gap-lg lg:pb-section-gap-sm">
       <div className="max-w-[1200px] mx-auto px-container-margin grid gap-section-gap-sm lg:grid-cols-2 lg:gap-16 items-start">
         <div>
           <h2 className={sectionTitle}>Waarom deze maaltijden?</h2>
@@ -29,16 +29,19 @@ export function WhySection() {
             </li>
           </ul>
         </div>
-        <div className="bg-harvest-orange text-evergreen border-2 border-evergreen p-gutter md:p-10 shadow-[8px_8px_0_0_var(--color-evergreen)]">
+        {/* Het oranje blok steekt net omhoog in de donkergroene hero. Op mobiel
+            staat het bovenaan (vóór de koopargumenten), op desktop rechts. */}
+        <div className="relative z-10 order-first lg:order-none -mt-[72px] md:-mt-[120px] lg:-mt-[176px] bg-harvest-orange text-evergreen p-gutter md:p-10 md:grid md:grid-cols-2 md:gap-8 md:items-center lg:block">
           {/* Tweede foto uit de carrousel op de homepage (content/site.json). */}
           <Image
             src="/images/home/carrousel-2.jpg"
             alt="Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis"
             width={1200}
             height={800}
-            sizes="(min-width: 1200px) 520px, (min-width: 1024px) 45vw, 100vw"
-            className="w-full h-auto border-2 border-evergreen mb-6"
+            sizes="(min-width: 1200px) 520px, (min-width: 1024px) 45vw, (min-width: 768px) 45vw, 100vw"
+            className="w-full h-auto mb-6 md:mb-0 lg:mb-6"
           />
+          <div>
           <p className="hero-title font-bold text-headline-md md:text-[32px] leading-tight">
             Het belangrijkste: elke maaltijd die jij koopt, wordt ook gegeven aan iemand die nu geen
             toegang heeft tot gezond eten.
@@ -47,6 +50,7 @@ export function WhySection() {
             Goodness for All is een Rotterdamse stichting die gezonde maaltijden via buurthuizen
             beschikbaar maakt. Jouw abonnement betaalt voor beide kanten.
           </p>
+          </div>
         </div>
       </div>
     </section>
