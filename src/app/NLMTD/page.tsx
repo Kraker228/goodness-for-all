@@ -1,0 +1,66 @@
+import type { Metadata } from "next";
+import { connection } from "next/server";
+import { getSiteContent } from "@/lib/content";
+import { isSignupOpen } from "@/lib/nlmtd/config";
+import NlmtdHeader from "@/components/nlmtd/NlmtdHeader";
+import NlmtdFooter from "@/components/nlmtd/NlmtdFooter";
+import Hero from "@/components/nlmtd/Hero";
+import { HowItWorks, WhySection, sectionTitle } from "@/components/nlmtd/InfoSections";
+import SubscriptionBuilder from "@/components/nlmtd/SubscriptionBuilder";
+import { SignupClosed } from "@/components/nlmtd/SignupClosed";
+import MealDetails from "@/components/nlmtd/MealDetails";
+import Faq from "@/components/nlmtd/Faq";
+
+// Niet-geïndexeerde abonnementspagina voor NLMTD. Bewust niet in navigatie of sitemap.
+export const metadata: Metadata = {
+  title: "Maaltijdabonnement voor NLMTD, door Goodness for All",
+  description:
+    "Gezonde maaltijden van Goodness for All voor de collega’s van NLMTD. Stel je eigen abonnement samen.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
+};
+
+export default async function NlmtdPage() {
+  // Per verzoek renderen, zodat de aanmelddeadline op de server wordt gecontroleerd.
+  await connection();
+  const open = isSignupOpen();
+  const { settings } = getSiteContent();
+
+  return (
+    <>
+      <NlmtdHeader settings={settings} />
+      <main>
+        <Hero />
+        <WhySection />
+        <HowItWorks />
+
+        <section
+          id="samenstellen"
+          className="scroll-mt-4 bg-surface py-section-gap-sm md:py-section-gap-lg"
+        >
+          <div className="max-w-[1200px] mx-auto px-container-margin">
+            <h2 className={sectionTitle}>Stel je abonnement samen</h2>
+            {open ? (
+              <>
+                <p className="mt-2 max-w-3xl font-body-lg text-body-lg text-on-surface-variant">
+                  Elke maaltijd kost €6 in plaats van €8. Dat is hetzelfde als elke 4e maaltijd
+                  gratis, maar dan altijd, ook als je er steeds 3 neemt.
+                </p>
+                <SubscriptionBuilder />
+              </>
+            ) : (
+              <SignupClosed />
+            )}
+          </div>
+        </section>
+
+        <MealDetails />
+        <Faq />
+      </main>
+      <NlmtdFooter />
+    </>
+  );
+}
