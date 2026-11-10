@@ -43,7 +43,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Hoe maak ik de maaltijden klaar?",
-    a: "Uit de vriezer in de pan, 8 tot 10 minuten op matig vuur met wat olie. Of in een magnetronbakje, ongeveer 6 minuten op 900 W. Steeds tussendoor roeren.",
+    a: "Uit de vriezer in de pan, 8 minuten op matig vuur met wat olie. Of in een magnetronbakje, ongeveer 6 minuten op 900 W. Steeds tussendoor roeren.",
   },
 ];
 
