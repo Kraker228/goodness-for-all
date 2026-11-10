@@ -1,0 +1,34 @@
+{
+  "gnocchi": {
+    "img": "/meals/gnocchi-bord.png",
+    "imgLarge": "/meals/gnocchi-sfeer.jpg"
+  },
+  "korean": {
+    "img": "/meals/korean-bord.png",
+    "imgLarge": "/meals/korean-sfeer.jpg"
+  },
+  "risotto": {
+    "img": "/meals/risotto-bord.png",
+    "imgLarge": "/meals/risotto-sfeer.jpg"
+  },
+  "tikka": {
+    "img": "/meals/tikka-bord.png",
+    "imgLarge": "/meals/tikka-sfeer.jpg"
+  },
+  "thai": {
+    "img": "/meals/thai-bord.png",
+    "imgLarge": "/meals/thai-sfeer.jpg"
+  },
+  "ramen": {
+    "img": "/meals/ramen-bord.png",
+    "imgLarge": "/meals/ramen-sfeer.jpg"
+  },
+  "mexican": {
+    "img": "/meals/mexican-bord.png",
+    "imgLarge": "/meals/mexican-sfeer.png"
+  },
+  "lebanese": {
+    "img": "/meals/lebanese-bord.png",
+    "imgLarge": "/meals/lebanese-sfeer.png"
+  }
+}
