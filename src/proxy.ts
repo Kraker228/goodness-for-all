@@ -17,5 +17,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/nlmtd", "/nlmtd/"],
+  // Elke schrijfwijze van "nlmtd"; /NLMTD zelf gaat in de functie gewoon door.
+  matcher: ["/:slug([nN][lL][mM][tT][dD])"],
 };

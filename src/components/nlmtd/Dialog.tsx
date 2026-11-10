@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { focusRing } from "./styles";
 
 type Props = {
@@ -13,21 +14,31 @@ type Props = {
 /**
  * Modale dialoog op basis van het native <dialog>-element: de browser regelt
  * focus vasthouden, Escape en de achtergrond. Stijl volgt ReportModal
- * (beige vlak, groene rand, harde schaduw).
+ * (beige vlak, groene rand, harde schaduw). Net als ReportModal via een portal
+ * in <body>, zodat de dialoog nooit binnen bijvoorbeeld een <p> belandt. Hij
+ * rendert alleen als hij open is, dus nooit op de server.
  */
 export default function Dialog({ open, onClose, title, children }: Props) {
+  if (!open) return null;
+  return createPortal(
+    <OpenDialog onClose={onClose} title={title}>
+      {children}
+    </OpenDialog>,
+    document.body,
+  );
+}
+
+function OpenDialog({ onClose, title, children }: Omit<Props, "open">) {
   const ref = useRef<HTMLDialogElement | null>(null);
   const titleId = useId();
 
   useEffect(() => {
     const dialog = ref.current;
-    if (!dialog) return;
-    if (open && !dialog.open) {
-      dialog.showModal();
-    } else if (!open && dialog.open) {
-      dialog.close();
-    }
-  }, [open]);
+    if (dialog && !dialog.open) dialog.showModal();
+    return () => {
+      if (dialog?.open) dialog.close();
+    };
+  }, []);
 
   return (
     <dialog
