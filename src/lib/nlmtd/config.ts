@@ -11,8 +11,6 @@ export const NORMAL_PRICE_CENTS = 800;
 export const MEALS_MIN = 2;
 export const MEALS_MAX = 12;
 export const MEALS_DEFAULT = 3;
-/** Snelkeuzes voor het aantal maaltijden per levering. */
-export const MEAL_CHIPS = [2, 3, 4, 6, 8, 12] as const;
 
 /** Toegestane aantallen leveringen per maand. */
 export const FREQUENCIES = [1, 2, 3, 4] as const;

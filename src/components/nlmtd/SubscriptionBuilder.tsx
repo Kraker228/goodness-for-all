@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRef, useState, type ReactNode } from "react";
 import {
   FREQUENCY_DEFAULT,
-  MEAL_CHIPS,
   MEALS_DEFAULT,
   MEALS_MAX,
   MEALS_MIN,
@@ -97,7 +96,6 @@ function useSubmitOrder() {
 export default function SubscriptionBuilder() {
   const [perDelivery, setPerDelivery] = useState(MEALS_DEFAULT);
   const [frequency, setFrequency] = useState<number>(FREQUENCY_DEFAULT);
-  const [favorites, setFavorites] = useState<string[]>([]);
   const [naam, setNaam] = useState("");
   const [email, setEmail] = useState("");
   const [telefoon, setTelefoon] = useState("");
@@ -149,7 +147,6 @@ export default function SubscriptionBuilder() {
       buildOrderPayload({
         perDelivery,
         frequency,
-        favorites,
         naam,
         email,
         telefoon,
@@ -227,26 +224,6 @@ export default function SubscriptionBuilder() {
               maaltijden per levering
             </span>
           </div>
-          <div role="group" aria-label="Snelle keuze" className="flex flex-wrap gap-2 mt-4">
-            {MEAL_CHIPS.map((value) => {
-              const pressed = value === perDelivery;
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  aria-pressed={pressed}
-                  onClick={() => setPerDelivery(value)}
-                  className={`min-w-11 min-h-11 px-4 border-2 border-evergreen font-cta text-cta cursor-pointer ${
-                    pressed
-                      ? "bg-evergreen text-sandstone-beige"
-                      : "text-evergreen hover:bg-sandstone-beige"
-                  } ${focusRing}`}
-                >
-                  {value}
-                </button>
-              );
-            })}
-          </div>
         </StepCard>
 
         {/* Stap B: frequentie */}
@@ -280,11 +257,10 @@ export default function SubscriptionBuilder() {
         <StepCard
           titleId="stap-smaken"
           title="Dit komt er in de vriezer"
-          hintText="Elke week ligt er een andere smaak gegarandeerd. De andere smaken wisselen. Het label bij elke smaak laat zien in welke week hij gegarandeerd in de vriezer ligt. Pak per keer waar je zin in hebt. Populaire smaken vullen we sneller aan, dus markeer je favorieten."
+          hintText="Elke week ligt er een andere smaak gegarandeerd. De andere smaken wisselen. Het label bij elke smaak laat zien in welke week hij gegarandeerd in de vriezer ligt. Pak per keer waar je zin in hebt."
         >
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {MEALS.map((meal) => {
-              const pressed = favorites.includes(meal.id);
               return (
                 <li key={meal.id} className="flex flex-col gap-1.5">
                   <div className="aspect-square bg-sandstone-beige border-2 border-evergreen p-[6%] flex items-center justify-center">
@@ -306,25 +282,7 @@ export default function SubscriptionBuilder() {
                   <p className="font-body-md text-label-sm leading-snug text-on-surface-variant">
                     {meal.sub}
                   </p>
-                  <div className="mt-auto pt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-label-sm">
-                    <button
-                      type="button"
-                      aria-pressed={pressed}
-                      aria-label={`Favoriet: ${meal.name}`}
-                      onClick={() => setFavorites((list) => toggle(list, meal.id))}
-                      className={`inline-flex items-center gap-1 min-h-8 font-bold cursor-pointer ${
-                        pressed ? "text-harvest-orange" : "text-evergreen hover:text-harvest-orange"
-                      } ${focusRing}`}
-                    >
-                      <span
-                        className="material-symbols-outlined text-[20px]"
-                        aria-hidden="true"
-                        style={{ fontVariationSettings: `"FILL" ${pressed ? 1 : 0}` }}
-                      >
-                        favorite
-                      </span>
-                      Favoriet
-                    </button>
+                  <div className="mt-auto pt-1 text-label-sm">
                     <a href={`#smaak-${meal.id}`} className={textLink}>
                       Meer over deze smaak
                     </a>

@@ -4,14 +4,12 @@ import {
   NOTICE_DAYS,
   PRICE_CENTS,
 } from "./config";
-import { getMeal } from "./meals";
 import { calculatePrice } from "./pricing";
 
 /** Alles wat de samensteller verzamelt. */
 export type OrderFormState = {
   perDelivery: number;
   frequency: number;
-  favorites: string[];
   naam: string;
   email: string;
   telefoon: string;
@@ -34,7 +32,6 @@ export type OrderPayload = {
   telefoon: string;
   allergieen: string;
   spreekt_aan: string[];
-  favoriete_smaken: string[];
   maaltijden_per_levering: number;
   leveringen_per_maand: number;
   maaltijden_per_maand: number;
@@ -68,9 +65,6 @@ export function buildOrderPayload(state: OrderFormState, now: Date = new Date())
     spreekt_aan: state.spreektAan.map((value) =>
       value === "Anders" ? (anders ? `Anders: ${anders}` : "Anders") : value,
     ),
-    favoriete_smaken: state.favorites
-      .map((id) => getMeal(id)?.name)
-      .filter((name): name is string => Boolean(name)),
     maaltijden_per_levering: price.perDelivery,
     leveringen_per_maand: price.frequency,
     maaltijden_per_maand: price.maaltijdenPerMaand,

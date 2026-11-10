@@ -1,7 +1,9 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
 import { sectionTitle } from "./InfoSections";
-import { focusRing } from "./styles";
+import { focusRing, textLink } from "./styles";
 
-const FAQ = [
+const FAQ: { q: string; a: ReactNode }[] = [
   {
     q: "Wat gebeurt er als er niet genoeg mensen meedoen?",
     a: "Dan krijg je alleen je eerste bestelling, die je een week lang kunt ophalen. Er volgen geen afschrijvingen en er zijn geen verplichtingen, van jouw kant of van ons.",
@@ -21,6 +23,23 @@ const FAQ = [
   {
     q: "Wat als ik een allergie heb?",
     a: "Geef het door in het formulier en lees bij elke smaak de ingrediënten. Op het etiket van de verpakking staat altijd de definitieve informatie.",
+  },
+  {
+    q: "Waar worden de voordelige maaltijden die ik mogelijk maak aangeboden?",
+    a: (
+      <>
+        Nu werken we in Rotterdam en Den Haag (
+        <Link href="/impact" className={textLink}>
+          bekijk de locaties
+        </Link>
+        ). Binnenkort starten we ook bij buurthuizen in Amsterdam. Weet je een goede partner? Laat
+        het ons weten via het{" "}
+        <Link href="/contact" className={textLink}>
+          contactformulier
+        </Link>
+        .
+      </>
+    ),
   },
   {
     q: "Hoe maak ik de maaltijden klaar?",

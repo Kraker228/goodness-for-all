@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const sectionTitle =
   "hero-title font-bold text-headline-lg-mobile md:text-headline-lg text-evergreen";
 
@@ -13,7 +15,7 @@ export function WhySection() {
                 Lekker, makkelijk, gezond
               </strong>
               <span className="font-body-lg text-body-lg text-on-surface-variant">
-                Plantaardige maaltijden vol groenten, binnen 10 minuten klaar in de pan of magnetron.
+                Plantaardige maaltijden vol groenten, binnen 8 minuten klaar in de pan of magnetron.
               </span>
             </li>
             <li className="border-l-4 border-harvest-orange pl-4">
@@ -28,6 +30,15 @@ export function WhySection() {
           </ul>
         </div>
         <div className="bg-harvest-orange text-evergreen border-2 border-evergreen p-gutter md:p-10 shadow-[8px_8px_0_0_var(--color-evergreen)]">
+          {/* Tweede foto uit de carrousel op de homepage (content/site.json). */}
+          <Image
+            src="/images/home/carrousel-2.jpg"
+            alt="Vrijwilligers en een partner leveren Korean Noodles af in een buurthuis"
+            width={1200}
+            height={800}
+            sizes="(min-width: 1200px) 520px, (min-width: 1024px) 45vw, 100vw"
+            className="w-full h-auto border-2 border-evergreen mb-6"
+          />
           <p className="hero-title font-bold text-headline-md md:text-[32px] leading-tight">
             Het belangrijkste: elke maaltijd die jij koopt, wordt ook gegeven aan iemand die nu geen
             toegang heeft tot gezond eten.
