@@ -17,7 +17,7 @@ export default function MealDetails() {
             <article
               key={meal.id}
               id={`smaak-${meal.id}`}
-              className="scroll-mt-6 grid gap-6 md:grid-cols-2 md:gap-14 items-center py-8 border-t-2 border-evergreen"
+              className="scroll-mt-[184px] md:scroll-mt-[124px] grid gap-6 md:grid-cols-2 md:gap-14 items-center py-8 border-t-2 border-evergreen"
             >
               <div
                 className={`relative aspect-[4/3] overflow-hidden border-2 border-evergreen bg-sandstone-beige ${

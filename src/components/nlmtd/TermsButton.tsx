@@ -44,7 +44,7 @@ export function TermsContent() {
       <p>
         Je kiest hoeveel maaltijden je per levering wilt (2 tot 12) en hoe vaak per maand (1, 2, 3
         of 4 keer). Bij voldoende animo zetten wij het abonnement door vanaf 1 februari 2027 en laten
-        wij dat vóór die datum per e-mail weten. Is er onvoldoende animo, dan blijft het bij je
+        wij dat ruim voor 11 januari 2027 per e-mail weten. Is er onvoldoende animo, dan blijft het bij je
         eerste levering. Je betaalt dan niets meer en er zijn geen verplichtingen over en weer.
       </p>
       <H>5. Automatische incasso</H>

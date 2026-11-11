@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CONTACT_EMAIL } from "@/lib/nlmtd/config";
-import { NLMTD_ALT } from "./NlmtdHeader";
+import { NLMTD_ALT } from "./CobrandBar";
 import TermsButton from "./TermsButton";
 import { focusRingOnDark } from "./styles";
 

@@ -68,11 +68,11 @@ const STEPS = [
   },
   {
     title: "Haal op bij NLMTD",
-    text: "Vanaf maandag 11 januari. Je eerste bestelling is gegarandeerd. Pak je maaltijden uit de vriezer en vink ze af op de lijst.",
+    text: "Vanaf maandag 11 januari. Pak je maaltijden uit de vriezer en vink ze af op de lijst.",
   },
   {
-    title: "Doorgaan als er genoeg animo is",
-    text: "Bij voldoende animo start je abonnement op 1 februari. Zo niet, dan blijft het bij die ene levering, zonder verplichtingen. Opzeggen kan altijd, met 2 weken opzegtermijn.",
+    title: "Abonnement bij voldoende animo",
+    text: "Ruim voor 11 januari hoor je of het bij één levering blijft, of het abonnement start. Opzeggen kan altijd, met 2 weken opzegtermijn.",
   },
 ];
 

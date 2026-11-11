@@ -13,6 +13,10 @@ const FAQ: { q: string; a: ReactNode }[] = [
     a: "Bij NLMTD op kantoor staat een vriezer. Pak je maaltijden en vink ze af op de lijst met je voornaam. Dat kan elke werkdag.",
   },
   {
+    q: "Mag ik zelf de smaken kiezen?",
+    a: "Ja, je pakt zelf wat je wilt uit de vriezer. Elke week is er één weeksmaak, waarvan ruim genoeg is voor alle abonnementen van die week. Daarnaast liggen er elke week ook andere smaken. Pak gerust wat er is: de weeksmaak is er altijd.",
+  },
+  {
     q: "Hoe zeg ik op?",
     a: "Stuur een e-mail naar info@goodnessforall.nl. De opzegtermijn is 2 weken.",
   },
