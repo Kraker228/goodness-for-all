@@ -18,8 +18,8 @@ export default function Hero() {
           <HeroTitle />
           <HeroCoinMobile />
           <p className="font-body-lg text-body-lg md:text-xl mt-6 max-w-xl text-sandstone-beige/90">
-            Gezonde maaltijden van Goodness for All, speciaal voor de collega’s van NLMTD. Stel je
-            eigen abonnement samen en help ons te laten zien dat dit werkt.
+            Exclusief voor NLMTD: Gezonde maaltijden van Goodness for All, direct vanuit kantoor mee
+            naar huis. Stel je eigen abonnement samen en help ons te laten zien dat dit werkt.
           </p>
           <ul className="flex flex-wrap gap-2 mt-8 mb-8">
             {FACTS.map((fact) => (

@@ -46,8 +46,10 @@ export default async function NlmtdPage() {
             {open ? (
               <>
                 <p className="mt-2 max-w-3xl font-body-lg text-body-lg text-on-surface-variant">
-                  Elke maaltijd kost €6 in plaats van €8. Dat is hetzelfde als elke 4e maaltijd
-                  gratis, maar dan altijd, ook als je er steeds 3 neemt.
+                  In het abonnement kost elke maaltijd <strong>€6 in plaats van €8</strong>. Dat is
+                  hetzelfde als elke 4e maaltijd gratis, maar dan altijd, ook als je er steeds 3
+                  neemt. De losse verkoop kan ook opraken, bij de abonnementen garanderen we dat er
+                  steeds voldoende keuze is.
                 </p>
                 <SubscriptionBuilder />
               </>
