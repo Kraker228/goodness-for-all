@@ -72,7 +72,7 @@ const STEPS = [
   },
   {
     title: "Abonnement bij voldoende animo",
-    text: "Ruim voor 15 januari hoor je of het bij één levering blijft, of het abonnement start. Opzeggen kan altijd, met 2 weken opzegtermijn.",
+    text: "Ruim voor 11 januari hoor je of het bij één levering blijft, of het abonnement start. Opzeggen kan altijd, met 2 weken opzegtermijn.",
   },
 ];
 
