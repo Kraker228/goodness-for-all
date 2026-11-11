@@ -231,7 +231,7 @@ export default function SubscriptionBuilder() {
           as="fieldset"
           titleId="stap-frequentie"
           title="Hoe vaak per maand?"
-          hintText="Je haalt op bij NLMTD, 5 dagen per week beschikbaar."
+          hintText="Neem de maaltijden mee vanuit NLMTD wanneer het jou uitkomt."
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {FREQUENCY_OPTIONS.map((option) => (
