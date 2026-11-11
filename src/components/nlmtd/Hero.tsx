@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getMeal } from "@/lib/nlmtd/meals";
+import HeroCoin from "./HeroCoin";
 import { NLMTD_ALT } from "./NlmtdHeader";
 import { focusRingOnDark, primaryButton } from "./styles";
 
@@ -10,11 +10,6 @@ const FACTS = [
 ];
 
 export default function Hero() {
-  const plates = [
-    { meal: getMeal("gnocchi")!, caption: "voor jou" },
-    { meal: getMeal("tikka")!, caption: "voor iemand anders" },
-  ];
-
   return (
     <section className="bg-evergreen text-sandstone-beige overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm md:py-section-gap-lg grid gap-section-gap-sm lg:grid-cols-[1.15fr_0.85fr] items-center">
@@ -58,27 +53,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
-          className="grid grid-cols-[1.15fr_0.85fr] gap-4 items-end w-full max-w-[460px] justify-self-center"
-          aria-hidden="true"
-        >
-          {plates.map(({ meal, caption }, i) => (
-            <figure key={meal.id} className={`m-0 text-center ${i === 1 ? "-translate-y-[14%]" : ""}`}>
-              <Image
-                src={meal.plate.src}
-                alt=""
-                width={meal.plate.width}
-                height={meal.plate.height}
-                sizes="(min-width: 1024px) 260px, 50vw"
-                preload={i === 0}
-                className="w-full h-auto drop-shadow-[6px_6px_0_rgba(0,0,0,0.25)]"
-              />
-              <figcaption className="mt-2 font-label-sm text-label-sm uppercase tracking-widest">
-                {caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <HeroCoin />
       </div>
     </section>
   );
