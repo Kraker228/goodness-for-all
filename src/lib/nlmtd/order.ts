@@ -1,4 +1,5 @@
 import {
+  DEBIT_DAY_OF_MONTH,
   FIRST_DEBIT,
   FIRST_DELIVERY,
   NOTICE_DAYS,
@@ -39,7 +40,11 @@ export type OrderPayload = {
   eerste_betaling_cent: number;
   maandbedrag_cent: number;
   eerste_levering: string;
+  /** Restant van de eerste maand, af te schrijven rond 11 januari (0 bij 1x per maand). */
+  rest_eerste_maand_cent: number;
   eerste_incasso: string;
+  /** Dag van de maand waarop de maandelijkse incasso ongeveer plaatsvindt. */
+  incassodag: number;
   opzegtermijn_dagen: number;
   akkoord_voorwaarden: boolean;
   machtiging_incasso: boolean;
@@ -72,7 +77,9 @@ export function buildOrderPayload(state: OrderFormState, now: Date = new Date())
     eerste_betaling_cent: price.eersteBetalingCents,
     maandbedrag_cent: price.maandbedragCents,
     eerste_levering: FIRST_DELIVERY,
+    rest_eerste_maand_cent: price.restEersteMaandCents,
     eerste_incasso: FIRST_DEBIT,
+    incassodag: DEBIT_DAY_OF_MONTH,
     opzegtermijn_dagen: NOTICE_DAYS,
     akkoord_voorwaarden: state.akkoordVoorwaarden,
     machtiging_incasso: state.machtigingIncasso,

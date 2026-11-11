@@ -21,8 +21,14 @@ export const FREQUENCY_DEFAULT: Frequency = 2;
 export const SIGNUP_DEADLINE = "2026-12-15T23:59:00+01:00";
 /** Eerste levering: maandag 11 januari 2027. */
 export const FIRST_DELIVERY = "2027-01-11";
-/** Eerste maandelijkse incasso, als het abonnement doorgaat. */
-export const FIRST_DEBIT = "2027-02-01";
+/** Eerste incasso: het restant van de eerste abonnementsmaand. */
+export const FIRST_DEBIT = "2027-01-11";
+/**
+ * Het abonnement begint met de eerste levering op 11 januari. Een
+ * abonnementsmaand loopt steeds vanaf de 11e; de incasso volgt rond de 11e.
+ * Eerste incasso (rond 11 januari) is het restant van de eerste maand.
+ */
+export const DEBIT_DAY_OF_MONTH = 11;
 /** Opzegtermijn in dagen. */
 export const NOTICE_DAYS = 14;
 

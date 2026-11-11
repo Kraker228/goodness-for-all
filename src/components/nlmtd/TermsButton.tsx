@@ -43,16 +43,19 @@ export function TermsContent() {
       <H>4. Abonnement</H>
       <p>
         Je kiest hoeveel maaltijden je per levering wilt (2 tot 12) en hoe vaak per maand (1, 2, 3
-        of 4 keer). Bij voldoende animo zetten wij het abonnement door vanaf 1 februari 2027 en laten
-        wij dat ruim voor 11 januari 2027 per e-mail weten. Is er onvoldoende animo, dan blijft het bij je
+        of 4 keer). Bij voldoende animo start je abonnement met de eerste levering op 11 januari 2027;
+        een abonnementsmaand loopt steeds vanaf de 11e. Of het abonnement doorgaat, laten wij ruim
+        voor 11 januari 2027 per e-mail weten. Is er onvoldoende animo, dan blijft het bij je
         eerste levering. Je betaalt dan niets meer en er zijn geen verplichtingen over en weer.
       </p>
       <H>5. Automatische incasso</H>
       <p>
         Met je akkoord geef je ons een machtiging voor SEPA-incasso, via onze betaalprovider Mollie.
-        Als het abonnement doorgaat, schrijven wij elke 1e van de maand het bedrag af van je
-        abonnement: aantal maaltijden per levering × leveringen per maand × €6. Je kunt een
-        afschrijving binnen 8 weken laten terugboeken via je bank.
+        Als het abonnement doorgaat, schrijven wij rond de 11e van elke maand het bedrag van je
+        abonnement af: aantal maaltijden per levering × leveringen per maand × €6. Voor de eerste
+        maand heb je bij aanmelding je eerste levering al betaald; het restant van die maand
+        schrijven wij rond 11 januari 2027 af. Je kunt een afschrijving binnen 8 weken laten
+        terugboeken via je bank.
       </p>
       <H>6. Ophalen</H>
       <p>

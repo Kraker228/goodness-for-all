@@ -446,8 +446,8 @@ export default function SubscriptionBuilder() {
                 />
                 <label htmlFor="nlmtd-incasso" className="font-body-md text-body-md cursor-pointer">
                   Ik geef Stichting Goodness for All toestemming om, als het abonnement doorgaat,
-                  elke 1e van de maand het bedrag van mijn abonnement automatisch van mijn rekening
-                  af te schrijven. Opzeggen kan altijd met 2 weken opzegtermijn.
+                  rond de 11e van elke maand het bedrag van mijn abonnement automatisch van mijn
+                  rekening af te schrijven. Opzeggen kan altijd met 2 weken opzegtermijn.
                 </label>
               </div>
               {errorText("machtigingIncasso")}
@@ -542,7 +542,14 @@ function PaymentPlaceholder({ payload, onClose }: { payload: OrderPayload; onClo
         januari.
         <br />
         Daarna, als het abonnement doorgaat: <b>{formatEuro(payload.maandbedrag_cent)}</b> per maand,
-        elke 1e van de maand, vanaf 1 februari.
+        steeds rond de 11e van de maand.
+        {payload.rest_eerste_maand_cent > 0 && (
+          <>
+            {" "}
+            De resterende <b>{formatEuro(payload.rest_eerste_maand_cent)}</b> van de eerste maand
+            wordt rond 11 januari afgeschreven.
+          </>
+        )}
       </p>
       <h3 className="font-headline-md text-body-lg font-bold mt-5 mb-1">
         Wat er in de bestelsheet terechtkomt
