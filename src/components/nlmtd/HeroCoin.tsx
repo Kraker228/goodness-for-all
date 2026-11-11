@@ -18,7 +18,7 @@ export function HeroCoinProvider({ children }: { children: ReactNode }) {
   return <CoinFace.Provider value={{ face, setFace }}>{children}</CoinFace.Provider>;
 }
 
-/** Ingestelde waarden na tunen op /dev/plate-coin. */
+/** Ingestelde waarden, getuned op een tijdelijke testpagina met sliders. */
 const COIN_SETTINGS = {
   diameter: 370,
   thickness: 0.065,
