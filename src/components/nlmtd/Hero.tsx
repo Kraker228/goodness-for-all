@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getMeal } from "@/lib/nlmtd/meals";
+import { HeroCoinDesktop, HeroCoinMobile, HeroCoinProvider, HeroTitle } from "./HeroCoin";
 import { NLMTD_ALT } from "./NlmtdHeader";
 import { focusRingOnDark, primaryButton } from "./styles";
 
@@ -10,19 +10,13 @@ const FACTS = [
 ];
 
 export default function Hero() {
-  const plates = [
-    { meal: getMeal("gnocchi")!, caption: "voor jou" },
-    { meal: getMeal("tikka")!, caption: "voor iemand anders" },
-  ];
-
   return (
     <section className="bg-evergreen text-sandstone-beige overflow-hidden">
+      <HeroCoinProvider>
       <div className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm md:py-section-gap-lg grid gap-section-gap-sm lg:grid-cols-[1.15fr_0.85fr] items-center">
         <div>
-          <h1 className="hero-title text-[40px] md:text-[60px] text-sandstone-beige">
-            Eindelijk kan je lekker, gezond, snel én betaalbaar eten.{" "}
-            <span className="text-harvest-orange">En sponsor je ook de maaltijd van een ander.</span>
-          </h1>
+          <HeroTitle />
+          <HeroCoinMobile />
           <p className="font-body-lg text-body-lg md:text-xl mt-6 max-w-xl text-sandstone-beige/90">
             Gezonde maaltijden van Goodness for All, speciaal voor de collega’s van NLMTD. Stel je
             eigen abonnement samen en help ons te laten zien dat dit werkt.
@@ -58,28 +52,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
-          className="grid grid-cols-[1.15fr_0.85fr] gap-4 items-end w-full max-w-[460px] justify-self-center"
-          aria-hidden="true"
-        >
-          {plates.map(({ meal, caption }, i) => (
-            <figure key={meal.id} className={`m-0 text-center ${i === 1 ? "-translate-y-[14%]" : ""}`}>
-              <Image
-                src={meal.plate.src}
-                alt=""
-                width={meal.plate.width}
-                height={meal.plate.height}
-                sizes="(min-width: 1024px) 260px, 50vw"
-                preload={i === 0}
-                className="w-full h-auto drop-shadow-[6px_6px_0_rgba(0,0,0,0.25)]"
-              />
-              <figcaption className="mt-2 font-label-sm text-label-sm uppercase tracking-widest">
-                {caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <HeroCoinDesktop />
       </div>
+      </HeroCoinProvider>
     </section>
   );
 }

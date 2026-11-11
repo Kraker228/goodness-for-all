@@ -176,3 +176,9 @@ export const MEALS: Meal[] = [
 export function getMeal(id: string): Meal | undefined {
   return MEALS.find((meal) => meal.id === id);
 }
+
+/** Ronde, strak bijgesneden bordfoto's (640 px webp) voor de draaiende munt. */
+export const COIN_IMAGES = MEALS.map((meal) => ({
+  src: `/meals/coin/${meal.id}.webp`,
+  alt: meal.name,
+}));
