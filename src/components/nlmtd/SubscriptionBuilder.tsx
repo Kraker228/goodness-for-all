@@ -459,7 +459,7 @@ export default function SubscriptionBuilder() {
       {/* Samenvatting */}
       <aside
         aria-labelledby="samenvatting-titel"
-        className="bg-evergreen text-sandstone-beige border-2 border-evergreen p-6 shadow-[8px_8px_0_0_var(--color-harvest-orange)] lg:sticky lg:top-6"
+        className="bg-evergreen text-sandstone-beige border-2 border-evergreen p-6 shadow-[8px_8px_0_0_var(--color-harvest-orange)] lg:sticky lg:top-[124px]"
       >
         <h3 id="samenvatting-titel" className="hero-title font-bold text-headline-md mb-4">
           Jouw abonnement

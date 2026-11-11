@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { HeroCoinDesktop, HeroCoinMobile, HeroCoinProvider, HeroTitle } from "./HeroCoin";
-import { NLMTD_ALT } from "./NlmtdHeader";
 import { focusRingOnDark, primaryButton } from "./styles";
 
 const FACTS = [
@@ -39,17 +37,6 @@ export default function Hero() {
             maaltijd gratis. Met een abonnement krijg je gewoon 25% korting op het totale aantal
             maaltijden, ook als je er minder dan vier per keer neemt.
           </p>
-          <div className="mt-8 flex items-center gap-4">
-            <span className="font-body-md text-body-md">Een samenwerking met</span>
-            <Image
-              src="/nlmtd/Logo_wit___tekst.png"
-              alt={NLMTD_ALT}
-              width={2000}
-              height={2000}
-              sizes="80px"
-              className="h-16 md:h-20 w-auto"
-            />
-          </div>
         </div>
 
         <HeroCoinDesktop />
