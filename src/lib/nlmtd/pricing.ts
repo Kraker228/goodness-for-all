@@ -18,6 +18,8 @@ export type PriceBreakdown = {
   besparingCents: number;
   /** Alleen de eerste levering, nu te betalen. */
   eersteBetalingCents: number;
+  /** Rest van de eerste maand (maandbedrag min eerste betaling), af te schrijven rond de eerste levering. */
+  restEersteMaandCents: number;
 };
 
 export function isValidMealCount(m: unknown): m is number {
@@ -52,6 +54,7 @@ export function calculatePrice(m: number, f: number): PriceBreakdown {
     normaalPerMaandCents,
     besparingCents: normaalPerMaandCents - maandbedragCents,
     eersteBetalingCents: m * PRICE_CENTS,
+    restEersteMaandCents: maandbedragCents - m * PRICE_CENTS,
   };
 }
 

@@ -13,6 +13,7 @@ describe("calculatePrice", () => {
     expect(p.eersteBetalingCents).toBe(1800);
     expect(p.normaalPerMaandCents).toBe(4800);
     expect(p.besparingCents).toBe(1200);
+    expect(p.restEersteMaandCents).toBe(1800);
     expect(formatEuro(p.maandbedragCents)).toBe(nbsp("€ 36,00"));
     expect(formatEuro(p.eersteBetalingCents)).toBe(nbsp("€ 18,00"));
   });
@@ -23,8 +24,13 @@ describe("calculatePrice", () => {
     expect(p.maandbedragCents).toBe(12000);
     expect(p.eersteBetalingCents).toBe(3000);
     expect(p.besparingCents).toBe(4000);
+    expect(p.restEersteMaandCents).toBe(9000);
     expect(formatEuro(p.maandbedragCents)).toBe(nbsp("€ 120,00"));
     expect(formatEuro(p.eersteBetalingCents)).toBe(nbsp("€ 30,00"));
+  });
+
+  it("1 keer per maand: geen restbedrag voor de eerste maand", () => {
+    expect(calculatePrice(4, 1).restEersteMaandCents).toBe(0);
   });
 
   it("randen: 2 en 12 maaltijden, 1 en 4 keer per maand", () => {

@@ -495,8 +495,14 @@ export default function SubscriptionBuilder() {
           {formatEuro(price.eersteBetalingCents)}
         </p>
         <p className="font-body-md text-label-sm leading-snug opacity-90 mb-4">
-          Daarna, als het abonnement doorgaat: {formatEuro(price.maandbedragCents)} per maand, vanaf
-          1 februari.
+          Daarna, als het abonnement doorgaat: {formatEuro(price.maandbedragCents)} per maand.
+          {price.restEersteMaandCents > 0 && (
+            <>
+              {" "}
+              De resterende {formatEuro(price.restEersteMaandCents)} van de eerste maand wordt rond 11
+              januari afgeschreven.
+            </>
+          )}
         </p>
         <button type="button" onClick={handlePay} className={`${primaryButton} w-full ${focusRingOnDark}`}>
           Betaal met iDEAL
