@@ -14,11 +14,11 @@ type Settings = {
 };
 
 const DEFAULTS: Settings = {
-  diameter: 340,
-  thickness: 0.07,
-  halfTurnMs: 1200,
-  restMs: 1500,
-  glare: 0.6,
+  diameter: 370,
+  thickness: 0.065,
+  halfTurnMs: 850,
+  restMs: 1200,
+  glare: 0.9,
   wobble: 1,
 };
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroCoin from "./HeroCoin";
+import { HeroCoinDesktop, HeroCoinMobile, HeroCoinProvider, HeroTitle } from "./HeroCoin";
 import { NLMTD_ALT } from "./NlmtdHeader";
 import { focusRingOnDark, primaryButton } from "./styles";
 
@@ -12,12 +12,11 @@ const FACTS = [
 export default function Hero() {
   return (
     <section className="bg-evergreen text-sandstone-beige overflow-hidden">
+      <HeroCoinProvider>
       <div className="max-w-[1200px] mx-auto px-container-margin py-section-gap-sm md:py-section-gap-lg grid gap-section-gap-sm lg:grid-cols-[1.15fr_0.85fr] items-center">
         <div>
-          <h1 className="hero-title text-[40px] md:text-[60px] text-sandstone-beige">
-            Eindelijk kan je lekker, gezond, snel én betaalbaar eten.{" "}
-            <span className="text-harvest-orange">En sponsor je ook de maaltijd van een ander.</span>
-          </h1>
+          <HeroTitle />
+          <HeroCoinMobile />
           <p className="font-body-lg text-body-lg md:text-xl mt-6 max-w-xl text-sandstone-beige/90">
             Gezonde maaltijden van Goodness for All, speciaal voor de collega’s van NLMTD. Stel je
             eigen abonnement samen en help ons te laten zien dat dit werkt.
@@ -53,8 +52,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <HeroCoin />
+        <HeroCoinDesktop />
       </div>
+      </HeroCoinProvider>
     </section>
   );
 }
