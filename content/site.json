@@ -186,10 +186,12 @@
     "hero": {
       "leftTitle": "Het is ook jullie stad.",
       "leftText": "Samen bouwen we aan een stad zonder honger. Uw organisatie kan het verschil maken voor duizenden buurtgenoten, en zo bijdragen aan een prettiger vestigingsklimaat en fijne werkplek.",
+      "povertyText": "In Nederland leven 521.000 mensen in armoede en 1,1 miljoen mensen net boven de armoedegrens. Ondanks veel goede initiatieven wordt niet iedereen bereikt.",
+      "povertySource": "Bron: CBS, 25 november 2026 (voorlopige armoedecijfers 2025).",
       "impactTitle": "Het model werkt.",
       "impactParagraph1": "Inmiddels leveren we duizenden maaltijden per maand aan wie dat nodig heeft.",
-      "impactParagraph2": "Onze totale kosten zijn ca. €3,50 per maaltijd en worden volledig gedekt door het solidaire model: de één betaalt voor de ander. Hierdoor kunnen mensen eindelijk goed eten: zij betalen €1 of zelfs niks. Ze halen de maaltijd bij een buurthuis bij hen om de hoek.",
-      "impactParagraph3": "Met een boost in de vorm van een duurzame samenwerking kunnen we nog meer mensen bereiken.",
+      "impactParagraph2": "Wij leveren zeer efficiënt gezonde maaltijden, precies daar waar ze nodig zijn, en weten de mensen ook te bereiken. Hiervoor werken we nauw samen met buurthuizen en medewerkers die vertrouwd worden.",
+      "impactParagraph3": "",
       "rightTitle": "Word Goodness for All Impact Partner",
       "badges": [
         "CSRD PROOF",
@@ -202,10 +204,15 @@
     "pricingTitle": "Kies uw impact niveau",
     "pricingText": "Transparante bijdragen, meetbaar resultaat.",
     "mealsTooltip": "Extra maaltijden in aanvulling op de aantallen die we nu realiseren",
+    "customAmountText": "Of kies zelf het aantal maaltijden, tegen een bijdrage van €5 per maaltijd.",
+    "mealsSubtext": "Aangeboden aan wie het het hardste nodig heeft.",
+    "anbiNote": "Goodness for All is een stichting met ANBI-status.",
     "freezerTooltip": "Vanuit de vriezer verkoop van maaltijden voor thuis. Elke verkochte maaltijd = 1 extra maaltijd uitgedeeld",
     "plans": [
       {
         "name": "Impact Supporter",
+        "meals": "100",
+        "mealsUnit": "maaltijden per maand",
         "price": "€500",
         "period": "/ maand",
         "featured": false,
@@ -233,7 +240,9 @@
       },
       {
         "name": "Impact Builder",
-        "price": "€1.250",
+        "meals": "500",
+        "mealsUnit": "maaltijden per maand",
+        "price": "€2.500",
         "period": "/ maand",
         "featured": false,
         "featuredLabel": "",
@@ -247,7 +256,7 @@
           {
             "type": "meals",
             "text": "",
-            "count": "3.000"
+            "count": "6.000"
           },
           {
             "type": "text",
@@ -265,7 +274,9 @@
       },
       {
         "name": "Impact Leader",
-        "price": "€2.500",
+        "meals": "1.000",
+        "mealsUnit": "maaltijden per maand",
+        "price": "€5.000",
         "period": "/ maand",
         "featured": false,
         "featuredLabel": "",
@@ -278,7 +289,7 @@
           {
             "type": "meals",
             "text": "",
-            "count": "6.000"
+            "count": "12.000"
           },
           {
             "type": "text",
@@ -319,9 +330,22 @@
       "quote": "Wij steunen graag innovatieve projecten in de stad. Zeker als het onze stadsgenoten voedt op een solidaire, duurzame en effectieve manier. Onze collega's genoten van de lekkere, snelle maaltijden, ikzelf zeker, ik kan het iedereen aanraden!",
       "quoteAuthor": "Eleonoor Hintzen-Cuppen, Senior Consultant bij Rebel"
     },
+    "together": {
+      "title": "Samen brengen we de missie tot leven",
+      "text": "Samen bepalen we hoe we jullie medewerkers betrekken: bijvoorbeeld via interne communicatie, inspiratiesessies, activaties op de werkvloer en het delen van de gerealiseerde impact.",
+      "stepsTitle": "Samen aan de slag",
+      "steps": [
+        "We maken vrijblijvend kennis en bespreken jullie ambities.",
+        "Jullie bepalen hoeveel maaltijden jullie mogelijk willen maken.",
+        "Samen geven we invulling aan het partnership.",
+        "We maken de gerealiseerde maatschappelijke impact inzichtelijk."
+      ]
+    },
     "logoGridTitle": "Wij werken al samen met",
     "formTitle": "Impact maken?",
-    "formText": "Vul het formulier in en we nemen binnen 24 uur contact op."
+    "formText": "Vul het formulier in en we nemen binnen 24 uur contact op.",
+    "contactText": "Liever direct contact? Neem contact op met Folkert Postma:",
+    "contactEmail": "folkert@goodnessforall.nl"
   },
   "partnerLogos": [
     {
