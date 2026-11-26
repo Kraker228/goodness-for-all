@@ -11,6 +11,8 @@ export type Feature =
 
 export type Plan = {
   name: string;
+  meals: string;
+  mealsUnit: string;
   price: string;
   period: string;
   featured: boolean;
@@ -27,10 +29,14 @@ export default function ImpactCard({
   plan,
   mealsTooltip,
   freezerTooltip,
+  mealsSubtext,
+  anbiNote,
 }: {
   plan: Plan;
   mealsTooltip: string;
   freezerTooltip: string;
+  mealsSubtext: string;
+  anbiNote: string;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -92,12 +98,22 @@ export default function ImpactCard({
       >
         {plan.name}
       </span>
-      <div
-        className={`mb-6 text-headline-lg text-headline-lg ${
-          plan.dark ? "text-harvest-orange" : "text-evergreen"
-        }`}
-      >
-        {plan.price} <span className={`text-body-md ${plan.dark ? "text-sandstone-beige" : ""}`}>{plan.period}</span>
+      <div className="mb-6">
+        <div
+          className={`text-headline-lg text-headline-lg ${
+            plan.dark ? "text-harvest-orange" : "text-evergreen"
+          }`}
+        >
+          {plan.meals}{" "}
+          <span className={`text-body-md ${plan.dark ? "text-sandstone-beige" : ""}`}>
+            {plan.mealsUnit}
+          </span>
+        </div>
+        {mealsSubtext && (
+          <p className={`mt-2 text-body-md ${plan.dark ? "text-sandstone-beige" : "text-on-surface-variant"}`}>
+            {mealsSubtext}
+          </p>
+        )}
       </div>
       <ul className="mb-10 flex-grow space-y-4">
         {plan.features.map((feature, i) => {
@@ -132,6 +148,16 @@ export default function ImpactCard({
           );
         })}
       </ul>
+      <div
+        className={`mb-6 border-t-2 pt-4 ${
+          plan.dark ? "border-sandstone-beige/30 text-sandstone-beige" : "border-evergreen/15 text-evergreen"
+        }`}
+      >
+        <p className="text-body-md font-bold">
+          {plan.price} {plan.period}
+        </p>
+        {anbiNote && <p className="mt-1 text-label-sm opacity-80">{anbiNote}</p>}
+      </div>
       <a
         href={plan.buttonHref}
         className={`block w-full py-4 text-center font-cta text-cta transition-colors ${

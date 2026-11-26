@@ -47,6 +47,8 @@ export default async function PartnersPage({
                 plan={plan as unknown as Plan}
                 mealsTooltip={partners.mealsTooltip}
                 freezerTooltip={partners.freezerTooltip}
+                mealsSubtext={partners.mealsSubtext}
+                anbiNote={partners.anbiNote}
               />
             ))}
           </div>

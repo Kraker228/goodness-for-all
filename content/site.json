@@ -188,8 +188,8 @@
       "leftText": "Samen bouwen we aan een stad zonder honger. Uw organisatie kan het verschil maken voor duizenden buurtgenoten, en zo bijdragen aan een prettiger vestigingsklimaat en fijne werkplek.",
       "impactTitle": "Het model werkt.",
       "impactParagraph1": "Inmiddels leveren we duizenden maaltijden per maand aan wie dat nodig heeft.",
-      "impactParagraph2": "Onze totale kosten zijn ca. €3,50 per maaltijd en worden volledig gedekt door het solidaire model: de één betaalt voor de ander. Hierdoor kunnen mensen eindelijk goed eten: zij betalen €1 of zelfs niks. Ze halen de maaltijd bij een buurthuis bij hen om de hoek.",
-      "impactParagraph3": "Met een boost in de vorm van een duurzame samenwerking kunnen we nog meer mensen bereiken.",
+      "impactParagraph2": "Wij leveren zeer efficiënt gezonde maaltijden, precies daar waar ze nodig zijn, en weten de mensen ook te bereiken. Hiervoor werken we nauw samen met buurthuizen en medewerkers die vertrouwd worden.",
+      "impactParagraph3": "",
       "rightTitle": "Word Goodness for All Impact Partner",
       "badges": [
         "CSRD PROOF",
@@ -202,10 +202,14 @@
     "pricingTitle": "Kies uw impact niveau",
     "pricingText": "Transparante bijdragen, meetbaar resultaat.",
     "mealsTooltip": "Extra maaltijden in aanvulling op de aantallen die we nu realiseren",
+    "mealsSubtext": "Aangeboden aan wie het het hardste nodig heeft.",
+    "anbiNote": "Goodness for All is een stichting met ANBI-status.",
     "freezerTooltip": "Vanuit de vriezer verkoop van maaltijden voor thuis. Elke verkochte maaltijd = 1 extra maaltijd uitgedeeld",
     "plans": [
       {
         "name": "Impact Supporter",
+        "meals": "100",
+        "mealsUnit": "maaltijden per maand",
         "price": "€500",
         "period": "/ maand",
         "featured": false,
@@ -233,7 +237,9 @@
       },
       {
         "name": "Impact Builder",
-        "price": "€1.250",
+        "meals": "500",
+        "mealsUnit": "maaltijden per maand",
+        "price": "€2.500",
         "period": "/ maand",
         "featured": false,
         "featuredLabel": "",
@@ -247,7 +253,7 @@
           {
             "type": "meals",
             "text": "",
-            "count": "3.000"
+            "count": "6.000"
           },
           {
             "type": "text",
@@ -265,7 +271,9 @@
       },
       {
         "name": "Impact Leader",
-        "price": "€2.500",
+        "meals": "1.000",
+        "mealsUnit": "maaltijden per maand",
+        "price": "€5.000",
         "period": "/ maand",
         "featured": false,
         "featuredLabel": "",
@@ -278,7 +286,7 @@
           {
             "type": "meals",
             "text": "",
-            "count": "6.000"
+            "count": "12.000"
           },
           {
             "type": "text",

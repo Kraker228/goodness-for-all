@@ -25,9 +25,11 @@ export default function PartnerHero({ content }: { content: PartnerHeroContent }
             <p className="mt-4 text-body-md text-body-md text-on-surface-variant">
               {content.impactParagraph2}
             </p>
-            <p className="mt-4 text-body-md text-body-md text-on-surface-variant">
-              {content.impactParagraph3}
-            </p>
+            {content.impactParagraph3 && (
+              <p className="mt-4 text-body-md text-body-md text-on-surface-variant">
+                {content.impactParagraph3}
+              </p>
+            )}
           </div>
         </div>
       </div>
