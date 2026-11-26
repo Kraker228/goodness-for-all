@@ -99,15 +99,21 @@ export default function ImpactCard({
         {plan.name}
       </span>
       <div className="mb-6">
-        <div
-          className={`text-headline-lg text-headline-lg ${
-            plan.dark ? "text-harvest-orange" : "text-evergreen"
-          }`}
-        >
-          {plan.meals}{" "}
-          <span className={`text-body-md ${plan.dark ? "text-sandstone-beige" : ""}`}>
+        <div className="text-center">
+          <div
+            className={`font-[family-name:var(--font-baloo)] text-[64px] font-bold leading-none md:text-[72px] ${
+              plan.dark ? "text-harvest-orange" : "text-evergreen"
+            }`}
+          >
+            {plan.meals}
+          </div>
+          <div
+            className={`mt-1 text-body-md font-bold ${
+              plan.dark ? "text-sandstone-beige" : "text-evergreen"
+            }`}
+          >
             {plan.mealsUnit}
-          </span>
+          </div>
         </div>
         {mealsSubtext && (
           <p className={`mt-2 text-body-md ${plan.dark ? "text-sandstone-beige" : "text-on-surface-variant"}`}>
