@@ -14,6 +14,14 @@ export default function PartnerHero({ content }: { content: PartnerHeroContent }
             <p className="mt-6 text-body-lg text-body-lg text-on-surface-variant">
               {content.leftText}
             </p>
+            {content.povertyText && (
+              <div className="mt-6 border-l-4 border-harvest-orange pl-4">
+                <p className="text-body-md text-body-md text-evergreen">{content.povertyText}</p>
+                {content.povertySource && (
+                  <p className="mt-2 text-label-sm text-on-surface-variant">{content.povertySource}</p>
+                )}
+              </div>
+            )}
           </div>
           <div className="border-t-2 border-evergreen/15 pt-10">
             <h2 className="hero-title font-bold text-headline-md text-evergreen">

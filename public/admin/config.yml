@@ -121,6 +121,8 @@ collections:
                 fields:
                   - { label: Linker titel, name: leftTitle, widget: string }
                   - { label: Linker tekst, name: leftText, widget: text }
+                  - { label: Armoedecijfers, name: povertyText, widget: text, required: false }
+                  - { label: Bron armoedecijfers, name: povertySource, widget: string, required: false }
                   - { label: Onderblok titel, name: impactTitle, widget: string }
                   - { label: Onderblok alinea 1, name: impactParagraph1, widget: text }
                   - { label: Onderblok alinea 2, name: impactParagraph2, widget: text }
@@ -132,6 +134,7 @@ collections:
               - { label: Pakketten tekst, name: pricingText, widget: text }
               - { label: Tooltip maaltijden, name: mealsTooltip, widget: text }
               - { label: Tooltip vriezer, name: freezerTooltip, widget: text }
+              - { label: Tekst onder pakketten (zelf kiezen), name: customAmountText, widget: text, required: false }
               - { label: Tekst onder aantal maaltijden, name: mealsSubtext, widget: string }
               - { label: ANBI-melding bij prijs, name: anbiNote, widget: string }
               - label: Impact pakketten
@@ -167,9 +170,19 @@ collections:
                   - { label: Outro, name: outro, widget: text }
                   - { label: Quote, name: quote, widget: text }
                   - { label: Quote auteur, name: quoteAuthor, widget: string }
+              - label: Samen aan de slag
+                name: together
+                widget: object
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Tekst, name: text, widget: text }
+                  - { label: Titel stappen, name: stepsTitle, widget: string }
+                  - { label: Stappen, name: steps, widget: list, field: { label: Stap, name: step, widget: string } }
               - { label: Logogrid titel, name: logoGridTitle, widget: string }
               - { label: Formulier titel, name: formTitle, widget: string }
               - { label: Formulier tekst, name: formText, widget: text }
+              - { label: Contact tekst, name: contactText, widget: string, required: false }
+              - { label: Contact e-mail, name: contactEmail, widget: string, required: false }
 
           - label: Partnerlogo carousel
             name: partnerLogos

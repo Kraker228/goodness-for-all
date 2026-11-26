@@ -52,6 +52,39 @@ export default async function PartnersPage({
               />
             ))}
           </div>
+          {partners.customAmountText && (
+            <p className="mt-10 text-center text-body-lg text-body-lg text-evergreen">
+              {partners.customAmountText}
+            </p>
+          )}
+        </section>
+
+        <section className="py-section-gap-lg px-container-margin bg-white border-y-2 border-evergreen">
+          <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="hero-title font-bold text-headline-lg text-evergreen">
+                {partners.together.title}
+              </h2>
+              <p className="mt-6 text-body-lg text-body-lg text-on-surface-variant">
+                {partners.together.text}
+              </p>
+            </div>
+            <div>
+              <h3 className="hero-title font-bold text-headline-md text-evergreen mb-6">
+                {partners.together.stepsTitle}
+              </h3>
+              <ol className="space-y-4">
+                {partners.together.steps.map((step, i) => (
+                  <li key={step} className="flex items-start gap-4 text-body-md text-body-md text-evergreen">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-harvest-orange font-bold text-evergreen">
+                      {i + 1}
+                    </span>
+                    <span className="pt-1">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-2 bg-sandstone-beige items-stretch">
@@ -106,6 +139,17 @@ export default async function PartnersPage({
               <p className="text-body-md text-evergreen">
                 {partners.formText}
               </p>
+              {partners.contactEmail && (
+                <p className="mt-2 text-body-md text-evergreen">
+                  {partners.contactText}{" "}
+                  <a
+                    href={`mailto:${partners.contactEmail}`}
+                    className="font-bold underline decoration-harvest-orange underline-offset-4 hover:text-harvest-orange"
+                  >
+                    {partners.contactEmail}
+                  </a>
+                </p>
+              )}
             </div>
             <PartnerForm content={forms.partner} initialChoice={choice} />
           </div>
