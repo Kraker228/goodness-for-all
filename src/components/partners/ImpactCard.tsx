@@ -98,8 +98,12 @@ export default function ImpactCard({
       >
         {plan.name}
       </span>
-      <div className="mb-6">
-        <div className="text-center">
+      <div
+        className={`mb-6 border-b-2 pb-6 ${
+          plan.dark ? "border-sandstone-beige/30" : "border-evergreen/15"
+        }`}
+      >
+        <div>
           <div
             className={`font-[family-name:var(--font-baloo)] text-[64px] font-bold leading-none md:text-[72px] ${
               plan.dark ? "text-harvest-orange" : "text-evergreen"
