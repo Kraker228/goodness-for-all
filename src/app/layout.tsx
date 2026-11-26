@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     images: [
       {
-        url: "/images/home/hero.jpg",
-        width: 512,
-        height: 384,
+        url: "/images/og-share.jpg",
+        width: 1200,
+        height: 630,
         alt: site.settings.logoAlt,
       },
     ],
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.settings.defaultMetaTitle,
     description: site.settings.defaultMetaDescription,
-    images: ["/images/home/hero.jpg"],
+    images: ["/images/og-share.jpg"],
   },
 };
 
